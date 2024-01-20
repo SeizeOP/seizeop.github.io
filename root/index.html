@@ -1,0 +1,679 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2024-01-19 Fri 22:16 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Sway Waybar Config</title>
+<meta name="author" content="SeizeOP" />
+<meta name="description" content="An org-mode document indented to make my Waybar configuration for the Sway Window Manager more legible." />
+<meta name="generator" content="Org Mode" />
+<link rel="stylesheet" type="text/css" href="https://fniessen.github.io/org-html-themes/src/readtheorg_theme/css/htmlize.css"/>
+<link rel="stylesheet" type="text/css" href="https://fniessen.github.io/org-html-themes/src/readtheorg_theme/css/readtheorg.css"/>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="https://fniessen.github.io/org-html-themes/src/lib/js/jquery.stickytableheaders.min.js"></script>
+<script type="text/javascript" src="https://fniessen.github.io/org-html-themes/src/readtheorg_theme/js/readtheorg.js"></script>
+</head>
+<body>
+<div id="content" class="content">
+<h1 class="title">Sway Waybar Config</h1>
+<div id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#org59236f2">ABOUT THIS CONFIG</a></li>
+<li><a href="#org82b8771">PERSONAL CONFIG</a>
+<ul>
+<li><a href="#org51c9a6a">Configuration</a>
+<ul>
+<li><a href="#org4541efe">TOP BAR</a></li>
+<li><a href="#orgbbf072c">BOTTOM BAR</a></li>
+</ul>
+</li>
+<li><a href="#orgfaf825e">CSS Styling</a>
+<ul>
+<li><a href="#org6f08fea">Global Styling</a></li>
+<li><a href="#org88f3449">Module Styling</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org59236f2" class="outline-2">
+<h2 id="org59236f2">ABOUT THIS CONFIG</h2>
+</div>
+<div id="outline-container-org82b8771" class="outline-2">
+<h2 id="org82b8771">PERSONAL CONFIG</h2>
+<div class="outline-text-2" id="text-org82b8771">
+</div>
+<div id="outline-container-org51c9a6a" class="outline-3">
+<h3 id="org51c9a6a">Configuration</h3>
+<div class="outline-text-3" id="text-org51c9a6a">
+</div>
+<div id="outline-container-org4541efe" class="outline-4">
+<h4 id="org4541efe">TOP BAR</h4>
+<div class="outline-text-4" id="text-org4541efe">
+<div class="org-src-container">
+<pre class="src src-java">[
+</pre>
+</div>
+</div>
+<ul class="org-ul">
+<li><a id="org66569dd"></a>Layout<br />
+<div class="outline-text-5" id="text-org66569dd">
+<p>
+<b>Define Top Bar Modules</b>
+</p>
+<div class="org-src-container">
+<pre class="src src-java">  {
+    <span style="color: #f1fa8c;">"position"</span>: <span style="color: #f1fa8c;">"top"</span>,
+    <span style="color: #f1fa8c;">"all-outputs"</span>: <span style="color: #8be9fd;">true</span>,
+    <span style="color: #f1fa8c;">"name"</span>: <span style="color: #f1fa8c;">"top"</span>,
+    <span style="color: #f1fa8c;">"height"</span>: <span style="color: #bd93f9; font-weight: bold;">30</span>,
+    <span style="color: #f1fa8c;">"spacing"</span>: <span style="color: #bd93f9; font-weight: bold;">4</span>,
+    <span style="color: #f1fa8c;">"modules-left"</span>: [<span style="color: #f1fa8c;">"sway/workspaces"</span>],
+    <span style="color: #f1fa8c;">"modules-center"</span>: [<span style="color: #f1fa8c;">"sway/window"</span>, <span style="color: #f1fa8c;">"sway/scratchpad"</span>],
+    <span style="color: #f1fa8c;">"modules-right"</span>: [<span style="color: #f1fa8c;">"sway/mode"</span>, <span style="color: #f1fa8c;">"backlight"</span>, <span style="color: #f1fa8c;">"pulseaudio"</span>],
+</pre>
+</div>
+</div>
+</li>
+<li><a id="org5f60b24"></a>Modules<br />
+<ul class="org-ul">
+<li><a id="org6191ee3"></a><b>Sway Workspaces</b><br />
+<div class="outline-text-6" id="text-org6191ee3">
+<div class="org-src-container">
+<pre class="src src-java">    <span style="color: #f1fa8c;">"sway/workspaces"</span>: {
+        dc
+           <span style="color: #f1fa8c;">"format"</span>: <span style="color: #f1fa8c;">"{name} {icon}"</span>,
+           <span style="color: #f1fa8c;">"format-icons"</span>: {
+              <span style="color: #f1fa8c;">"1"</span>: <span style="color: #f1fa8c;">"&#62057;"</span>,
+              <span style="color: #f1fa8c;">"2"</span>: <span style="color: #f1fa8c;">"&#61763;"</span>,
+              <span style="color: #f1fa8c;">"3"</span>: <span style="color: #f1fa8c;">"&#58930;"</span>,
+              <span style="color: #f1fa8c;">"4"</span>: <span style="color: #f1fa8c;">"&#984687;"</span>,
+              <span style="color: #f1fa8c;">"5"</span>: <span style="color: #f1fa8c;">"&#984275;"</span>,
+              <span style="color: #f1fa8c;">"6"</span>: <span style="color: #f1fa8c;">"&#984387;"</span>,
+          <span style="color: #f1fa8c;">"urgent"</span>: <span style="color: #f1fa8c;">"&#61546;"</span>,
+              <span style="color: #f1fa8c;">"focused"</span>: <span style="color: #f1fa8c;">"&#61842;"</span>,
+              <span style="color: #f1fa8c;">"default"</span>: <span style="color: #f1fa8c;">"&#61712;"</span>
+    }
+  },
+</pre>
+</div>
+</div>
+</li>
+<li><a id="orgca2f866"></a><b>Sway Scratchpad</b><br />
+<div class="outline-text-6" id="text-orgca2f866">
+<div class="org-src-container">
+<pre class="src src-java">     <span style="color: #f1fa8c;">"sway/scratchpad"</span>: {
+          <span style="color: #f1fa8c;">"format"</span>: <span style="color: #f1fa8c;">"{icon} {count}"</span>,
+          <span style="color: #f1fa8c;">"show-empty"</span>: <span style="color: #8be9fd;">false</span>,
+          <span style="color: #f1fa8c;">"format-icons"</span>: [<span style="color: #f1fa8c;">"&#62162;"</span>, <span style="color: #f1fa8c;">"&#62162;"</span>],
+          <span style="color: #f1fa8c;">"tooltip"</span>: <span style="color: #8be9fd;">true</span>,
+          <span style="color: #f1fa8c;">"tooltip-format"</span>: <span style="color: #f1fa8c;">"{app}: {title}"</span>
+      },
+
+</pre>
+</div>
+</div>
+</li>
+<li><a id="org699e30b"></a><b>Sway Window</b><br />
+<div class="outline-text-6" id="text-org699e30b">
+<div class="org-src-container">
+<pre class="src src-java">  <span style="color: #f1fa8c;">"sway/window"</span>: {
+         <span style="color: #f1fa8c;">"max-length"</span>: <span style="color: #bd93f9; font-weight: bold;">100</span>
+     },
+</pre>
+</div>
+</div>
+</li>
+<li><a id="org71df4aa"></a>Pulse Audio<br />
+<div class="outline-text-6" id="text-org71df4aa">
+<div class="org-src-container">
+<pre class="src src-java">     <span style="color: #f1fa8c;">"pulseaudio"</span>: {
+           <span style="color: #f1fa8c;">"scroll-step"</span>: <span style="color: #bd93f9; font-weight: bold;">1</span>, <span style="color: #6272a4;">// </span><span style="color: #6272a4;">%, can be a float</span>
+          <span style="color: #f1fa8c;">"format"</span>: <span style="color: #f1fa8c;">"{volume}% {icon} {format_source}"</span>,
+          <span style="color: #f1fa8c;">"format-bluetooth"</span>: <span style="color: #f1fa8c;">"{volume}% {icon}&#62100; {format_source}"</span>,
+          <span style="color: #f1fa8c;">"format-bluetooth-muted"</span>: <span style="color: #f1fa8c;">"&#63145; {icon}&#62100; {format_source}"</span>,
+          <span style="color: #f1fa8c;">"format-muted"</span>: <span style="color: #f1fa8c;">"&#63145; {format_source}"</span>,
+          <span style="color: #f1fa8c;">"format-source"</span>: <span style="color: #f1fa8c;">"{volume}% &#61744;"</span>,
+          <span style="color: #f1fa8c;">"format-source-muted"</span>: <span style="color: #f1fa8c;">"&#61745;"</span>,
+          <span style="color: #f1fa8c;">"format-icons"</span>: {
+              <span style="color: #f1fa8c;">"headphone"</span>: <span style="color: #f1fa8c;">"&#61477;"</span>,
+              <span style="color: #f1fa8c;">"hands-free"</span>: <span style="color: #f1fa8c;">"&#62864;"</span>,
+              <span style="color: #f1fa8c;">"headset"</span>: <span style="color: #f1fa8c;">"&#62864;"</span>,
+              <span style="color: #f1fa8c;">"phone"</span>: <span style="color: #f1fa8c;">"&#61589;"</span>,
+              <span style="color: #f1fa8c;">"portable"</span>: <span style="color: #f1fa8c;">"&#61589;"</span>,
+              <span style="color: #f1fa8c;">"car"</span>: <span style="color: #f1fa8c;">"&#61881;"</span>,
+              <span style="color: #f1fa8c;">"default"</span>: [<span style="color: #f1fa8c;">"&#61478;"</span>, <span style="color: #f1fa8c;">"&#61479;"</span>, <span style="color: #f1fa8c;">"&#61480;"</span>]
+          },
+          <span style="color: #f1fa8c;">"on-click"</span>: <span style="color: #f1fa8c;">"pavucontrol"</span>
+    },
+},
+</pre>
+</div>
+</div>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div id="outline-container-orgbbf072c" class="outline-4">
+<h4 id="orgbbf072c">BOTTOM BAR</h4>
+<div class="outline-text-4" id="text-orgbbf072c">
+</div>
+<ul class="org-ul">
+<li><a id="org69ca4f6"></a>Layout<br />
+<div class="outline-text-5" id="text-org69ca4f6">
+<p>
+<b>Define Bottom Bar Modules</b>
+</p>
+<div class="org-src-container">
+<pre class="src src-java">{
+    <span style="color: #f1fa8c;">"position"</span>: <span style="color: #f1fa8c;">"bottom"</span>,
+    <span style="color: #f1fa8c;">"spacing"</span>: <span style="color: #bd93f9; font-weight: bold;">4</span>,
+    <span style="color: #f1fa8c;">"height"</span>: <span style="color: #bd93f9; font-weight: bold;">30</span>,
+    <span style="color: #f1fa8c;">"name"</span>: <span style="color: #f1fa8c;">"bottom"</span>,
+    <span style="color: #f1fa8c;">"layer"</span>: <span style="color: #f1fa8c;">"top"</span>,
+    <span style="color: #f1fa8c;">"position"</span>: <span style="color: #f1fa8c;">"bottom"</span>,
+    <span style="color: #f1fa8c;">"modules-left"</span>: [<span style="color: #f1fa8c;">"clock"</span>, <span style="color: #f1fa8c;">"custom/media"</span>],
+    <span style="color: #f1fa8c;">"modules-right"</span>: [<span style="color: #f1fa8c;">"tray"</span>, <span style="color: #f1fa8c;">"network"</span>, <span style="color: #f1fa8c;">"battery"</span>],
+</pre>
+</div>
+</div>
+</li>
+<li><a id="org6126add"></a>Modules<br />
+<ul class="org-ul">
+<li><a id="orge8297dd"></a><b>Custom Media</b><br />
+<div class="outline-text-6" id="text-orge8297dd">
+<p>
+A module to display song/media metadata from MPRIS enabled players.
+</p>
+<ul class="org-ul">
+<li>ex: <code>cmus, Brave, mpv</code></li>
+</ul>
+
+<div class="org-src-container">
+<pre class="src src-java">      <span style="color: #f1fa8c;">"custom/media"</span>: {
+          <span style="color: #f1fa8c;">"format"</span>: <span style="color: #f1fa8c;">"{icon} {}"</span>,
+          <span style="color: #f1fa8c;">"escape"</span>: <span style="color: #8be9fd;">true</span>,
+          <span style="color: #f1fa8c;">"return-type"</span>: <span style="color: #f1fa8c;">"json"</span>,
+          <span style="color: #f1fa8c;">"max-length"</span>: <span style="color: #bd93f9; font-weight: bold;">100</span>,
+          <span style="color: #f1fa8c;">"on-click"</span>: <span style="color: #f1fa8c;">"playerctl play-pause"</span>,
+          <span style="color: #f1fa8c;">"on-click-right"</span>: <span style="color: #f1fa8c;">"playerctl stop"</span>,
+          <span style="color: #f1fa8c;">"smooth-scrolling-threshold"</span>: <span style="color: #bd93f9; font-weight: bold;">10</span>,
+          <span style="color: #f1fa8c;">"on-scroll-up"</span>: <span style="color: #f1fa8c;">"playerctl next"</span>,
+          <span style="color: #f1fa8c;">"on-scroll-down"</span>: <span style="color: #f1fa8c;">"playerctl previous"</span>,
+          <span style="color: #f1fa8c;">"format-icons"</span>: {
+              <span style="color: #f1fa8c;">"mpv"</span>: <span style="color: #f1fa8c;">"&#60326;"</span>,
+              <span style="color: #f1fa8c;">"default"</span>: <span style="color: #f1fa8c;">"&#127900;"</span>
+          },
+          <span style="color: #f1fa8c;">"exec"</span>: <span style="color: #f1fa8c;">"$HOME/.config/waybar/scripts/mediaplayer.py 2&gt; /dev/null"</span> <span style="color: #6272a4;">// </span><span style="color: #6272a4;">Script in resources folder</span>
+          <span style="color: #6272a4;">//</span><span style="color: #6272a4;">"exec": "$HOME/.config/waybar/mediaplayer.py --player mpv 2&gt; /dev/null" // Filter player based     on name</span>
+      },
+</pre>
+</div>
+</div>
+</li>
+<li><a id="org2fc540e"></a><b>Clock Module</b><br />
+<div class="outline-text-6" id="text-org2fc540e">
+<div class="org-src-container">
+<pre class="src src-java">  <span style="color: #f1fa8c;">"clock"</span>: {
+           <span style="color: #f1fa8c;">"timezone"</span>: <span style="color: #f1fa8c;">"America/New_York"</span>,
+          <span style="color: #f1fa8c;">"tooltip-format"</span>: <span style="color: #f1fa8c;">"&lt;big&gt;{:%Y %B}&lt;/big&gt;\n&lt;tt&gt;&lt;small&gt;{calendar}&lt;/small&gt;&lt;/tt&gt;"</span>,
+          <span style="color: #f1fa8c;">"format-alt"</span>: <span style="color: #f1fa8c;">"{:%Y-%m-%d}"</span>
+      },
+</pre>
+</div>
+</div>
+</li>
+<li><a id="org316c9fe"></a>Tray Module<br />
+<div class="outline-text-6" id="text-org316c9fe">
+<div class="org-src-container">
+<pre class="src src-java">     <span style="color: #f1fa8c;">"tray"</span>: {
+          <span style="color: #f1fa8c;">"icon-size"</span>: <span style="color: #bd93f9; font-weight: bold;">20</span>,
+          <span style="color: #f1fa8c;">"spacing"</span>: <span style="color: #bd93f9; font-weight: bold;">10</span>
+      },
+</pre>
+</div>
+</div>
+</li>
+<li><a id="org269ff6c"></a><b>Battery Module</b><br />
+<div class="outline-text-6" id="text-org269ff6c">
+<div class="org-src-container">
+<pre class="src src-java">      <span style="color: #f1fa8c;">"battery"</span>: {
+          <span style="color: #f1fa8c;">"states"</span>: {
+               <span style="color: #f1fa8c;">"good"</span>: <span style="color: #bd93f9; font-weight: bold;">95</span>,
+              <span style="color: #f1fa8c;">"warning"</span>: <span style="color: #bd93f9; font-weight: bold;">30</span>,
+              <span style="color: #f1fa8c;">"critical"</span>: <span style="color: #bd93f9; font-weight: bold;">15</span>
+          },
+          <span style="color: #f1fa8c;">"format"</span>: <span style="color: #f1fa8c;">"{capacity}% {icon}"</span>,
+          <span style="color: #f1fa8c;">"format-charging"</span>: <span style="color: #f1fa8c;">"{capacity}% &#62951;"</span>,
+          <span style="color: #f1fa8c;">"format-plugged"</span>: <span style="color: #f1fa8c;">"{capacity}% &#61926;"</span>,
+          <span style="color: #6272a4;">// </span><span style="color: #6272a4;">"format-good": "", // An empty format will hide the module</span>
+          <span style="color: #6272a4;">// </span><span style="color: #6272a4;">"format-full": "",</span>
+          <span style="color: #f1fa8c;">"format-icons"</span>: [<span style="color: #f1fa8c;">"&#62020;"</span>, <span style="color: #f1fa8c;">"&#62019;"</span>, <span style="color: #f1fa8c;">"&#62018;"</span>, <span style="color: #f1fa8c;">"&#62017;"</span>, <span style="color: #f1fa8c;">"&#62016;"</span>]
+      },
+</pre>
+</div>
+</div>
+</li>
+<li><a id="org66f106c"></a><b>Network Module</b><br />
+<div class="outline-text-6" id="text-org66f106c">
+<div class="org-src-container">
+<pre class="src src-java"> <span style="color: #f1fa8c;">"network"</span>: {
+         <span style="color: #6272a4;">// </span><span style="color: #6272a4;">"interface": "wlp2*", // (Optional) To force the use of this interface</span>
+      <span style="color: #f1fa8c;">"format-wifi"</span>: <span style="color: #f1fa8c;">"{essid} ({signalStrength}%) &#61931;"</span>,
+          <span style="color: #f1fa8c;">"format-ethernet"</span>: <span style="color: #f1fa8c;">"{ipaddr}/{cidr} &#63382;"</span>,
+          <span style="color: #f1fa8c;">"tooltip-format"</span>: <span style="color: #f1fa8c;">"{ifname} via {gwaddr} &#63382;"</span>,
+          <span style="color: #f1fa8c;">"format-linked"</span>: <span style="color: #f1fa8c;">"{ifname} (No IP) &#63382;"</span>,
+          <span style="color: #f1fa8c;">"format-disconnected"</span>: <span style="color: #f1fa8c;">"Disconnected &#9888;"</span>,
+         <span style="color: #6272a4;">// </span><span style="color: #6272a4;">"format-alt": "{ifname}: {ipaddr}/{cidr}",</span>
+          <span style="color: #f1fa8c;">"on-click"</span>: <span style="color: #f1fa8c;">"nm-connection-editor"</span>
+      },
+</pre>
+</div>
+
+<div class="org-src-container">
+<pre class="src src-java">    }
+]
+</pre>
+</div>
+</div>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgfaf825e" class="outline-3">
+<h3 id="orgfaf825e">CSS Styling</h3>
+<div class="outline-text-3" id="text-orgfaf825e">
+</div>
+<div id="outline-container-org6f08fea" class="outline-4">
+<h4 id="org6f08fea">Global Styling</h4>
+<div class="outline-text-4" id="text-org6f08fea">
+<p>
+<b>Define global styling settings</b>
+</p>
+<div class="org-src-container">
+<pre class="src src-css"> <span style="color: #50fa7b;">*</span> { <span style="color: #bd93f9;">border</span>: none;
+<span style="color: #bd93f9;">border-radius</span>: 0px;
+<span style="color: #bd93f9;">padding</span>: 0px;
+<span style="color: #6272a4;">/* </span><span style="color: #6272a4;">`otf-font-awesome` is required to be installed for icons</span><span style="color: #6272a4;"> */</span>
+ <span style="color: #bd93f9;">font-family</span>: FontAwesome, Roboto, Helvetica, Arial, sans-serif;
+ <span style="color: #bd93f9;">font-size</span>: 20px;
+}
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org88f3449" class="outline-4">
+<h4 id="org88f3449">Module Styling</h4>
+<div class="outline-text-4" id="text-org88f3449">
+</div>
+<ul class="org-ul">
+<li><a id="orgc86033d"></a>Top Bar<br />
+<div class="outline-text-5" id="text-orgc86033d">
+<p>
+<b>Define Styling For the window module</b>
+</p>
+<div class="org-src-container">
+<pre class="src src-css"><span style="color: #50fa7b;">#window</span> {
+    <span style="color: #bd93f9;">color</span>: <span style="color: #000000; background-color: #50fa7b;">#50fa7b</span>;
+    <span style="color: #bd93f9;">box-shadow</span>: inset <span style="color: #bd93f9; font-weight: bold;">0</span> -3px <span style="color: #ffffff; background-color: #282A36;">#282A36</span>;
+    <span style="color: #bd93f9;">background-color</span>: <span style="color: #ffffff; background-color: #282A36;">#282A36</span>;
+}
+
+<span style="color: #50fa7b;">window#waybar</span> {
+    <span style="color: #bd93f9;">background-color</span>: <span style="color: #ffffff; background-color: #282A36;">#282A36</span>;
+    <span style="color: #bd93f9;">color</span>: <span style="color: #000000; background-color: #50fa7b;">#50fa7b</span>;
+    <span style="color: #bd93f9;">transition-property</span>: background-color;
+    <span style="color: #bd93f9;">transition-duration</span>: .5s;
+}
+
+<span style="color: #50fa7b;">window#waybar.hidden</span> {
+    <span style="color: #bd93f9;">opacity</span>: <span style="color: #bd93f9; font-weight: bold;">0.2</span>;
+}
+</pre>
+</div>
+
+<p>
+<b>Define Styling for button module</b>
+</p>
+<div class="org-src-container">
+<pre class="src src-css"><span style="color: #50fa7b;">button</span> {
+    <span style="color: #6272a4;">/* </span><span style="color: #6272a4;">Use box-shadow instead of border so the text isn't offset</span><span style="color: #6272a4;"> */</span>
+    <span style="color: #bd93f9;">box-shadow</span>: inset <span style="color: #bd93f9; font-weight: bold;">0</span> -3px transparent;
+    <span style="color: #6272a4;">/* </span><span style="color: #6272a4;">Avoid rounded borders under each button name</span><span style="color: #6272a4;"> */</span>
+    <span style="color: #bd93f9;">border</span>: none;
+    <span style="color: #bd93f9;">border-radius</span>: <span style="color: #bd93f9; font-weight: bold;">0</span>;
+}
+
+<span style="color: #6272a4;">/* </span><span style="color: #6272a4;">https://github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect</span><span style="color: #6272a4;"> */</span>
+<span style="color: #50fa7b;">button:hover</span> {
+    <span style="color: #bd93f9;">background</span>: inherit;
+    <span style="color: #bd93f9;">box-shadow</span>: inset <span style="color: #bd93f9; font-weight: bold;">0</span> -3px <span style="color: #ffffff; background-color: #5f5faf;">#5f5faf</span>;
+}
+</pre>
+</div>
+
+<p>
+<b>Define workspace module styling</b>
+</p>
+<div class="org-src-container">
+<pre class="src src-css"><span style="color: #50fa7b;">#workspaces</span> {
+    <span style="color: #bd93f9;">margin</span>: <span style="color: #bd93f9; font-weight: bold;">0</span> 4px;
+}
+
+<span style="color: #50fa7b;">#workspaces button</span> {
+    <span style="color: #bd93f9;">padding</span>: <span style="color: #bd93f9; font-weight: bold;">0</span> 0.4em;
+    <span style="color: #bd93f9;">background-color</span>: transparent;
+    <span style="color: #bd93f9;">color</span>: <span style="color: #000000; background-color: #ffffff;">#ffffff</span>;
+}
+
+<span style="color: #50fa7b;">#workspaces button:hover</span> {
+    <span style="color: #bd93f9;">background</span>: <span style="color: #ffffff; background-color: #282A36;">#282A36</span>;
+}
+
+<span style="color: #50fa7b;">#workspaces button.focused</span> {
+    <span style="color: #bd93f9;">background-color</span>: <span style="color: #ffffff; background-color: #282A36;">#282A36</span>;
+    <span style="color: #bd93f9;">color</span>: <span style="color: #000000; background-color: #74b3d2;">#74b3d2</span>;
+    <span style="color: #bd93f9;">box-shadow</span>: inset <span style="color: #bd93f9; font-weight: bold;">0</span> -3px <span style="color: #000000; background-color: #ff87d7;">#ff87d7</span>;
+}
+
+<span style="color: #50fa7b;">#workspaces button.urgent</span> {
+    <span style="color: #bd93f9;">background-color</span>: <span style="color: #ffffff; background-color: #eb4d4b;">#eb4d4b</span>;
+}
+</pre>
+</div>
+
+<p>
+<b>If workspaces is the leftmost module, omit left margin</b>
+</p>
+<div class="org-src-container">
+<pre class="src src-css"><span style="color: #6272a4;">/* </span><span style="color: #6272a4;">If workspaces is the leftmost module, omit left margin</span><span style="color: #6272a4;"> */</span>
+<span style="color: #50fa7b;">.modules-left &gt; widget:first-child &gt; #workspaces</span> {
+    <span style="color: #bd93f9;">margin-left</span>: <span style="color: #bd93f9; font-weight: bold;">0</span>;
+}
+</pre>
+</div>
+
+<p>
+<b>If workspaces is the rightmost module, omit right margin</b>
+</p>
+<div class="org-src-container">
+<pre class="src src-css"><span style="color: #6272a4;">/* </span><span style="color: #6272a4;">If workspaces is the rightmost module, omit right margin</span><span style="color: #6272a4;"> */</span>
+<span style="color: #50fa7b;">.modules-right &gt; widget:last-child &gt; #workspaces</span> {
+    <span style="color: #bd93f9;">margin-right</span>: <span style="color: #bd93f9; font-weight: bold;">0</span>;
+}
+
+</pre>
+</div>
+
+<p>
+<b>Define Scratchpad module styling</b>
+</p>
+<div class="org-src-container">
+<pre class="src src-css"><span style="color: #50fa7b;">#scratchpad</span> {
+    <span style="color: #bd93f9;">background-color</span>: <span style="color: #ffffff; background-color: #282A36;">#282A36</span>;
+    <span style="color: #bd93f9;">color</span>: <span style="color: #000000; background-color: #50fa7b;">#50fa7b</span>;
+}
+<span style="color: #50fa7b;">#scratchpad.empty</span> {
+    <span style="color: #bd93f9;">background-color</span>: transparent;
+}
+</pre>
+</div>
+
+<p>
+<b>Define Pulse Audio module styling</b>
+</p>
+<div class="org-src-container">
+<pre class="src src-css"><span style="color: #50fa7b;">#pulseaudio</span> {
+    <span style="color: #bd93f9;">background-color</span>: <span style="color: #ffffff; background-color: #282A36;">#282A36</span>;
+    <span style="color: #bd93f9;">color</span>: <span style="color: #000000; background-color: #74b3d2;">#74b3d2</span>;
+    <span style="color: #bd93f9;">box-shadow</span>: inset <span style="color: #bd93f9; font-weight: bold;">0</span> -3px <span style="color: #000000; background-color: #ff87d7;">#ff87d7</span>;
+}
+
+<span style="color: #50fa7b;">#pulseaudio.muted</span> {
+    <span style="color: #bd93f9;">color</span>: <span style="color: #ffffff; background-color: #ff0000;">#ff0000</span>;
+    <span style="color: #bd93f9;">background-color</span>: <span style="color: #ffffff; background-color: #282A36;">#282A36</span>;
+    <span style="color: #bd93f9;">box-shadow</span>: inset <span style="color: #bd93f9; font-weight: bold;">0</span> -3px <span style="color: #ffffff; background-color: #ff0000;">#ff0000</span>;
+}
+</pre>
+</div>
+
+<p>
+<b>Define Wireplumber Audio module styling</b>
+</p>
+<div class="org-src-container">
+<pre class="src src-css"><span style="color: #50fa7b;">#wireplumber</span> {
+    <span style="color: #bd93f9;">background-color</span>: <span style="color: #000000; background-color: #fff0f5;">#fff0f5</span>;
+    <span style="color: #bd93f9;">color</span>: <span style="color: #ffffff; background-color: #000000;">#000000</span>;
+}
+
+<span style="color: #50fa7b;">#wireplumber.muted</span> {
+    <span style="color: #bd93f9;">background-color</span>: <span style="color: #ffffff; background-color: #f53c3c;">#f53c3c</span>;
+}
+</pre>
+</div>
+
+<p>
+<b>Define mode module styling</b>
+</p>
+<div class="org-src-container">
+<pre class="src src-css"><span style="color: #50fa7b;">#mode</span> {
+    <span style="color: #bd93f9;">background-color</span>: <span style="color: #ffffff; background-color: #282A36;">#282A36</span>;
+    <span style="color: #bd93f9;">border-top</span>: 3px solid <span style="color: #000000; background-color: #ff87d7;">#ff87d7</span>;
+    <span style="color: #bd93f9;">border-bottom</span>: 3px solid <span style="color: #000000; background-color: #ff87d7;">#ff87d7</span>;
+}
+</pre>
+</div>
+</div>
+</li>
+<li><a id="org45a4f1d"></a>Bottom Bar<br />
+<div class="outline-text-5" id="text-org45a4f1d">
+<p>
+<b>Define clock module styling</b>
+</p>
+<div class="org-src-container">
+<pre class="src src-css"><span style="color: #50fa7b;">#clock</span> {
+    <span style="color: #bd93f9;">background-color</span>: <span style="color: #ffffff; background-color: #282A36;">#282A36</span>;
+    <span style="color: #bd93f9;">color</span>: <span style="color: #000000; background-color: #74b3d2;">#74b3d2</span>;
+    <span style="color: #bd93f9;">box-shadow</span>: inset <span style="color: #bd93f9; font-weight: bold;">0</span> -3px <span style="color: #000000; background-color: #ff87d7;">#ff87d7</span>;
+}
+</pre>
+</div>
+
+<p>
+<b>Define clock module styling</b>
+</p>
+<div class="org-src-container">
+<pre class="src src-css"><span style="color: #50fa7b;">#custom-media</span> {
+    <span style="color: #bd93f9;">background-color</span>: <span style="color: #ffffff; background-color: #282A36;">#282A36</span>;
+    <span style="color: #bd93f9;">color</span>: <span style="color: #ffffff; background-color: #5f5faf;">#5f5faf</span>;
+}
+<span style="color: #50fa7b;">#custom-media.active</span> {
+    <span style="color: #bd93f9;">background-color</span>: <span style="color: #ffffff; background-color: #282A36;">#282A36</span>;
+    <span style="color: #bd93f9;">color</span>: <span style="color: #ffffff; background-color: #5f5faf;">#5f5faf</span>;
+}
+</pre>
+</div>
+
+<p>
+<b>Define Network module styling</b>
+</p>
+<div class="org-src-container">
+<pre class="src src-css"><span style="color: #50fa7b;">#network</span> {
+    <span style="color: #bd93f9;">background-color</span>: <span style="color: #ffffff; background-color: #282A36;">#282A36</span>;
+    <span style="color: #bd93f9;">color</span>: <span style="color: #000000; background-color: #50fa7b;">#50fa7b</span>;
+    <span style="color: #bd93f9;">box-shadow</span>: inset <span style="color: #bd93f9; font-weight: bold;">0</span> -3px <span style="color: #000000; background-color: #ff87d7;">#ff87d7</span>;
+}
+
+<span style="color: #50fa7b;">#network.disconnected</span> {
+    <span style="color: #bd93f9;">background-color</span>: <span style="color: #ffffff; background-color: #282A36;">#282A36</span>;
+    <span style="color: #bd93f9;">color</span>: <span style="color: #ffffff; background-color: #ff0000;">#ff0000</span>;
+    <span style="color: #bd93f9;">box-shadow</span>: inset <span style="color: #bd93f9; font-weight: bold;">0</span> -3px <span style="color: #ffffff; background-color: #ff0000;">#ff0000</span>;
+}
+</pre>
+</div>
+
+<p>
+<b>Define battery module styling</b>
+</p>
+<div class="org-src-container">
+<pre class="src src-css"><span style="color: #50fa7b;">#battery</span> {
+    <span style="color: #bd93f9;">color</span>: <span style="color: #000000; background-color: #74b3d2;">#74b3d2</span>;
+    <span style="color: #bd93f9;">background-color</span>: <span style="color: #ffffff; background-color: #282A36;">#282A36</span>;
+    <span style="color: #bd93f9;">box-shadow</span>: inset <span style="color: #bd93f9; font-weight: bold;">0</span> -3px <span style="color: #000000; background-color: #ff87d7;">#ff87d7</span>;
+}
+
+<span style="color: #50fa7b;">#battery.charging, #battery.plugged</span> {
+    <span style="color: #bd93f9;">color</span>: <span style="color: #ffffff; background-color: #282A36;">#282A36</span>;
+    <span style="color: #bd93f9;">background-color</span>: <span style="color: #000000; background-color: #50fa7b;">rgba(80, 250, 123, 1.00)</span>;
+    <span style="color: #bd93f9;">box-shadow</span>: inset <span style="color: #bd93f9; font-weight: bold;">0</span> -3px <span style="color: #000000; background-color: #50fa7b;">rgba(80, 250, 123, 1.00)</span>;
+}
+
+<span style="color: #ffb86c;">@keyframes</span> blink {
+    <span style="color: #50fa7b;">to</span> {
+        <span style="color: #bd93f9;">background-color</span>: <span style="color: #000000; background-color: #ffffff;">#ffffff</span>;
+        <span style="color: #bd93f9;">color</span>: <span style="color: #ffffff; background-color: #000000;">#000000</span>;
+    }
+}
+
+<span style="color: #50fa7b;">#battery.critical:not(.charging)</span> {
+    <span style="color: #bd93f9;">color</span>: <span style="color: #ffffff; background-color: #282A36;">#282A36</span>;
+    <span style="color: #bd93f9;">background-color</span>: <span style="color: #ffffff; background-color: #ff0000;">rgba(255, 0, 0, 1.00)</span>;
+    <span style="color: #bd93f9;">box-shadow</span>: inset <span style="color: #bd93f9; font-weight: bold;">0</span> -3px <span style="color: #ffffff; background-color: #ff0000;">rgba(255, 0, 0, 1.00)</span>;
+    <span style="color: #bd93f9;">animation-name</span>: blink;
+    <span style="color: #bd93f9;">animation-duration</span>: 0.5s;
+    <span style="color: #bd93f9;">animation-timing-function</span>: linear;
+    <span style="color: #bd93f9;">animation-iteration-count</span>: infinite;
+    <span style="color: #bd93f9;">animation-direction</span>: alternate;
+}
+
+<span style="color: #50fa7b;">label:focus</span> {
+    <span style="color: #bd93f9;">background-color</span>: <span style="color: #ffffff; background-color: #000000;">#000000</span>;
+}
+
+</pre>
+</div>
+
+<p>
+<b>Define Styling for Tray module</b>
+</p>
+<div class="org-src-container">
+<pre class="src src-css"><span style="color: #50fa7b;">#tray</span> {
+    <span style="color: #bd93f9;">background-color</span>: <span style="color: #ffffff; background-color: #282A36;">#282A36</span>;
+}
+
+<span style="color: #50fa7b;">#tray &gt; .passive</span> {
+    -gtk-icon-effect: dim;
+}
+
+<span style="color: #50fa7b;">#tray &gt; .needs-attention</span> {
+    -gtk-icon-effect: highlight;
+    <span style="color: #bd93f9;">background-color</span>: <span style="color: #ffffff; background-color: #282A36;">#282A36</span>;
+    <span style="color: #bd93f9;">box-shadow</span>: inset <span style="color: #bd93f9; font-weight: bold;">0</span> -3px <span style="color: #ffffff; background-color: #ff0000;">#ff0000</span>;
+}
+</pre>
+</div>
+
+<p>
+<b>Define Styling for Backlight module</b>
+</p>
+<div class="org-src-container">
+<pre class="src src-css">
+<span style="color: #50fa7b;">#backlight</span> {
+    <span style="color: #bd93f9;">background-color</span>: <span style="color: #ffffff; background-color: #282A36;">#282A36</span>;
+    <span style="color: #bd93f9;">color</span>: <span style="color: #000000; background-color: #f1fa8c;">#f1fa8c</span>;
+    <span style="color: #bd93f9;">box-shadow</span>: inset <span style="color: #bd93f9; font-weight: bold;">0</span> -3px <span style="color: #000000; background-color: #f1fa8c;">#f1fa8c</span>;
+}
+</pre>
+</div>
+</div>
+</li>
+<li><a id="orgd77f001"></a>Unused Modules<br />
+<div class="outline-text-5" id="text-orgd77f001">
+<p>
+This is a collection of additional modules that are currently unused in my Waybar configuration. I&rsquo;m Leaving these here in case I want/need to add any of these modules in future.
+</p>
+
+<p>
+These configurations are not tangled to <code>style.css</code> at this time. If I decide to use any of the following modules in future, i will move them to thier own place in the <b>modules</b> section of this document.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-css"><span style="color: #50fa7b;">#idle_inhibitor</span> {
+    <span style="color: #bd93f9;">background-color</span>: <span style="color: #ffffff; background-color: #282A36;">#282A36</span>;
+    <span style="color: #bd93f9;">color</span>: <span style="color: #ffffff; background-color: #ff0000;">#ff0000</span>;
+}
+
+<span style="color: #50fa7b;">#idle_inhibitor.activated</span> {
+    <span style="color: #bd93f9;">background-color</span>: <span style="color: #ffffff; background-color: #282A36;">#282A36</span>;
+    <span style="color: #bd93f9;">color</span>: <span style="color: #000000; background-color: #50fa7b;">#50fa7b</span>;
+}
+
+<span style="color: #50fa7b;">#mpd</span> {
+    <span style="color: #bd93f9;">background-color</span>: <span style="color: #000000; background-color: #66cc99;">#66cc99</span>;
+    <span style="color: #bd93f9;">color</span>: <span style="color: #ffffff; background-color: #2a5c45;">#2a5c45</span>;
+}
+
+<span style="color: #50fa7b;">#mpd.disconnected</span> {
+    <span style="color: #bd93f9;">background-color</span>: <span style="color: #ffffff; background-color: #f53c3c;">#f53c3c</span>;
+}
+
+<span style="color: #50fa7b;">#mpd.stopped</span> {
+    <span style="color: #bd93f9;">background-color</span>: <span style="color: #000000; background-color: #90b1b1;">#90b1b1</span>;
+}
+
+<span style="color: #50fa7b;">#mpd.paused</span> {
+    <span style="color: #bd93f9;">background-color</span>: <span style="color: #ffffff; background-color: #51a37a;">#51a37a</span>;
+}
+
+<span style="color: #50fa7b;">#language</span> {
+    <span style="color: #bd93f9;">background</span>: <span style="color: #000000; background-color: #00b093;">#00b093</span>;
+    <span style="color: #bd93f9;">color</span>: <span style="color: #ffffff; background-color: #333333;">#333333</span>;
+    <span style="color: #bd93f9;">padding</span>: <span style="color: #bd93f9; font-weight: bold;">0</span> 5px;
+    <span style="color: #bd93f9;">margin</span>: 6px 3px;
+    <span style="color: #bd93f9;">min-width</span>: 3px;
+}
+
+<span style="color: #50fa7b;">#keyboard-state</span> {
+    <span style="color: #bd93f9;">background</span>: <span style="color: #000000; background-color: #97e1ad;">#97e1ad</span>;
+    <span style="color: #bd93f9;">color</span>: <span style="color: #ffffff; background-color: #000000;">#000000</span>;
+    <span style="color: #bd93f9;">padding</span>: <span style="color: #bd93f9; font-weight: bold;">0</span> 0px;
+    <span style="color: #bd93f9;">margin</span>: <span style="color: #bd93f9; font-weight: bold;">0</span> 5px;
+    <span style="color: #bd93f9;">min-width</span>: 16px;
+}
+
+<span style="color: #50fa7b;">#keyboard-state &gt; label</span> {
+    <span style="color: #bd93f9;">padding</span>: <span style="color: #bd93f9; font-weight: bold;">0</span> 5px;
+    <span style="color: #bd93f9;">background-color</span>: <span style="color: #000000; background-color: #bbccdd;">#bbccdd</span>;
+    <span style="color: #bd93f9;">color</span>: <span style="color: #ffffff; background-color: #2d3436;">#2d3436</span>;
+}
+
+<span style="color: #50fa7b;">#keyboard-state &gt; label.locked</span> {
+    <span style="color: #bd93f9;">background-color</span>: <span style="color: #000000; background-color: #bbccdd;">#bbccdd</span>;
+    <span style="color: #bd93f9;">color</span>: <span style="color: #ffffff; background-color: #2d3436;">#2d3436</span>;
+}
+</pre>
+</div>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author: SeizeOP</p>
+<p class="date">Created: 2024-01-19 Fri 22:16</p>
+</div>
+</body>
+</html>
