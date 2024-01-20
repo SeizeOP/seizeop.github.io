@@ -3,19 +3,197 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2024-01-19 Fri 22:16 -->
+<!-- 2024-01-11 Thu 02:22 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Sway Waybar Config</title>
 <meta name="author" content="SeizeOP" />
 <meta name="description" content="An org-mode document indented to make my Waybar configuration for the Sway Window Manager more legible." />
 <meta name="generator" content="Org Mode" />
-<link rel="stylesheet" type="text/css" href="https://fniessen.github.io/org-html-themes/src/readtheorg_theme/css/htmlize.css"/>
-<link rel="stylesheet" type="text/css" href="https://fniessen.github.io/org-html-themes/src/readtheorg_theme/css/readtheorg.css"/>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
-<script type="text/javascript" src="https://fniessen.github.io/org-html-themes/src/lib/js/jquery.stickytableheaders.min.js"></script>
-<script type="text/javascript" src="https://fniessen.github.io/org-html-themes/src/readtheorg_theme/js/readtheorg.js"></script>
+<style>
+  #content { max-width: 60em; margin: auto; }
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #e6e6e6;
+    border-radius: 3px;
+    background-color: #f2f2f2;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: auto;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    top: -8px;
+    right: 12px;
+    padding: 3px;
+    color: #555;
+    background-color: #f2f2f299;
+  }
+  pre.src:hover:before { display: inline; margin-top: 14px;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-authinfo::before { content: 'Authinfo'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { }
+</style>
 </head>
 <body>
 <div id="content" class="content">
@@ -24,19 +202,20 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org59236f2">ABOUT THIS CONFIG</a></li>
-<li><a href="#org82b8771">PERSONAL CONFIG</a>
+<li><a href="#org9d5798f">1. TABLE OF CONTENTS&#xa0;&#xa0;&#xa0;<span class="tag"><span class="TOC">TOC</span></span></a></li>
+<li><a href="#org853e2a4">2. ABOUT THIS CONFIG</a></li>
+<li><a href="#org593dce5">3. PERSONAL CONFIG</a>
 <ul>
-<li><a href="#org51c9a6a">Configuration</a>
+<li><a href="#org791a520">3.1. Configuration</a>
 <ul>
-<li><a href="#org4541efe">TOP BAR</a></li>
-<li><a href="#orgbbf072c">BOTTOM BAR</a></li>
+<li><a href="#org47b138d">3.1.1. TOP BAR</a></li>
+<li><a href="#orge27165e">3.1.2. BOTTOM BAR</a></li>
 </ul>
 </li>
-<li><a href="#orgfaf825e">CSS Styling</a>
+<li><a href="#orgafd79ae">3.2. CSS Styling</a>
 <ul>
-<li><a href="#org6f08fea">Global Styling</a></li>
-<li><a href="#org88f3449">Module Styling</a></li>
+<li><a href="#org557722b">3.2.1. Global Styling</a></li>
+<li><a href="#orgf7555bd">3.2.2. Module Styling</a></li>
 </ul>
 </li>
 </ul>
@@ -44,28 +223,40 @@
 </ul>
 </div>
 </div>
-<div id="outline-container-org59236f2" class="outline-2">
-<h2 id="org59236f2">ABOUT THIS CONFIG</h2>
+<div id="outline-container-org9d5798f" class="outline-2">
+<h2 id="org9d5798f"><span class="section-number-2">1.</span> TABLE OF CONTENTS&#xa0;&#xa0;&#xa0;<span class="tag"><span class="TOC">TOC</span></span></h2>
+<div class="outline-text-2" id="text-1">
+<ul class="org-ul">
+<li></li>
+<li><ul class="org-ul">
+<li></li>
+<li></li>
+</ul></li>
+</ul>
 </div>
-<div id="outline-container-org82b8771" class="outline-2">
-<h2 id="org82b8771">PERSONAL CONFIG</h2>
-<div class="outline-text-2" id="text-org82b8771">
 </div>
-<div id="outline-container-org51c9a6a" class="outline-3">
-<h3 id="org51c9a6a">Configuration</h3>
-<div class="outline-text-3" id="text-org51c9a6a">
+<div id="outline-container-org853e2a4" class="outline-2">
+<h2 id="org853e2a4"><span class="section-number-2">2.</span> ABOUT THIS CONFIG</h2>
 </div>
-<div id="outline-container-org4541efe" class="outline-4">
-<h4 id="org4541efe">TOP BAR</h4>
-<div class="outline-text-4" id="text-org4541efe">
+<div id="outline-container-org593dce5" class="outline-2">
+<h2 id="org593dce5"><span class="section-number-2">3.</span> PERSONAL CONFIG</h2>
+<div class="outline-text-2" id="text-3">
+</div>
+<div id="outline-container-org791a520" class="outline-3">
+<h3 id="org791a520"><span class="section-number-3">3.1.</span> Configuration</h3>
+<div class="outline-text-3" id="text-3-1">
+</div>
+<div id="outline-container-org47b138d" class="outline-4">
+<h4 id="org47b138d"><span class="section-number-4">3.1.1.</span> TOP BAR</h4>
+<div class="outline-text-4" id="text-3-1-1">
 <div class="org-src-container">
 <pre class="src src-java">[
 </pre>
 </div>
 </div>
-<ul class="org-ul">
-<li><a id="org66569dd"></a>Layout<br />
-<div class="outline-text-5" id="text-org66569dd">
+<ol class="org-ol">
+<li><a id="org54f2af9"></a>Layout<br />
+<div class="outline-text-5" id="text-3-1-1-1">
 <p>
 <b>Define Top Bar Modules</b>
 </p>
@@ -83,10 +274,10 @@
 </div>
 </div>
 </li>
-<li><a id="org5f60b24"></a>Modules<br />
-<ul class="org-ul">
-<li><a id="org6191ee3"></a><b>Sway Workspaces</b><br />
-<div class="outline-text-6" id="text-org6191ee3">
+<li><a id="org864bd4f"></a>Modules<br />
+<ol class="org-ol">
+<li><a id="orga8ac0c1"></a><b>Sway Workspaces</b><br />
+<div class="outline-text-6" id="text-3-1-1-2-1">
 <div class="org-src-container">
 <pre class="src src-java">    <span style="color: #f1fa8c;">"sway/workspaces"</span>: {
         dc
@@ -107,23 +298,24 @@
 </div>
 </div>
 </li>
-<li><a id="orgca2f866"></a><b>Sway Scratchpad</b><br />
-<div class="outline-text-6" id="text-orgca2f866">
-<div class="org-src-container">
-<pre class="src src-java">     <span style="color: #f1fa8c;">"sway/scratchpad"</span>: {
-          <span style="color: #f1fa8c;">"format"</span>: <span style="color: #f1fa8c;">"{icon} {count}"</span>,
-          <span style="color: #f1fa8c;">"show-empty"</span>: <span style="color: #8be9fd;">false</span>,
-          <span style="color: #f1fa8c;">"format-icons"</span>: [<span style="color: #f1fa8c;">"&#62162;"</span>, <span style="color: #f1fa8c;">"&#62162;"</span>],
-          <span style="color: #f1fa8c;">"tooltip"</span>: <span style="color: #8be9fd;">true</span>,
-          <span style="color: #f1fa8c;">"tooltip-format"</span>: <span style="color: #f1fa8c;">"{app}: {title}"</span>
+<li><a id="org3bd2ac1"></a><b>Sway Scratchpad</b><br />
+<div class="outline-text-6" id="text-3-1-1-2-2">
+<p>
+#+begin<sub>src</sub> java :tangle config
+     &ldquo;sway/scratchpad&rdquo;: {
+          &ldquo;format&rdquo;: &ldquo;{icon} {count}&rdquo;,
+          &ldquo;show-empty&rdquo;: false,
+          &ldquo;format-icons&rdquo;: [&ldquo;&rdquo;, &ldquo;&rdquo;],
+          &ldquo;tooltip&rdquo;: true,
+          &ldquo;tooltip-format&rdquo;: &ldquo;{app}: {title}&rdquo;
       },
-
-</pre>
-</div>
+:w
+:w#+end<sub>src</sub>
+</p>
 </div>
 </li>
-<li><a id="org699e30b"></a><b>Sway Window</b><br />
-<div class="outline-text-6" id="text-org699e30b">
+<li><a id="org5393d65"></a><b>Sway Window</b><br />
+<div class="outline-text-6" id="text-3-1-1-2-3">
 <div class="org-src-container">
 <pre class="src src-java">  <span style="color: #f1fa8c;">"sway/window"</span>: {
          <span style="color: #f1fa8c;">"max-length"</span>: <span style="color: #bd93f9; font-weight: bold;">100</span>
@@ -132,8 +324,8 @@
 </div>
 </div>
 </li>
-<li><a id="org71df4aa"></a>Pulse Audio<br />
-<div class="outline-text-6" id="text-org71df4aa">
+<li><a id="orgfb0aaf7"></a>Pulse Audio*<br />
+<div class="outline-text-6" id="text-3-1-1-2-4">
 <div class="org-src-container">
 <pre class="src src-java">     <span style="color: #f1fa8c;">"pulseaudio"</span>: {
            <span style="color: #f1fa8c;">"scroll-step"</span>: <span style="color: #bd93f9; font-weight: bold;">1</span>, <span style="color: #6272a4;">// </span><span style="color: #6272a4;">%, can be a float</span>
@@ -159,17 +351,17 @@
 </div>
 </div>
 </li>
-</ul>
+</ol>
 </li>
-</ul>
+</ol>
 </div>
-<div id="outline-container-orgbbf072c" class="outline-4">
-<h4 id="orgbbf072c">BOTTOM BAR</h4>
-<div class="outline-text-4" id="text-orgbbf072c">
+<div id="outline-container-orge27165e" class="outline-4">
+<h4 id="orge27165e"><span class="section-number-4">3.1.2.</span> BOTTOM BAR</h4>
+<div class="outline-text-4" id="text-3-1-2">
 </div>
-<ul class="org-ul">
-<li><a id="org69ca4f6"></a>Layout<br />
-<div class="outline-text-5" id="text-org69ca4f6">
+<ol class="org-ol">
+<li><a id="org5c14d72"></a>Layout<br />
+<div class="outline-text-5" id="text-3-1-2-1">
 <p>
 <b>Define Bottom Bar Modules</b>
 </p>
@@ -187,10 +379,10 @@
 </div>
 </div>
 </li>
-<li><a id="org6126add"></a>Modules<br />
-<ul class="org-ul">
-<li><a id="orge8297dd"></a><b>Custom Media</b><br />
-<div class="outline-text-6" id="text-orge8297dd">
+<li><a id="org4393120"></a>Modules<br />
+<ol class="org-ol">
+<li><a id="org630d867"></a><b>Custom Media</b><br />
+<div class="outline-text-6" id="text-3-1-2-2-1">
 <p>
 A module to display song/media metadata from MPRIS enabled players.
 </p>
@@ -220,8 +412,8 @@ A module to display song/media metadata from MPRIS enabled players.
 </div>
 </div>
 </li>
-<li><a id="org2fc540e"></a><b>Clock Module</b><br />
-<div class="outline-text-6" id="text-org2fc540e">
+<li><a id="org63b8758"></a><b>Clock Module</b><br />
+<div class="outline-text-6" id="text-3-1-2-2-2">
 <div class="org-src-container">
 <pre class="src src-java">  <span style="color: #f1fa8c;">"clock"</span>: {
            <span style="color: #f1fa8c;">"timezone"</span>: <span style="color: #f1fa8c;">"America/New_York"</span>,
@@ -232,8 +424,8 @@ A module to display song/media metadata from MPRIS enabled players.
 </div>
 </div>
 </li>
-<li><a id="org316c9fe"></a>Tray Module<br />
-<div class="outline-text-6" id="text-org316c9fe">
+<li><a id="org71d1880"></a>Tray Module<br />
+<div class="outline-text-6" id="text-3-1-2-2-3">
 <div class="org-src-container">
 <pre class="src src-java">     <span style="color: #f1fa8c;">"tray"</span>: {
           <span style="color: #f1fa8c;">"icon-size"</span>: <span style="color: #bd93f9; font-weight: bold;">20</span>,
@@ -243,8 +435,8 @@ A module to display song/media metadata from MPRIS enabled players.
 </div>
 </div>
 </li>
-<li><a id="org269ff6c"></a><b>Battery Module</b><br />
-<div class="outline-text-6" id="text-org269ff6c">
+<li><a id="org497efd1"></a><b>Battery Module</b><br />
+<div class="outline-text-6" id="text-3-1-2-2-4">
 <div class="org-src-container">
 <pre class="src src-java">      <span style="color: #f1fa8c;">"battery"</span>: {
           <span style="color: #f1fa8c;">"states"</span>: {
@@ -263,8 +455,8 @@ A module to display song/media metadata from MPRIS enabled players.
 </div>
 </div>
 </li>
-<li><a id="org66f106c"></a><b>Network Module</b><br />
-<div class="outline-text-6" id="text-org66f106c">
+<li><a id="org6beaa76"></a><b>Network Module</b><br />
+<div class="outline-text-6" id="text-3-1-2-2-5">
 <div class="org-src-container">
 <pre class="src src-java"> <span style="color: #f1fa8c;">"network"</span>: {
          <span style="color: #6272a4;">// </span><span style="color: #6272a4;">"interface": "wlp2*", // (Optional) To force the use of this interface</span>
@@ -286,18 +478,18 @@ A module to display song/media metadata from MPRIS enabled players.
 </div>
 </div>
 </li>
-</ul>
+</ol>
 </li>
-</ul>
+</ol>
 </div>
 </div>
-<div id="outline-container-orgfaf825e" class="outline-3">
-<h3 id="orgfaf825e">CSS Styling</h3>
-<div class="outline-text-3" id="text-orgfaf825e">
+<div id="outline-container-orgafd79ae" class="outline-3">
+<h3 id="orgafd79ae"><span class="section-number-3">3.2.</span> CSS Styling</h3>
+<div class="outline-text-3" id="text-3-2">
 </div>
-<div id="outline-container-org6f08fea" class="outline-4">
-<h4 id="org6f08fea">Global Styling</h4>
-<div class="outline-text-4" id="text-org6f08fea">
+<div id="outline-container-org557722b" class="outline-4">
+<h4 id="org557722b"><span class="section-number-4">3.2.1.</span> Global Styling</h4>
+<div class="outline-text-4" id="text-3-2-1">
 <p>
 <b>Define global styling settings</b>
 </p>
@@ -313,13 +505,13 @@ A module to display song/media metadata from MPRIS enabled players.
 </div>
 </div>
 </div>
-<div id="outline-container-org88f3449" class="outline-4">
-<h4 id="org88f3449">Module Styling</h4>
-<div class="outline-text-4" id="text-org88f3449">
+<div id="outline-container-orgf7555bd" class="outline-4">
+<h4 id="orgf7555bd"><span class="section-number-4">3.2.2.</span> Module Styling</h4>
+<div class="outline-text-4" id="text-3-2-2">
 </div>
-<ul class="org-ul">
-<li><a id="orgc86033d"></a>Top Bar<br />
-<div class="outline-text-5" id="text-orgc86033d">
+<ol class="org-ol">
+<li><a id="org3335476"></a>Top Bar<br />
+<div class="outline-text-5" id="text-3-2-2-1">
 <p>
 <b>Define Styling For the window module</b>
 </p>
@@ -476,8 +668,8 @@ A module to display song/media metadata from MPRIS enabled players.
 </div>
 </div>
 </li>
-<li><a id="org45a4f1d"></a>Bottom Bar<br />
-<div class="outline-text-5" id="text-org45a4f1d">
+<li><a id="org4568e9d"></a>Bottom Bar<br />
+<div class="outline-text-5" id="text-3-2-2-2">
 <p>
 <b>Define clock module styling</b>
 </p>
@@ -598,8 +790,8 @@ A module to display song/media metadata from MPRIS enabled players.
 </div>
 </div>
 </li>
-<li><a id="orgd77f001"></a>Unused Modules<br />
-<div class="outline-text-5" id="text-orgd77f001">
+<li><a id="org4e1ca07"></a>Unused Modules<br />
+<div class="outline-text-5" id="text-3-2-2-3">
 <p>
 This is a collection of additional modules that are currently unused in my Waybar configuration. I&rsquo;m Leaving these here in case I want/need to add any of these modules in future.
 </p>
@@ -666,14 +858,14 @@ These configurations are not tangled to <code>style.css</code> at this time. If 
 </div>
 </div>
 </li>
-</ul>
+</ol>
 </div>
 </div>
 </div>
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: SeizeOP</p>
-<p class="date">Created: 2024-01-19 Fri 22:16</p>
+<p class="date">Created: 2024-01-11 Thu 02:22</p>
 </div>
 </body>
 </html>
