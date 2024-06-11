@@ -1,0 +1,338 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2024-06-11 Tue 12:43 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Firefox Hardening</title>
+<meta name="author" content="Henry Davies" />
+<meta name="description" content="A personal outline of Firefox configuration for security and privacy." />
+<meta name="generator" content="Org Mode" />
+<link rel="stylesheet" type="text/css" href="https://fniessen.github.io/org-html-themes/src/readtheorg_theme/css/htmlize.css"/>
+<link rel="stylesheet" type="text/css" href="https://fniessen.github.io/org-html-themes/src/readtheorg_theme/css/readtheorg.css"/>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="https://fniessen.github.io/org-html-themes/src/lib/js/jquery.stickytableheaders.min.js"></script>
+<script type="text/javascript" src="https://fniessen.github.io/org-html-themes/src/readtheorg_theme/js/readtheorg.js"></script>
+</head>
+<body>
+<div id="content" class="content">
+<h1 class="title">Firefox Hardening</h1>
+<div id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#orge65c74a">1. Firefox Configuration Guide</a>
+<ul>
+<li><a href="#org3262405">1.1. My Configuration&#xa0;&#xa0;&#xa0;<span class="tag"><span class="My">My</span>&#xa0;<span class="Configuration">Configuration</span></span></a>
+<ul>
+<li><a href="#org0979552">1.1.1. Settings</a></li>
+<li><a href="#org9355c8a">1.1.2. Extensions &amp; Themes</a></li>
+<li><a href="#org8a15d98">1.1.3. Manual Configuration</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#org423e1cf">2. References</a></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orge65c74a" class="outline-2">
+<h2 id="orge65c74a"><span class="section-number-2">1.</span> Firefox Configuration Guide</h2>
+<div class="outline-text-2" id="text-1">
+</div>
+<div id="outline-container-org3262405" class="outline-3">
+<h3 id="org3262405"><span class="section-number-3">1.1.</span> My Configuration&#xa0;&#xa0;&#xa0;<span class="tag"><span class="My">My</span>&#xa0;<span class="Configuration">Configuration</span></span></h3>
+<div class="outline-text-3" id="text-1-1">
+<p>
+This guide is intended to outline my current Firefox configuration; including security hardening and style configuration. Since a complete Firefox configuration can be rather complex; this guide has been separated into three sections (Settings, Extensions &amp; Themes, and Manual Configuration). This separation of topics will help to clarify the purpose of any instructions in each section.
+</p>
+</div>
+
+<div id="outline-container-org0979552" class="outline-4">
+<h4 id="org0979552"><span class="section-number-4">1.1.1.</span> Settings</h4>
+<div class="outline-text-4" id="text-1-1-1">
+</div>
+<ol class="org-ol">
+<li><a id="orga466962"></a>General<br />
+<ol class="org-ol">
+<li><a id="org1aed84e"></a>Startup<br />
+<div class="outline-text-6" id="text-1-1-1-1-1">
+<ul class="org-ul">
+<li>Open previous windows &amp; tabs: Disabled</li>
+</ul>
+</div>
+</li>
+<li><a id="org96ae0f7"></a>Tabs<br />
+<div class="outline-text-6" id="text-1-1-1-1-2">
+<ul class="org-ul">
+<li>Ctrl+Tab cycles through tabs in recently used order: Enabled</li>
+<li>Open links in tabs instead of new windows: Enabled</li>
+<li>Confirm before quitting with Ctrl+Q: Enabled</li>
+</ul>
+</div>
+</li>
+<li><a id="orgaf57e29"></a>Browsing<br />
+<div class="outline-text-6" id="text-1-1-1-1-3">
+<ul class="org-ul">
+<li>Recommend extensions as you browse: Disabled</li>
+<li>Recommend features as you browse: Disabled</li>
+</ul>
+</div>
+</li>
+</ol>
+</li>
+<li><a id="org5b057a8"></a>Home<br />
+<ol class="org-ol">
+<li><a id="orga9bb41f"></a>New Windows &amp; Tabs<br />
+<div class="outline-text-6" id="text-1-1-1-2-1">
+<ul class="org-ul">
+<li>Homepage &amp; New windows: Tabliss</li>
+<li>New Tabs: Tabliss</li>
+</ul>
+</div>
+</li>
+<li><a id="org5ce02ec"></a>Firefox Home Content<br />
+<div class="outline-text-6" id="text-1-1-1-2-2">
+<p>
+Since Tabliss is in use these settings don't matter that much. However these are still the recommended settings.
+</p>
+<ul class="org-ul">
+<li>Web Search: Enabled</li>
+<li>Shortcuts: Enabled | 1 row
+<ul class="org-ul">
+<li>Sponsored shortcuts: Disabled</li>
+</ul></li>
+<li>Recommended by Pocket: Disabled</li>
+<li>Recent activity: Disabled</li>
+<li>Snippets: Disabled</li>
+</ul>
+</div>
+</li>
+</ol>
+</li>
+<li><a id="org37cb094"></a>Search<br />
+<ol class="org-ol">
+<li><a id="org15060fe"></a>Search Bar<br />
+<div class="outline-text-6" id="text-1-1-1-3-1">
+<ul class="org-ul">
+<li>Add search bar in toolbar: Enabled</li>
+</ul>
+</div>
+</li>
+<li><a id="orgada7e3b"></a>Default Search Engine<br />
+<div class="outline-text-6" id="text-1-1-1-3-2">
+<ul class="org-ul">
+<li><a href="https://search.brave.com/">Brave Search</a>
+There are various privacy respecting search/meta-search engines available. This selection comes down to personal preference. Just make sure to pick something other than Google or Bing.</li>
+</ul>
+</div>
+</li>
+<li><a id="org11e64ed"></a>Search Suggestions<br />
+<div class="outline-text-6" id="text-1-1-1-3-3">
+<ul class="org-ul">
+<li>Provide search suggestions: Disabled</li>
+</ul>
+</div>
+</li>
+</ol>
+</li>
+<li><a id="org9a0987c"></a>Privacy &amp; Security<br />
+<div class="outline-text-5" id="text-1-1-1-4">
+<ul class="org-ul">
+<li>Enhanced Tracking Protection: Strict<sup><a id="fnr.1" class="footref" href="#fn.1" role="doc-backlink">1</a></sup></li>
+<li>Cookies &amp; Site Data: Delete cookies and site data when Firefox is closed: checked</li>
+<li>Logins and Passwords: Uncheck all<sup><a id="fnr.2" class="footref" href="#fn.2" role="doc-backlink">2</a></sup></li>
+<li>History: Never remember history</li>
+<li>Address Bar - Firefox Suggest: Suggestions from the web: disabled</li>
+<li>Address Bar - Firefox Suggest: Suggestions from sponsors: disabled</li>
+<li>Firefox Data Collection and Use: Uncheck all</li>
+<li>Enable HTTPS-Only Mode in all windows</li>
+</ul>
+</div>
+</li>
+<li><a id="org4b8239d"></a>Sync<br />
+<div class="outline-text-5" id="text-1-1-1-5">
+<p>
+Not enabled
+</p>
+<ul class="org-ul">
+<li>Contents are E2EE<sup><a id="fnr.3" class="footref" href="#fn.3" role="doc-backlink">3</a></sup>; so not a security/privacy issue. However only usefull if Firefox is installed on multiple devices.</li>
+</ul>
+</div>
+</li>
+</ol>
+</div>
+<div id="outline-container-org9355c8a" class="outline-4">
+<h4 id="org9355c8a"><span class="section-number-4">1.1.2.</span> Extensions &amp; Themes</h4>
+<div class="outline-text-4" id="text-1-1-2">
+</div>
+<ol class="org-ol">
+<li><a id="orga730857"></a>Extensions<br />
+<div class="outline-text-5" id="text-1-1-2-1">
+<p>
+Extensions can increase attack surface, have privileged access in browser, requiring developer trust. For this reason it is reccommended to keep extensions to a minimum.
+</p>
+</div>
+<ol class="org-ol">
+<li><a id="orge939b58"></a>Tabliss<br />
+<div class="outline-text-6" id="text-1-1-2-1-1">
+<p>
+Used to replace the default new tab and home pages in Firefox with a more user friendly layout and style. This is a personal choice for consistency; generally only Ublock Origin and maybe the extension for your chosen password manager is reccommended.
+Author: Tabliss
+Homepage: <a href="https://tabliss.io/">tabliss.io</a>
+</p>
+</div>
+</li>
+<li><a id="orgb69f7fe"></a>Ublock Origin<br />
+<div class="outline-text-6" id="text-1-1-2-1-2">
+<p>
+<b>Author:</b> Raymond Hill
+<b>Homepage:</b> <a href="https://github.com/gorhill/uBlock#ublock-origin">ublock-origin</a>
+<b>Documentation:</b> <a href="https://github.com/gorhill/uBlock/wiki">Wiki</a>
+<b>Description:</b> Ublock Origin is a wide-spectrum content blocker, with sane defaults and easy to configure settings.
+</p>
+</div>
+<ol class="org-ol">
+<li><a id="orge786de3"></a>Configuration<br />
+<ol class="org-ol">
+<li><a id="org45ad11f"></a>Blocking Mode<sup><a id="fnr.4" class="footref" href="#fn.4" role="doc-backlink">4</a></sup><br />
+<div class="outline-text-8" id="text-1-1-2-1-2-1-1">
+<ul class="org-ul">
+<li>Hard Mode</li>
+</ul>
+</div>
+</li>
+<li><a id="org38cfddd"></a>My Filters<br />
+<div class="outline-text-8" id="text-1-1-2-1-2-1-2">
+<p>
+Custom domain filters
+</p>
+<blockquote>
+<p>
+youtube.com
+facebook.com
+instagram.com
+google.com
+twitter.com
+x.com
+twitch.tv
+justin.tv
+discord.gg
+discord.com
+snapchat.com
+tiktok.com
+douyin.com
+skype.com
+</p>
+</blockquote>
+</div>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+<li><a id="orga20a222"></a>Themes<br />
+<div class="outline-text-5" id="text-1-1-2-2">
+<p>
+System theme - auto (<a href="https://draculatheme.com/gtk">Dracula</a>)<sup><a id="fnr.5" class="footref" href="#fn.5" role="doc-backlink">5</a></sup>
+</p>
+</div>
+</li>
+</ol>
+</div>
+<div id="outline-container-org8a15d98" class="outline-4">
+<h4 id="org8a15d98"><span class="section-number-4">1.1.3.</span> Manual Configuration</h4>
+<div class="outline-text-4" id="text-1-1-3">
+</div>
+<ol class="org-ol">
+<li><a id="org478e0e3"></a>About:Config<br />
+<div class="outline-text-5" id="text-1-1-3-1">
+<p>
+Navigate to 'about:config' in URL bar, and accept the warning.
+</p>
+<ul class="org-ul">
+<li>toggle privacy.resistFingerprinting true</li>
+<li>toggle extensions.pocket.enabled false</li>
+</ul>
+<p>
+<b>Optional</b>
+</p>
+<ul class="org-ul">
+<li>toggle middlemouse.paste
+<ul class="org-ul">
+<li>Useful if on Windows and dual booting with Linux. (so used to middle mouse paste now)</li>
+</ul></li>
+</ul>
+</div>
+</li>
+<li><a id="org16ea6ba"></a>Arkenfox User.js<br />
+<div class="outline-text-5" id="text-1-1-3-2">
+<p>
+<b>Author:</b> Thorin-Oakenpants
+<b>Homepage:</b> <a href="https://github.com/arkenfox/user.js">Arkenfox</a>
+<b>Documentation:</b> <a href="https://github.com/arkenfox/user.js/wiki">Wiki</a>
+<b>Description:</b> Custom userjs file for firefox
+</p>
+</div>
+</li>
+</ol>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org423e1cf" class="outline-2">
+<h2 id="org423e1cf"><span class="section-number-2">2.</span> References</h2>
+<div class="outline-text-2" id="text-2">
+<p>
+This document is a personal configuration outline, and is not intended as a definitive guide to firefox hardening. To this end included bellow are a couple resources that where helpfull in the creation of this configuration outline.
+</p>
+
+<ul class="org-ul">
+<li><a href="https://thenewoil.org/en/guides/most-important/browser/">The New Oil</a></li>
+<li><a href="https://www.privacyguides.org/en/desktop-browsers/">Privacy Guides</a></li>
+</ul>
+
+<p>
+There are probably other sites/guides that influenced this write-up, however are the two I remember.
+</p>
+</div>
+</div>
+<div id="footnotes">
+<h2 class="footnotes">Footnotes: </h2>
+<div id="text-footnotes">
+
+<div class="footdef"><sup><a id="fn.1" class="footnum" href="#fnr.1" role="doc-backlink">1</a></sup> <div class="footpara" role="doc-footnote"><p class="footpara">
+I have never known this setting to cause any website breakage, however you can always change it back to Standard or Custom if you do.
+</p></div></div>
+
+<div class="footdef"><sup><a id="fn.2" class="footnum" href="#fnr.2" role="doc-backlink">2</a></sup> <div class="footpara" role="doc-footnote"><p class="footpara">
+There is malware capable of swiping data stored in your browser, including history and saved passwords, credit cards, and even multi-factor authentication cookies. You can choose to leave cookies and other sign-in data and history if you want, but know that it is a security risk.
+</p></div></div>
+
+<div class="footdef"><sup><a id="fn.3" class="footnum" href="#fnr.3" role="doc-backlink">3</a></sup> <div class="footpara" role="doc-footnote"><p class="footpara">
+End to End Encrypted
+</p></div></div>
+
+<div class="footdef"><sup><a id="fn.4" class="footnum" href="#fnr.4" role="doc-backlink">4</a></sup> <div class="footpara" role="doc-footnote"><p class="footpara">
+See the <a href="https://github.com/gorhill/uBlock/wiki/Blocking-mode">Wiki</a> for further explanation of Ublock Origin's blocking modes.
+</p></div></div>
+
+<div class="footdef"><sup><a id="fn.5" class="footnum" href="#fnr.5" role="doc-backlink">5</a></sup> <div class="footpara" role="doc-footnote"><p class="footpara">
+On my main system <a href="https://fedoraproject.org/spins/sway/">Fedora Sway</a> I use the Dracula gtk theme to provide a fairly universal UI/UX computing experience.
+</p></div></div>
+
+
+</div>
+</div></div>
+<div id="postamble" class="status">
+<p class="author">Author: Henry Davies</p>
+<p class="date">Created: 2024-06-11 Tue 12:43</p>
+<p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>
