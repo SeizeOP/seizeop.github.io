@@ -1,1 +1,1 @@
-test of links [index](https://seizeop.github.com/index.html)
+test of links [index](https://seizeop.github.io/index.html)
