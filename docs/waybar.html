@@ -1,0 +1,1067 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2025-06-05 Thu 13:03 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Waybar Configuration</title>
+<meta name="author" content="Henry Davies (HD)" />
+<meta name="generator" content="Org Mode" />
+<link rel="stylesheet" type="text/css" href="https://fniessen.github.io/org-html-themes/src/readtheorg_theme/css/htmlize.css"/>
+<link rel="stylesheet" type="text/css" href="https://fniessen.github.io/org-html-themes/src/readtheorg_theme/css/readtheorg.css"/>
+<link rel="stylesheet" type="text/css" href="src/readtheorg_theme/css/search.css"/>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="https://fniessen.github.io/org-html-themes/src/lib/js/jquery.stickytableheaders.min.js"></script>
+<script type="text/javascript" src="https://fniessen.github.io/org-html-themes/src/readtheorg_theme/js/search.js"></script>
+<script type="text/javascript" src="https://fniessen.github.io/org-html-themes/src/readtheorg_theme/js/readtheorg.js"></script>
+</head>
+<body>
+<div id="content" class="content">
+<h1 class="title">Waybar Configuration</h1>
+<div id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#org69581e1">About</a></li>
+<li><a href="#org2ecf596">CONFIG</a>
+<ul>
+<li><a href="#org404210f">Waybar Position</a></li>
+<li><a href="#orgc92e512">Module Declaration</a>
+<ul>
+<li><a href="#orga12aacc">Modules Left</a></li>
+<li><a href="#orgc4836d4">Modules Center</a></li>
+<li><a href="#orgfe04ed8">Modules Right</a></li>
+</ul>
+</li>
+<li><a href="#org39a4c4c">Module Definition</a>
+<ul>
+<li><a href="#org6a4012f">Modules Left</a></li>
+<li><a href="#org3e3ffbc">Modules Center</a></li>
+<li><a href="#org8dfc004">Modules Right</a></li>
+<li><a href="#org106cf18">Un-used Modules</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#orge48027d">CSS</a>
+<ul>
+<li><a href="#orgcbc0bd9">Colors.css</a></li>
+<li><a href="#org1462483">Style.css</a>
+<ul>
+<li><a href="#org9bbdf81">Import colors from <code>colors.css</code></a></li>
+<li><a href="#org39fe9aa">Global Styling</a></li>
+<li><a href="#org9617735">Module Styling</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#org7f29aeb">FOOTNOTES</a></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org69581e1" class="outline-2">
+<h2 id="org69581e1">About</h2>
+<div class="outline-text-2" id="text-org69581e1">
+<p width="800px" align="center">
+Personal Dracula theme for <i>Waybar</i>.  
+<img src="./images/bar-demo.png" alt="bar-demo.png" width="800px" align="center" />
+</p>
+</div>
+</div>
+<div id="outline-container-org2ecf596" class="outline-2">
+<h2 id="org2ecf596">CONFIG</h2>
+<div class="outline-text-2" id="text-org2ecf596">
+<div class="org-src-container">
+<pre class="src src-jsonc"><span style="color: #6272a4; font-style: italic;">// </span><span style="color: #6272a4; font-style: italic;">-*- mode: jsonc -*-</span>
+</pre>
+</div>
+
+
+<div class="org-src-container">
+<pre class="src src-jsonc">{
+</pre>
+</div>
+</div>
+<div id="outline-container-org404210f" class="outline-3">
+<h3 id="org404210f">Waybar Position</h3>
+<div class="outline-text-3" id="text-org404210f">
+<p>
+Define the location, width, and hieght of <i>Waybar</i>
+</p>
+<div class="org-src-container">
+<pre class="src src-jsonc"><span style="color: #ff79c6; font-style: italic;">"layer"</span>: <span style="color: #f1fa8c;">"top"</span>, <span style="color: #6272a4; font-style: italic;">// </span><span style="color: #6272a4; font-style: italic;">Waybar at top layer</span>
+<span style="color: #ff79c6; font-style: italic;">"position"</span>: <span style="color: #f1fa8c;">"top"</span>, <span style="color: #6272a4; font-style: italic;">// </span><span style="color: #6272a4; font-style: italic;">Waybar position (top|bottom|left|right)</span>
+<span style="color: #ff79c6; font-style: italic;">"height"</span>: <span style="color: #8be9fd;">30</span>, <span style="color: #6272a4; font-style: italic;">// </span><span style="color: #6272a4; font-style: italic;">Waybar height (to be removed for auto height)</span>
+<span style="color: #6272a4; font-style: italic;">// </span><span style="color: #6272a4; font-style: italic;">"width": 1280, // Waybar width</span>
+<span style="color: #ff79c6; font-style: italic;">"spacing"</span>: <span style="color: #8be9fd;">4</span>, <span style="color: #6272a4; font-style: italic;">// </span><span style="color: #6272a4; font-style: italic;">Gaps between modules (4px)</span>
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgc92e512" class="outline-3">
+<h3 id="orgc92e512">Module Declaration</h3>
+<div class="outline-text-3" id="text-orgc92e512">
+<p>
+This section will name each module I want included on my <i>Waybar</i>; along with the location of each module.
+</p>
+</div>
+
+<div id="outline-container-orga12aacc" class="outline-4">
+<h4 id="orga12aacc">Modules Left</h4>
+<div class="outline-text-4" id="text-orga12aacc">
+<p>
+Select the modules to show on the left portion of <i>Waybar</i>
+</p>
+<div class="org-src-container">
+<pre class="src src-jsonc"><span style="color: #ff79c6; font-style: italic;">"modules-left"</span>: [
+       <span style="color: #f1fa8c;">"clock"</span>,
+       <span style="color: #f1fa8c;">"custom/rofi"</span>,
+       <span style="color: #f1fa8c;">"tray"</span>,
+       <span style="color: #f1fa8c;">"hyprland/workspaces"</span>,
+       <span style="color: #f1fa8c;">"custom/media"</span>,
+   ],
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgc4836d4" class="outline-4">
+<h4 id="orgc4836d4">Modules Center</h4>
+<div class="outline-text-4" id="text-orgc4836d4">
+<p>
+Select the modules to show on the center portion of <i>Waybar</i>
+</p>
+<div class="org-src-container">
+<pre class="src src-jsonc"><span style="color: #ff79c6; font-style: italic;">"modules-center"</span>: [
+    <span style="color: #f1fa8c;">"hyprland/window"</span>,
+],
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgfe04ed8" class="outline-4">
+<h4 id="orgfe04ed8">Modules Right</h4>
+<div class="outline-text-4" id="text-orgfe04ed8">
+<p>
+Select the modules to show on the right portion of <i>Waybar</i>
+</p>
+<div class="org-src-container">
+<pre class="src src-jsonc"><span style="color: #ff79c6; font-style: italic;">"modules-right"</span>: [
+    <span style="color: #f1fa8c;">"idle_inhibitor"</span>,
+    <span style="color: #f1fa8c;">"backlight"</span>,
+    <span style="color: #f1fa8c;">"pulseaudio"</span>,
+    <span style="color: #f1fa8c;">"network"</span>,
+    <span style="color: #f1fa8c;">"temperature"</span>,
+    <span style="color: #f1fa8c;">"memory"</span>,
+    <span style="color: #f1fa8c;">"cpu"</span>,
+    <span style="color: #f1fa8c;">"power-profiles-daemon"</span>,
+    <span style="color: #f1fa8c;">"battery"</span>
+],
+</pre>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org39a4c4c" class="outline-3">
+<h3 id="org39a4c4c">Module Definition</h3>
+<div class="outline-text-3" id="text-org39a4c4c">
+<p>
+This section will include the module configuration for each module included in the <i>Module Declation</i> section. 
+</p>
+</div>
+
+<div id="outline-container-org6a4012f" class="outline-4">
+<h4 id="org6a4012f">Modules Left</h4>
+<div class="outline-text-4" id="text-org6a4012f">
+<p>
+Configuration for the clock module 
+</p>
+<div class="org-src-container">
+<pre class="src src-jsonc"><span style="color: #ff79c6; font-style: italic;">"clock"</span>: {
+    <span style="color: #6272a4; font-style: italic;">// </span><span style="color: #6272a4; font-style: italic;">"timezone": "America/New_York",</span>
+    <span style="color: #ff79c6; font-style: italic;">"tooltip-format"</span>: <span style="color: #f1fa8c;">"&lt;big&gt;{:%Y %B}&lt;/big&gt;\n&lt;tt&gt;&lt;small&gt;{calendar}&lt;/small&gt;&lt;/tt&gt;"</span>,
+    <span style="color: #ff79c6; font-style: italic;">"format-alt"</span>: <span style="color: #f1fa8c;">"{:%Y-%m-%d}"</span>
+},
+</pre>
+</div>
+
+<p>
+Configuration for the custom rofi module
+</p>
+<div class="org-src-container">
+<pre class="src src-jsonc"><span style="color: #ff79c6; font-style: italic;">"custom/rofi"</span>: {
+    <span style="color: #ff79c6; font-style: italic;">"format"</span>: <span style="color: #f1fa8c;">"&#988383;"</span>,
+    <span style="color: #ff79c6; font-style: italic;">"on-click"</span>: <span style="color: #f1fa8c;">"/home/user/dotfiles/waybar/scripts/rofi.sh"</span>,
+    <span style="color: #ff79c6; font-style: italic;">"signal"</span>: <span style="color: #8be9fd;">6</span>,
+    <span style="color: #ff79c6; font-style: italic;">"tooltip"</span>: <span style="color: #8be9fd;">false</span>,
+    <span style="color: #ff79c6; font-style: italic;">"return-type"</span>: <span style="color: #f1fa8c;">"json"</span>
+},
+</pre>
+</div>
+
+<p>
+Configuration for the tray module 
+</p>
+<div class="org-src-container">
+<pre class="src src-jsonc"><span style="color: #ff79c6; font-style: italic;">"tray"</span>: {
+        <span style="color: #6272a4; font-style: italic;">// </span><span style="color: #6272a4; font-style: italic;">"icon-size": 21,</span>
+        <span style="color: #ff79c6; font-style: italic;">"spacing"</span>: <span style="color: #8be9fd;">10</span>
+    },
+</pre>
+</div>
+
+<p>
+Configuration for the "hyprland/workspaces" module
+</p>
+<div class="org-src-container">
+<pre class="src src-jsonc"><span style="color: #ff79c6; font-style: italic;">"hyprland/workspaces"</span>: {
+         <span style="color: #ff79c6; font-style: italic;">"disable-scroll"</span>: <span style="color: #8be9fd;">false</span>,
+         <span style="color: #ff79c6; font-style: italic;">"all-outputs"</span>: <span style="color: #8be9fd;">true</span>,
+         <span style="color: #ff79c6; font-style: italic;">"warp-on-scroll"</span>: <span style="color: #8be9fd;">false</span>,
+         <span style="color: #ff79c6; font-style: italic;">"format"</span>: <span style="color: #f1fa8c;">"{name}: {icon}"</span>,
+         <span style="color: #ff79c6; font-style: italic;">"format-icons"</span>: {
+             <span style="color: #ff79c6; font-style: italic;">"1"</span>: <span style="color: #f1fa8c;">"&#61728;"</span>,
+             <span style="color: #ff79c6; font-style: italic;">"2"</span>: <span style="color: #f1fa8c;">"&#62056;"</span>,
+             <span style="color: #ff79c6; font-style: italic;">"3"</span>: <span style="color: #f1fa8c;">"&#61729;"</span>,
+             <span style="color: #ff79c6; font-style: italic;">"4"</span>: <span style="color: #f1fa8c;">"&#61884;"</span>,
+             <span style="color: #ff79c6; font-style: italic;">"5"</span>: <span style="color: #f1fa8c;">"&#984687;"</span>,
+             <span style="color: #ff79c6; font-style: italic;">"6"</span>: <span style="color: #f1fa8c;">"&#61878;"</span>,
+             <span style="color: #ff79c6; font-style: italic;">"urgent"</span>: <span style="color: #f1fa8c;">"&#61546;"</span>,
+             <span style="color: #ff79c6; font-style: italic;">"focused"</span>: <span style="color: #f1fa8c;">"&#61842;"</span>,
+             <span style="color: #ff79c6; font-style: italic;">"default"</span>: <span style="color: #f1fa8c;">"&#61713;"</span>
+         }
+     },
+</pre>
+</div>
+
+<p>
+Configuration for the "custom/media" module
+</p>
+<div class="org-src-container">
+<pre class="src src-jsonc"><span style="color: #ff79c6; font-style: italic;">"custom/media"</span>: {
+        <span style="color: #ff79c6; font-style: italic;">"format"</span>: <span style="color: #f1fa8c;">"{0} {1}"</span>,
+        <span style="color: #ff79c6; font-style: italic;">"return-type"</span>: <span style="color: #f1fa8c;">"json"</span>,
+        <span style="color: #ff79c6; font-style: italic;">"max-length"</span>: <span style="color: #8be9fd;">40</span>,
+        <span style="color: #ff79c6; font-style: italic;">"format-icons"</span>: {
+            <span style="color: #ff79c6; font-style: italic;">"spotify"</span>: <span style="color: #f1fa8c;">"&#61884;"</span>,
+            <span style="color: #ff79c6; font-style: italic;">"default"</span>: <span style="color: #f1fa8c;">"&#127900;"</span>,
+        },
+        <span style="color: #ff79c6; font-style: italic;">"escape"</span>: <span style="color: #8be9fd;">true</span>,
+        <span style="color: #ff79c6; font-style: italic;">"on-click"</span>: <span style="color: #f1fa8c;">"playerctl play-pause"</span>,         
+        <span style="color: #ff79c6; font-style: italic;">"exec"</span>: <span style="color: #f1fa8c;">"$HOME/.config/waybar/scripts/mediaplayer.py 2&gt; /dev/null"</span> <span style="color: #6272a4; font-style: italic;">// </span><span style="color: #6272a4; font-style: italic;">Script in resources folder</span>
+        <span style="color: #6272a4; font-style: italic;">// </span><span style="color: #6272a4; font-style: italic;">"exec": "$HOME/.config/waybar/scripts/mediaplayer.py --player spotify 2&gt; /dev/null" // Filter player based on name</span>
+    },
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org3e3ffbc" class="outline-4">
+<h4 id="org3e3ffbc">Modules Center</h4>
+<div class="outline-text-4" id="text-org3e3ffbc">
+<p>
+Configuration for the "hyprland/window" module
+</p>
+</div>
+</div>
+
+
+<div id="outline-container-org8dfc004" class="outline-4">
+<h4 id="org8dfc004">Modules Right</h4>
+<div class="outline-text-4" id="text-org8dfc004">
+</div>
+<ul class="org-ul">
+<li><a id="org38de544"></a>I/O<br />
+<div class="outline-text-5" id="text-org38de544">
+<p>
+Configuration for the idle<sub>inhibitor</sub> module
+</p>
+<div class="org-src-container">
+<pre class="src src-jsonc"><span style="color: #ff79c6; font-style: italic;">"idle_inhibitor"</span>: {
+        <span style="color: #ff79c6; font-style: italic;">"format"</span>: <span style="color: #f1fa8c;">"{icon}"</span>,
+        <span style="color: #ff79c6; font-style: italic;">"format-icons"</span>: {
+            <span style="color: #ff79c6; font-style: italic;">"activated"</span>: <span style="color: #f1fa8c;">"&#61550;"</span>,
+            <span style="color: #ff79c6; font-style: italic;">"deactivated"</span>: <span style="color: #f1fa8c;">"&#61552;"</span>
+        }
+    },
+</pre>
+</div>
+
+<p>
+Configuration for the backlight module
+</p>
+<div class="org-src-container">
+<pre class="src src-jsonc"><span style="color: #ff79c6; font-style: italic;">"backlight"</span>: {
+        <span style="color: #6272a4; font-style: italic;">// </span><span style="color: #6272a4; font-style: italic;">"device": "acpi_video1",</span>
+        <span style="color: #ff79c6; font-style: italic;">"format"</span>: <span style="color: #f1fa8c;">"{percent}% {icon}"</span>,
+        <span style="color: #ff79c6; font-style: italic;">"format-icons"</span>: [<span style="color: #f1fa8c;">"&#127761;"</span>, <span style="color: #f1fa8c;">"&#127768;"</span>, <span style="color: #f1fa8c;">"&#127767;"</span>, <span style="color: #f1fa8c;">"&#127766;"</span>, <span style="color: #f1fa8c;">"&#127765;"</span>]
+    },
+</pre>
+</div>
+
+<p>
+Configuration for the pulseaudio module
+</p>
+<div class="org-src-container">
+<pre class="src src-jsonc"><span style="color: #ff79c6; font-style: italic;">"pulseaudio"</span>: {
+        <span style="color: #6272a4; font-style: italic;">// </span><span style="color: #6272a4; font-style: italic;">"scroll-step": 1, // %, can be a float</span>
+        <span style="color: #ff79c6; font-style: italic;">"format"</span>: <span style="color: #f1fa8c;">"{volume}% {icon} {format_source}"</span>,
+        <span style="color: #ff79c6; font-style: italic;">"format-bluetooth"</span>: <span style="color: #f1fa8c;">"{volume}% {icon}&#62100; {format_source}"</span>,
+        <span style="color: #ff79c6; font-style: italic;">"format-bluetooth-muted"</span>: <span style="color: #f1fa8c;">"&#63145; {icon}&#62100; {format_source}"</span>,
+        <span style="color: #ff79c6; font-style: italic;">"format-muted"</span>: <span style="color: #f1fa8c;">"&#63145; {format_source}"</span>,
+        <span style="color: #ff79c6; font-style: italic;">"format-source"</span>: <span style="color: #f1fa8c;">"{volume}% &#61744;"</span>,
+        <span style="color: #ff79c6; font-style: italic;">"format-source-muted"</span>: <span style="color: #f1fa8c;">"&#61745;"</span>,
+        <span style="color: #ff79c6; font-style: italic;">"format-icons"</span>: {
+            <span style="color: #ff79c6; font-style: italic;">"headphone"</span>: <span style="color: #f1fa8c;">"&#61477;"</span>,
+            <span style="color: #ff79c6; font-style: italic;">"hands-free"</span>: <span style="color: #f1fa8c;">"&#62864;"</span>,
+            <span style="color: #ff79c6; font-style: italic;">"headset"</span>: <span style="color: #f1fa8c;">"&#62864;"</span>,
+            <span style="color: #ff79c6; font-style: italic;">"phone"</span>: <span style="color: #f1fa8c;">"&#61589;"</span>,
+            <span style="color: #ff79c6; font-style: italic;">"portable"</span>: <span style="color: #f1fa8c;">"&#61589;"</span>,
+            <span style="color: #ff79c6; font-style: italic;">"car"</span>: <span style="color: #f1fa8c;">"&#61881;"</span>,
+            <span style="color: #ff79c6; font-style: italic;">"default"</span>: [<span style="color: #f1fa8c;">"&#61478;"</span>, <span style="color: #f1fa8c;">"&#61479;"</span>, <span style="color: #f1fa8c;">"&#61480;"</span>]
+        },
+        <span style="color: #ff79c6; font-style: italic;">"on-click"</span>: <span style="color: #f1fa8c;">"pavucontrol"</span>
+    },
+</pre>
+</div>
+
+<p>
+Configuration for the network module
+</p>
+<div class="org-src-container">
+<pre class="src src-jsonc"><span style="color: #ff79c6; font-style: italic;">"network"</span>: {
+        <span style="color: #6272a4; font-style: italic;">// </span><span style="color: #6272a4; font-style: italic;">"interface": "wlp2*", // (Optional) To force the use of this interface</span>
+        <span style="color: #ff79c6; font-style: italic;">"format-wifi"</span>: <span style="color: #f1fa8c;">"{essid} ({signalStrength}%) &#61931;"</span>,
+        <span style="color: #ff79c6; font-style: italic;">"format-ethernet"</span>: <span style="color: #f1fa8c;">"{ipaddr}/{cidr} &#63382;"</span>,
+        <span style="color: #ff79c6; font-style: italic;">"tooltip-format"</span>: <span style="color: #f1fa8c;">"{ifname} via {gwaddr} &#63382;"</span>,
+        <span style="color: #ff79c6; font-style: italic;">"format-linked"</span>: <span style="color: #f1fa8c;">"{ifname} (No IP) &#63382;"</span>,
+        <span style="color: #ff79c6; font-style: italic;">"format-disconnected"</span>: <span style="color: #f1fa8c;">"Disconnected &#9888;"</span>,
+        <span style="color: #6272a4; font-style: italic;">//</span><span style="color: #6272a4; font-style: italic;">"format-alt": "{ifname}: {ipaddr}/{cidr}",</span>
+        <span style="color: #ff79c6; font-style: italic;">"on-click"</span>: <span style="color: #f1fa8c;">"kitty -e nmtui"</span>
+    },
+</pre>
+</div>
+</div>
+</li>
+
+<li><a id="orgc2fd2c3"></a>Monitoring<br />
+<div class="outline-text-5" id="text-orgc2fd2c3">
+<p>
+Configuration for the temperature module
+</p>
+<div class="org-src-container">
+<pre class="src src-jsonc"><span style="color: #ff79c6; font-style: italic;">"temperature"</span>: {
+    <span style="color: #6272a4; font-style: italic;">// </span><span style="color: #6272a4; font-style: italic;">"thermal-zone": 2,</span>
+    <span style="color: #6272a4; font-style: italic;">// </span><span style="color: #6272a4; font-style: italic;">"hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",</span>
+    <span style="color: #ff79c6; font-style: italic;">"critical-threshold"</span>: <span style="color: #8be9fd;">80</span>,
+    <span style="color: #6272a4; font-style: italic;">// </span><span style="color: #6272a4; font-style: italic;">"format-critical": "{temperatureC}&#176;C {icon}",</span>
+    <span style="color: #ff79c6; font-style: italic;">"format"</span>: <span style="color: #f1fa8c;">"{temperatureC}&#176;C {icon}"</span>,
+    <span style="color: #ff79c6; font-style: italic;">"format-icons"</span>: [<span style="color: #f1fa8c;">"&#63339;"</span>, <span style="color: #f1fa8c;">"&#62153;"</span>, <span style="color: #f1fa8c;">"&#63337;"</span>]
+},
+</pre>
+</div>
+
+<p>
+Configuration for the memory module
+</p>
+<div class="org-src-container">
+<pre class="src src-jsonc"><span style="color: #ff79c6; font-style: italic;">"memory"</span>: {
+        <span style="color: #ff79c6; font-style: italic;">"format"</span>: <span style="color: #f1fa8c;">"{}% &#61641;"</span>
+    },
+</pre>
+</div>
+
+<p>
+Configuration for the cpu module
+</p>
+<div class="org-src-container">
+<pre class="src src-jsonc"><span style="color: #ff79c6; font-style: italic;">"cpu"</span>: {
+       <span style="color: #ff79c6; font-style: italic;">"format"</span>: <span style="color: #f1fa8c;">"{usage}% &#62171;"</span>,
+       <span style="color: #ff79c6; font-style: italic;">"tooltip"</span>: <span style="color: #8be9fd;">false</span>
+   },
+</pre>
+</div>
+
+<p>
+Configuration for the power profiles daemon module
+</p>
+<div class="org-src-container">
+<pre class="src src-jsonc"><span style="color: #ff79c6; font-style: italic;">"power-profiles-daemon"</span>: {
+      <span style="color: #ff79c6; font-style: italic;">"format"</span>: <span style="color: #f1fa8c;">"{icon}"</span>,
+      <span style="color: #ff79c6; font-style: italic;">"tooltip-format"</span>: <span style="color: #f1fa8c;">"Power profile: {profile}\nDriver: {driver}"</span>,
+      <span style="color: #ff79c6; font-style: italic;">"tooltip"</span>: <span style="color: #8be9fd;">true</span>,
+      <span style="color: #ff79c6; font-style: italic;">"format-icons"</span>: {
+        <span style="color: #ff79c6; font-style: italic;">"default"</span>: <span style="color: #f1fa8c;">"&#61671;"</span>,
+        <span style="color: #ff79c6; font-style: italic;">"performance"</span>: <span style="color: #f1fa8c;">"&#61671;"</span>,
+        <span style="color: #ff79c6; font-style: italic;">"balanced"</span>: <span style="color: #f1fa8c;">"&#62030;"</span>,
+        <span style="color: #ff79c6; font-style: italic;">"power-saver"</span>: <span style="color: #f1fa8c;">"&#61548;"</span>
+      }
+    },
+</pre>
+</div>
+
+<p>
+Configuration for the battery module
+</p>
+<div class="org-src-container">
+<pre class="src src-jsonc"><span style="color: #ff79c6; font-style: italic;">"battery"</span>: {
+        <span style="color: #ff79c6; font-style: italic;">"states"</span>: {
+            <span style="color: #6272a4; font-style: italic;">// </span><span style="color: #6272a4; font-style: italic;">"good": 95,</span>
+            <span style="color: #ff79c6; font-style: italic;">"warning"</span>: <span style="color: #8be9fd;">30</span>,
+            <span style="color: #ff79c6; font-style: italic;">"critical"</span>: <span style="color: #8be9fd;">15</span>
+        },
+        <span style="color: #ff79c6; font-style: italic;">"format"</span>: <span style="color: #f1fa8c;">"{capacity}% {icon}"</span>,
+        <span style="color: #ff79c6; font-style: italic;">"format-full"</span>: <span style="color: #f1fa8c;">"{capacity}% {icon}"</span>,
+        <span style="color: #ff79c6; font-style: italic;">"format-charging"</span>: <span style="color: #f1fa8c;">"{capacity}% &#62951;"</span>,
+        <span style="color: #ff79c6; font-style: italic;">"format-plugged"</span>: <span style="color: #f1fa8c;">"{capacity}% &#61926;"</span>,
+        <span style="color: #ff79c6; font-style: italic;">"format-alt"</span>: <span style="color: #f1fa8c;">"{time} {icon}"</span>,
+        <span style="color: #6272a4; font-style: italic;">// </span><span style="color: #6272a4; font-style: italic;">"format-good": "", // An empty format will hide the module</span>
+        <span style="color: #6272a4; font-style: italic;">// </span><span style="color: #6272a4; font-style: italic;">"format-full": "",</span>
+        <span style="color: #ff79c6; font-style: italic;">"format-icons"</span>: [<span style="color: #f1fa8c;">"&#62020;"</span>, <span style="color: #f1fa8c;">"&#62019;"</span>, <span style="color: #f1fa8c;">"&#62018;"</span>, <span style="color: #f1fa8c;">"&#62017;"</span>, <span style="color: #f1fa8c;">"&#62016;"</span>]
+    },
+    <span style="color: #ff79c6; font-style: italic;">"battery#bat2"</span>: {
+        <span style="color: #ff79c6; font-style: italic;">"bat"</span>: <span style="color: #f1fa8c;">"BAT2"</span>
+    }
+</pre>
+</div>
+
+<div class="org-src-container">
+<pre class="src src-jsonc">  }
+]
+</pre>
+</div>
+</div>
+</li>
+</ul>
+</div>
+<div id="outline-container-org106cf18" class="outline-4">
+<h4 id="org106cf18">Un-used Modules</h4>
+<div class="outline-text-4" id="text-org106cf18">
+<p>
+This section includes modules from the default <i>Waybar</i> configuration file which I do not use. These modules are placed here for reference only, and are not used in my running configuration.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-jsonc"><span style="color: #ff79c6; font-style: italic;">"keyboard-state"</span>: {
+         <span style="color: #ff79c6; font-style: italic;">"numlock"</span>: <span style="color: #8be9fd;">true</span>,
+         <span style="color: #ff79c6; font-style: italic;">"capslock"</span>: <span style="color: #8be9fd;">true</span>,
+         <span style="color: #ff79c6; font-style: italic;">"format"</span>: <span style="color: #f1fa8c;">"{name} {icon}"</span>,
+         <span style="color: #ff79c6; font-style: italic;">"format-icons"</span>: {
+             <span style="color: #ff79c6; font-style: italic;">"locked"</span>: <span style="color: #f1fa8c;">"&#61475;"</span>,
+             <span style="color: #ff79c6; font-style: italic;">"unlocked"</span>: <span style="color: #f1fa8c;">"&#61596;"</span>
+         }
+     },
+</pre>
+</div>
+
+<div class="org-src-container">
+<pre class="src src-jsonc"><span style="color: #ff79c6; font-style: italic;">"sway/mode"</span>: {
+    <span style="color: #ff79c6; font-style: italic;">"format"</span>: <span style="color: #f1fa8c;">"&lt;span style=\"italic\"&gt;{}&lt;/span&gt;"</span>
+},
+</pre>
+</div>
+
+<div class="org-src-container">
+<pre class="src src-jsonc"><span style="color: #ff79c6; font-style: italic;">"sway/scratchpad"</span>: {
+    <span style="color: #ff79c6; font-style: italic;">"format"</span>: <span style="color: #f1fa8c;">"{icon} {count}"</span>,
+    <span style="color: #ff79c6; font-style: italic;">"show-empty"</span>: <span style="color: #8be9fd;">false</span>,
+    <span style="color: #ff79c6; font-style: italic;">"format-icons"</span>: [<span style="color: #f1fa8c;">""</span>, <span style="color: #f1fa8c;">"&#62162;"</span>],
+    <span style="color: #ff79c6; font-style: italic;">"tooltip"</span>: <span style="color: #8be9fd;">true</span>,
+    <span style="color: #ff79c6; font-style: italic;">"tooltip-format"</span>: <span style="color: #f1fa8c;">"{app}: {title}"</span>
+},
+</pre>
+</div>
+
+<div class="org-src-container">
+<pre class="src src-jsonc"><span style="color: #ff79c6; font-style: italic;">"mpd"</span>: {
+       <span style="color: #ff79c6; font-style: italic;">"format"</span>: <span style="color: #f1fa8c;">"{stateIcon} {consumeIcon}{randomIcon}{repeatIcon}{singleIcon}{artist} - {album} - {title} ({elapsedTime:%M:%S}/{totalTime:%M:%S}) &#11816;{songPosition}|{queueLength}&#11817; {volume}% &#61441;"</span>,
+        <span style="color: #ff79c6; font-style: italic;">"format-disconnected"</span>: <span style="color: #f1fa8c;">"Disconnected &#61441;"</span>,
+        <span style="color: #ff79c6; font-style: italic;">"format-stopped"</span>: <span style="color: #f1fa8c;">"{consumeIcon}{randomIcon}{repeatIcon}{singleIcon}Stopped &#61441;"</span>,
+        <span style="color: #ff79c6; font-style: italic;">"unknown-tag"</span>: <span style="color: #f1fa8c;">"N/A"</span>,
+        <span style="color: #ff79c6; font-style: italic;">"interval"</span>: <span style="color: #8be9fd;">5</span>,
+        <span style="color: #ff79c6; font-style: italic;">"consume-icons"</span>: {
+                         <span style="color: #ff79c6; font-style: italic;">"on"</span>: <span style="color: #f1fa8c;">"&#61636; "</span>
+        },
+        <span style="color: #ff79c6; font-style: italic;">"random-icons"</span>: {
+                <span style="color: #ff79c6; font-style: italic;">"off"</span>: <span style="color: #f1fa8c;">"&lt;span color=\"</span><span style="color: #ffffff; background-color: #f53c3c;">#f53c3c</span><span style="color: #f1fa8c;">\"&gt;&#61556;&lt;/span&gt; "</span>,
+                <span style="color: #ff79c6; font-style: italic;">"on"</span>: <span style="color: #f1fa8c;">"&#61556; "</span>
+        },
+        <span style="color: #ff79c6; font-style: italic;">"repeat-icons"</span>: {
+                <span style="color: #ff79c6; font-style: italic;">"on"</span>: <span style="color: #f1fa8c;">"&#61470; "</span>
+        },
+        <span style="color: #ff79c6; font-style: italic;">"single-icons"</span>: {
+                <span style="color: #ff79c6; font-style: italic;">"on"</span>: <span style="color: #f1fa8c;">"&#61470;1 "</span>
+        },
+        <span style="color: #ff79c6; font-style: italic;">"state-icons"</span>: {
+                <span style="color: #ff79c6; font-style: italic;">"paused"</span>: <span style="color: #f1fa8c;">"&#61516;"</span>,
+                <span style="color: #ff79c6; font-style: italic;">"playing"</span>: <span style="color: #f1fa8c;">"&#61515;"</span>
+        },
+        <span style="color: #ff79c6; font-style: italic;">"tooltip-format"</span>: <span style="color: #f1fa8c;">"MPD (connected)"</span>,
+        <span style="color: #ff79c6; font-style: italic;">"tooltip-format-disconnected"</span>: <span style="color: #f1fa8c;">"MPD (disconnected)"</span>
+},
+
+</pre>
+</div>
+
+<div class="org-src-container">
+<pre class="src src-jsonc"><span style="color: #ff79c6; font-style: italic;">"custom/power"</span>: {
+        <span style="color: #ff79c6; font-style: italic;">"format"</span> : <span style="color: #f1fa8c;">"&#9211; "</span>,
+                <span style="color: #ff79c6; font-style: italic;">"tooltip"</span>: <span style="color: #8be9fd;">false</span>,
+                <span style="color: #ff79c6; font-style: italic;">"menu"</span>: <span style="color: #f1fa8c;">"on-click"</span>,
+                <span style="color: #ff79c6; font-style: italic;">"menu-file"</span>: <span style="color: #f1fa8c;">"$HOME/.config/waybar/power_menu.xml"</span>, <span style="color: #6272a4; font-style: italic;">// </span><span style="color: #6272a4; font-style: italic;">Menu file in resources folder</span>
+                <span style="color: #ff79c6; font-style: italic;">"menu-actions"</span>: {
+                        <span style="color: #ff79c6; font-style: italic;">"shutdown"</span>: <span style="color: #f1fa8c;">"shutdown"</span>,
+                        <span style="color: #ff79c6; font-style: italic;">"reboot"</span>: <span style="color: #f1fa8c;">"reboot"</span>,
+                        <span style="color: #ff79c6; font-style: italic;">"suspend"</span>: <span style="color: #f1fa8c;">"systemctl suspend"</span>,
+                        <span style="color: #ff79c6; font-style: italic;">"hibernate"</span>: <span style="color: #f1fa8c;">"systemctl hibernate"</span>
+                }
+    }
+}
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orge48027d" class="outline-2">
+<h2 id="orge48027d">CSS</h2>
+<div class="outline-text-2" id="text-orge48027d">
+<p>
+there are two files used to style waybar using CSS. 
+</p>
+</div>
+<div id="outline-container-orgcbc0bd9" class="outline-3">
+<h3 id="orgcbc0bd9"><a href="./colors.css">Colors.css</a></h3>
+<div class="outline-text-3" id="text-orgcbc0bd9">
+<p>
+This file defines all the colors I will use to style <i>Waybar</i>
+</p>
+</div>
+</div>
+<div id="outline-container-org1462483" class="outline-3">
+<h3 id="org1462483"><a href="./style.css">Style.css</a></h3>
+<div class="outline-text-3" id="text-org1462483">
+<p>
+This file uses the colors from <a href="./colors.css">colors.css</a> to style the modules of <i>Waybar</i> to whatever look I want. 
+</p>
+</div>
+
+<div id="outline-container-org9bbdf81" class="outline-4">
+<h4 id="org9bbdf81">Import colors from <code>colors.css</code></h4>
+<div class="outline-text-4" id="text-org9bbdf81">
+<p>
+Before I can style anything in the <a href="./style.css">style.css</a> file; I need to imprt the pre-difined colors from <a href="./colors.css">colors.css</a>  
+</p>
+<div class="org-src-container">
+<pre class="src src-css"><span style="color: #ffb86c;">@import</span> url(<span style="color: #f1fa8c;">"./colors.css"</span>);
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org39fe9aa" class="outline-4">
+<h4 id="org39fe9aa">Global Styling</h4>
+<div class="outline-text-4" id="text-org39fe9aa">
+<p>
+Set the font, and font size globally
+</p>
+<div class="org-src-container">
+<pre class="src src-css"> <span style="color: #50fa7b;">*</span> {
+    <span style="color: #bd93f9;">font-family</span>: <span style="color: #f1fa8c;">'Noto Sans Mono'</span>, <span style="color: #f1fa8c;">'Font Awesome 6 Free'</span>, <span style="color: #f1fa8c;">'Font Awesome 6 Brands'</span>, monospace;
+    <span style="color: #bd93f9;">font-size</span>: 13px;
+}
+</pre>
+</div>
+</div>
+
+<ul class="org-ul">
+<li><a id="org1322899"></a>Window<br />
+<div class="outline-text-5" id="text-org1322899">
+<div class="org-src-container">
+<pre class="src src-css"><span style="color: #50fa7b;">window#waybar</span> {
+    <span style="color: #bd93f9;">background-color</span>: <span style="color: #ffb86c;">@background-darker</span>;
+    <span style="color: #bd93f9;">border-bottom</span>: 3px solid <span style="color: #ffb86c;">@background</span>;
+    <span style="color: #bd93f9;">color</span>: <span style="color: #ffb86c;">@foreground</span>;
+    <span style="color: #bd93f9;">transition-property</span>: background-color;
+    <span style="color: #bd93f9;">transition-duration</span>: .5s;
+}
+
+<span style="color: #50fa7b;">window#waybar.hidden</span> {
+    <span style="color: #bd93f9;">opacity</span>: 0.2;
+}
+</pre>
+</div>
+</div>
+</li>
+
+<li><a id="org0da62bf"></a>Button<br />
+<div class="outline-text-5" id="text-org0da62bf">
+<div class="org-src-container">
+<pre class="src src-css"><span style="color: #50fa7b;">button</span> {
+    <span style="color: #6272a4; font-style: italic;">/* </span><span style="color: #6272a4; font-style: italic;">Use box-shadow instead of border so the text isn't offset</span><span style="color: #6272a4; font-style: italic;"> */</span>
+    <span style="color: #bd93f9;">box-shadow</span>: inset 0 -3px transparent;
+    <span style="color: #6272a4; font-style: italic;">/* </span><span style="color: #6272a4; font-style: italic;">Avoid rounded borders under each button name</span><span style="color: #6272a4; font-style: italic;"> */</span>
+    <span style="color: #bd93f9;">border</span>: none;
+    <span style="color: #bd93f9;">border-radius</span>: 0;
+}
+
+<span style="color: #6272a4; font-style: italic;">/* </span><span style="color: #6272a4; font-style: italic;">https://github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect</span><span style="color: #6272a4; font-style: italic;"> */</span>
+<span style="color: #50fa7b;">button:hover</span> {
+    <span style="color: #bd93f9;">background</span>: inherit;
+    <span style="color: #bd93f9;">box-shadow</span>: inset 0 -3px <span style="color: #ffb86c;">@</span><span style="color: #000000; background-color: #FFC0CB;">pink</span>;
+}
+</pre>
+</div>
+</div>
+</li>
+</ul>
+</div>
+
+<div id="outline-container-org9617735" class="outline-4">
+<h4 id="org9617735">Module Styling</h4>
+<div class="outline-text-4" id="text-org9617735">
+</div>
+<ul class="org-ul">
+<li><a id="orgea2cb24"></a>Hover Rules<br />
+<div class="outline-text-5" id="text-orgea2cb24">
+<div class="org-src-container">
+<pre class="src src-css"><span style="color: #50fa7b;">#pulseaudio:hover</span> {
+    <span style="color: #bd93f9;">background-color</span>: <span style="color: #ffb86c;">@</span><span style="color: #000000; background-color: #FFFF00;">yellow</span>;
+}
+
+<span style="color: #50fa7b;">#network:hover</span> {
+    <span style="color: #bd93f9;">background-color</span>: <span style="color: #ffb86c;">@</span><span style="color: #000000; background-color: #FFFF00;">yellow</span>;
+    <span style="color: #bd93f9;">padding</span>: 1px 3px;
+}
+<span style="color: #6272a4; font-style: italic;">/* </span><span style="color: #6272a4; font-style: italic;">#workspaces button {</span>
+<span style="color: #6272a4; font-style: italic;">    padding: 0 5px;</span>
+<span style="color: #6272a4; font-style: italic;">    background-color: transparent;</span>
+<span style="color: #6272a4; font-style: italic;">    color: @foreground;</span>
+<span style="color: #6272a4; font-style: italic;">}</span><span style="color: #6272a4; font-style: italic;">*/</span>
+
+</pre>
+</div>
+</div>
+</li>
+
+<li><a id="orgb380570"></a>Mode<br />
+<div class="outline-text-5" id="text-orgb380570">
+<p>
+styling for submodes like window resizing or screenshot menus. I don't use this on Hyprland, but do on SwayWM.
+</p>
+<div class="org-src-container">
+<pre class="src src-css">
+
+<span style="color: #50fa7b;">#mode</span> {
+    <span style="color: #bd93f9;">background-color</span>: <span style="color: #ffb86c;">@comment</span>;
+    <span style="color: #bd93f9;">box-shadow</span>: inset 0 -3px <span style="color: #000000; background-color: #ffffff;">#ffffff</span>;
+}
+
+
+<span style="color: #50fa7b;">#cpu,</span>
+<span style="color: #50fa7b;">#memory,</span>
+<span style="color: #50fa7b;">#pulseaudio,</span>
+<span style="color: #50fa7b;">#wireplumber,</span>
+<span style="color: #50fa7b;">#idle_inhibitor,</span>
+<span style="color: #50fa7b;">#power-profiles-daemon,</span>
+<span style="color: #50fa7b;">#mpd</span> {
+    <span style="color: #bd93f9;">padding</span>: 0 10px;
+    <span style="color: #bd93f9;">color</span>: <span style="color: #000000; background-color: #ffffff;">#ffffff</span>;
+}
+
+#window,
+</pre>
+</div>
+</div>
+</li>
+
+<li><a id="orgdec5466"></a>Workspaces<br />
+<div class="outline-text-5" id="text-orgdec5466">
+<div class="org-src-container">
+<pre class="src src-css"><span style="color: #50fa7b;">#workspaces</span> {
+    <span style="color: #bd93f9;">margin</span>: 0 4px;
+    <span style="color: #bd93f9;">color</span>: <span style="color: #ffb86c;">@foreground</span>;
+}
+
+<span style="color: #50fa7b;">#workspaces button.active</span> {
+    <span style="color: #bd93f9;">background-color</span>: <span style="color: #ffb86c;">@background</span>;
+    <span style="color: #bd93f9;">color</span>: <span style="color: #ffb86c;">@forground</span>;
+    <span style="color: #bd93f9;">box-shadow</span>: inset 0 -3px <span style="color: #ffb86c;">@</span><span style="color: #ffffff; background-color: #800080;">purple</span>;
+} 
+<span style="color: #50fa7b;">#workspaces button:hover</span> {
+    <span style="color: #bd93f9;">background</span>: <span style="color: #ffb86c;">@selection</span>;
+    <span style="color: #bd93f9;">color</span>: <span style="color: #ffb86c;">@forground</span>;
+    <span style="color: #bd93f9;">box-shadow</span>: inset 0 -3px <span style="color: #ffb86c;">@</span><span style="color: #000000; background-color: #FFFF00;">yellow</span>
+}
+
+<span style="color: #50fa7b;">#workspaces button.focused</span> {
+    <span style="color: #bd93f9;">background-color</span>: <span style="color: #ffb86c;">@</span><span style="color: #ffffff; background-color: #800080;">purple</span>;
+    <span style="color: #bd93f9;">box-shadow</span>: inset 0 -3px <span style="color: #000000; background-color: #ffffff;">#ffffff</span>;
+}
+
+
+<span style="color: #50fa7b;">#workspaces button.urgent</span> {
+    <span style="color: #bd93f9;">background-color</span>: <span style="color: #ffb86c;">@</span><span style="color: #ffffff; background-color: #FF0000;">red</span>;
+}
+<span style="color: #6272a4; font-style: italic;">/* </span><span style="color: #6272a4; font-style: italic;">If workspaces is the leftmost module, omit left margin</span><span style="color: #6272a4; font-style: italic;"> */</span>
+<span style="color: #50fa7b;">.modules-left &gt; widget:first-child &gt; #workspaces</span> {
+    <span style="color: #bd93f9;">margin-left</span>: 0;
+}
+
+<span style="color: #6272a4; font-style: italic;">/* </span><span style="color: #6272a4; font-style: italic;">If workspaces is the rightmost module, omit right margin</span><span style="color: #6272a4; font-style: italic;"> */</span>
+<span style="color: #50fa7b;">.modules-right &gt; widget:last-child &gt; #workspaces</span> {
+    <span style="color: #bd93f9;">margin-right</span>: 0;
+}
+
+</pre>
+</div>
+</div>
+</li>
+
+<li><a id="org27d1526"></a>Clock<br />
+<div class="outline-text-5" id="text-org27d1526">
+<div class="org-src-container">
+<pre class="src src-css"><span style="color: #50fa7b;">#clock</span> {
+    <span style="color: #bd93f9;">padding</span>: 1px 8px;
+    <span style="color: #bd93f9;">background-color</span>: <span style="color: #ffb86c;">@background</span>;
+    <span style="color: #bd93f9;">color</span>: <span style="color: #ffb86c;">@</span><span style="color: #ffffff; background-color: #008000;">green</span>;
+}
+</pre>
+</div>
+</div>
+</li>
+
+<li><a id="org909f6ed"></a>Battery<br />
+<div class="outline-text-5" id="text-org909f6ed">
+<div class="org-src-container">
+<pre class="src src-css"><span style="color: #50fa7b;">#battery</span> {
+    <span style="color: #bd93f9;">background-color</span>: <span style="color: #ffb86c;">@</span><span style="color: #000000; background-color: #00FFFF;">cyan</span>;
+    <span style="color: #bd93f9;">color</span>: <span style="color: #ffb86c;">@background-darker</span>;
+    <span style="color: #bd93f9;">padding</span>: 1px 10px;
+}
+
+<span style="color: #50fa7b;">#battery.charging, #battery.plugged</span> {
+    <span style="color: #bd93f9;">color</span>: <span style="color: #ffb86c;">@background-darker</span>;
+    <span style="color: #bd93f9;">background-color</span>: <span style="color: #ffb86c;">@</span><span style="color: #ffffff; background-color: #008000;">green</span>;
+}
+
+<span style="color: #ffb86c;">@keyframes</span> blink {
+    <span style="color: #50fa7b;">to</span> {
+        <span style="color: #bd93f9;">background-color</span>: <span style="color: #000000; background-color: #ffffff;">#ffffff</span>;
+        <span style="color: #bd93f9;">color</span>: <span style="color: #ffffff; background-color: #000000;">#000000</span>;
+    }
+}
+
+<span style="color: #6272a4; font-style: italic;">/* </span><span style="color: #6272a4; font-style: italic;">Using steps() instead of linear as a timing function to limit cpu usage</span><span style="color: #6272a4; font-style: italic;"> */</span>
+<span style="color: #50fa7b;">#battery.critical:not(.charging)</span> {
+    <span style="color: #bd93f9;">background-color</span>: <span style="color: #ffb86c;">@</span><span style="color: #ffffff; background-color: #FF0000;">red</span>;
+    <span style="color: #bd93f9;">color</span>: <span style="color: #000000; background-color: #ffffff;">#ffffff</span>;
+    <span style="color: #bd93f9;">animation-name</span>: blink;
+    <span style="color: #bd93f9;">animation-duration</span>: 0.5s;
+    <span style="color: #bd93f9;">animation-timing-function</span>: steps(12);
+    <span style="color: #bd93f9;">animation-iteration-count</span>: infinite;
+    <span style="color: #bd93f9;">animation-direction</span>: alternate;
+}
+
+<span style="color: #50fa7b;">#power-profiles-daemon</span> {
+    <span style="color: #bd93f9;">padding-right</span>: 15px;
+}
+
+<span style="color: #50fa7b;">#power-profiles-daemon.performance</span> {
+    <span style="color: #bd93f9;">background-color</span>: <span style="color: #ffb86c;">@</span><span style="color: #ffffff; background-color: #FF0000;">red</span>;
+    <span style="color: #bd93f9;">color</span>: <span style="color: #ffb86c;">@background-darker</span>;
+}
+
+<span style="color: #50fa7b;">#power-profiles-daemon.balanced</span> {
+    <span style="color: #bd93f9;">background-color</span>: <span style="color: #ffb86c;">@comment</span>;
+    <span style="color: #bd93f9;">color</span>: <span style="color: #000000; background-color: #ffffff;">#ffffff</span>;
+}
+
+<span style="color: #50fa7b;">#power-profiles-daemon.power-saver</span> {
+    <span style="color: #bd93f9;">background-color</span>: <span style="color: #ffb86c;">@</span><span style="color: #ffffff; background-color: #008000;">green</span>;
+    <span style="color: #bd93f9;">color</span>: <span style="color: #ffb86c;">@background-darker</span>;
+}
+
+<span style="color: #50fa7b;">label:focus</span> {
+    <span style="color: #bd93f9;">background-color</span>: <span style="color: #ffffff; background-color: #000000;">#000000</span>;
+}
+</pre>
+</div>
+</div>
+</li>
+
+<li><a id="org55ef53e"></a>CPU<br />
+<div class="outline-text-5" id="text-org55ef53e">
+<div class="org-src-container">
+<pre class="src src-css"><span style="color: #50fa7b;">#cpu</span> {
+    <span style="color: #bd93f9;">background-color</span>: <span style="color: #ffb86c;">@background-darker</span>;
+    <span style="color: #bd93f9;">color</span>: <span style="color: #ffb86c;">@</span><span style="color: #ffffff; background-color: #008000;">green</span>;
+}
+
+<span style="color: #50fa7b;">#cpu:hover</span> {
+    <span style="color: #bd93f9;">background-color</span>: <span style="color: #ffb86c;">@</span><span style="color: #ffffff; background-color: #008000;">green</span>;
+    <span style="color: #bd93f9;">color</span>: <span style="color: #ffb86c;">@background-darker</span>;
+}
+</pre>
+</div>
+</div>
+</li>
+
+<li><a id="org55e2001"></a>Memory<br />
+<div class="outline-text-5" id="text-org55e2001">
+<div class="org-src-container">
+<pre class="src src-css"><span style="color: #50fa7b;">#memory</span> {
+    <span style="color: #bd93f9;">background-color</span>: <span style="color: #ffb86c;">@background-darker</span>;
+    <span style="color: #bd93f9;">color</span>: <span style="color: #ffb86c;">@</span><span style="color: #ffffff; background-color: #800080;">purple</span>;
+}
+
+<span style="color: #50fa7b;">#memory:hover</span> {
+    <span style="color: #bd93f9;">background-color</span>: <span style="color: #ffb86c;">@</span><span style="color: #ffffff; background-color: #800080;">purple</span>;
+    <span style="color: #bd93f9;">color</span>: <span style="color: #ffb86c;">@background-darker</span>;
+
+}
+
+<span style="color: #50fa7b;">#disk</span> {
+    <span style="color: #bd93f9;">background-color</span>: <span style="color: #ffb86c;">@background-color</span>;
+    <span style="color: #bd93f9;">color</span>: <span style="color: #ffb86c;">@</span><span style="color: #ffffff; background-color: #800080;">purple</span>;
+}
+
+<span style="color: #50fa7b;">#disk:hover</span> {
+    <span style="color: #bd93f9;">background-color</span>: <span style="color: #ffb86c;">@</span><span style="color: #ffffff; background-color: #800080;">purple</span>;
+    <span style="color: #bd93f9;">color</span>: <span style="color: #ffb86c;">@background-darker</span>;
+
+}
+</pre>
+</div>
+</div>
+</li>
+
+<li><a id="orgfac9aeb"></a>Backlight<br />
+<div class="outline-text-5" id="text-orgfac9aeb">
+<div class="org-src-container">
+<pre class="src src-css"><span style="color: #50fa7b;">#backlight</span> {
+    <span style="color: #bd93f9;">color</span>: <span style="color: #ffb86c;">@</span><span style="color: #000000; background-color: #FFFF00;">yellow</span>;
+    <span style="color: #bd93f9;">background-color</span>: <span style="color: #ffb86c;">@background-darker</span>;
+    <span style="color: #bd93f9;">padding</span>: 1px 3px;
+}
+
+<span style="color: #50fa7b;">#backlight:hover</span> {
+    <span style="color: #bd93f9;">color</span>: <span style="color: #ffb86c;">@background-darker</span>;
+    <span style="color: #bd93f9;">background-color</span>: <span style="color: #ffb86c;">@</span><span style="color: #000000; background-color: #FFFF00;">yellow</span>;
+    <span style="color: #bd93f9;">padding</span>: 1px 3px;
+}
+</pre>
+</div>
+</div>
+</li>
+
+<li><a id="org528ebc5"></a>Network<br />
+<div class="outline-text-5" id="text-org528ebc5">
+<div class="org-src-container">
+<pre class="src src-css"><span style="color: #50fa7b;">#network</span> {
+    <span style="color: #bd93f9;">background-color</span>: <span style="color: #ffb86c;">@</span><span style="color: #ffffff; background-color: #800080;">purple</span>;
+    <span style="color: #bd93f9;">color</span>: <span style="color: #ffb86c;">@background-darker</span>; 
+    <span style="color: #bd93f9;">padding</span>: 1px 3px;
+}
+
+<span style="color: #50fa7b;">#network.disconnected</span> {
+    <span style="color: #bd93f9;">background-color</span>: <span style="color: #ffb86c;">@</span><span style="color: #ffffff; background-color: #FF0000;">red</span>;
+    <span style="color: #bd93f9;">padding</span>: 1px 3px;
+}
+</pre>
+</div>
+</div>
+</li>
+
+<li><a id="orgbdd1612"></a>Audio<br />
+<div class="outline-text-5" id="text-orgbdd1612">
+<div class="org-src-container">
+<pre class="src src-css"><span style="color: #50fa7b;">#pulseaudio</span> {
+    <span style="color: #bd93f9;">background-color</span>: <span style="color: #ffb86c;">@comment</span>;
+    <span style="color: #bd93f9;">color</span>: <span style="color: #ffb86c;">@background</span>;
+    <span style="color: #bd93f9;">padding</span>: 1px 3px;
+}
+
+<span style="color: #50fa7b;">#pulseaudio.muted</span> {
+    <span style="color: #bd93f9;">background-color</span>: <span style="color: #ffb86c;">@</span><span style="color: #ffffff; background-color: #FF0000;">red</span>;
+    <span style="color: #bd93f9;">color</span>: <span style="color: #ffb86c;">@background-darker</span>;
+    <span style="color: #bd93f9;">padding</span>: 1px 3px;
+}
+
+<span style="color: #50fa7b;">#wireplumber</span> {
+    <span style="color: #bd93f9;">background-color</span>: <span style="color: #000000; background-color: #fff0f5;">#fff0f5</span>;
+    <span style="color: #bd93f9;">color</span>: <span style="color: #ffffff; background-color: #000000;">#000000</span>;
+}
+
+<span style="color: #50fa7b;">#wireplumber.muted</span> {
+    <span style="color: #bd93f9;">background-color</span>: <span style="color: #ffffff; background-color: #f53c3c;">#f53c3c</span>;
+}
+</pre>
+</div>
+</div>
+</li>
+
+<li><a id="orgb62f69f"></a>Custom Modules<br />
+<ul class="org-ul">
+<li><a id="org853fee8"></a>Media<br />
+<div class="outline-text-6" id="text-org853fee8">
+<div class="org-src-container">
+<pre class="src src-css"><span style="color: #50fa7b;">#custom-media</span> {
+    <span style="color: #bd93f9;">background-color</span>: <span style="color: #ffb86c;">@background-darker</span>;
+    <span style="color: #bd93f9;">color</span>: <span style="color: #000000; background-color: #fff0f5;">#fff0f5</span>;
+    <span style="color: #bd93f9;">min-width</span>: 50px;
+    <span style="color: #bd93f9;">border-bottom</span>: 3px solid <span style="color: #ffb86c;">@</span><span style="color: #ffffff; background-color: #800080;">purple</span>;
+    <span style="color: #bd93f9;">padding</span>: 1px 3px;
+}
+
+<span style="color: #50fa7b;">#custom-media.custom-spotify</span> {
+    <span style="color: #bd93f9;">background-color</span>: <span style="color: #ffb86c;">@background</span>;
+    <span style="color: #bd93f9;">color</span>: <span style="color: #ffb86c;">@</span><span style="color: #ffffff; background-color: #008000;">green</span>;
+    <span style="color: #bd93f9;">padding</span>: 1px 3px;
+}
+
+<span style="color: #50fa7b;">#custom-media.custom-vlc</span> {
+    <span style="color: #bd93f9;">color</span>: <span style="color: #000000; background-color: #ffa000;">#ffa000</span>;
+    <span style="color: #bd93f9;">padding</span>: 1px 3px;
+}
+
+<span style="color: #50fa7b;">#custom-media.custom-mpv</span> {
+    <span style="color: #bd93f9;">color</span>: <span style="color: #ffb86c;">@</span><span style="color: #ffffff; background-color: #800080;">purple</span>;
+    <span style="color: #bd93f9;">padding</span>: 1px 3px;
+}
+</pre>
+</div>
+</div>
+</li>
+
+<li><a id="org29865d0"></a>Rofi<br />
+<div class="outline-text-6" id="text-org29865d0">
+<div class="org-src-container">
+<pre class="src src-css"> <span style="color: #50fa7b;">#custom-rofi</span> {
+    <span style="color: #bd93f9;">background-color</span>: <span style="color: #ffb86c;">@background</span>;
+    <span style="color: #bd93f9;">color</span>: <span style="color: #000000; background-color: #fff0f5;">#fff0f5</span>;
+    <span style="color: #bd93f9;">padding</span>: 1px 6px;
+}
+</pre>
+</div>
+</div>
+</li>
+</ul>
+</li>
+<li><a id="org11b71e0"></a>Temperature<br />
+<div class="outline-text-5" id="text-org11b71e0">
+<div class="org-src-container">
+<pre class="src src-css"><span style="color: #50fa7b;">#temperature</span> {
+    <span style="color: #bd93f9;">color</span>: <span style="color: #ffb86c;">@</span><span style="color: #000000; background-color: #FFA500;">orange</span>;
+    <span style="color: #bd93f9;">background-color</span>: <span style="color: #ffb86c;">@background-darker</span>;
+    <span style="color: #bd93f9;">padding</span>: 1px 3px;
+}
+<span style="color: #50fa7b;">#temperature:hover</span> {
+    <span style="color: #bd93f9;">background-color</span>: <span style="color: #ffb86c;">@</span><span style="color: #000000; background-color: #FFA500;">orange</span>;
+    <span style="color: #bd93f9;">color</span>: <span style="color: #ffb86c;">@background-darker</span>;
+    <span style="color: #bd93f9;">padding</span>: 1px 3px;
+}
+
+<span style="color: #50fa7b;">#temperature.critical</span> {
+    <span style="color: #bd93f9;">color</span>: <span style="color: #ffb86c;">@</span><span style="color: #ffffff; background-color: #FF0000;">red</span>;
+    <span style="color: #bd93f9;">background-color</span>: <span style="color: #ffb86c;">@background-darker</span>;
+    <span style="color: #bd93f9;">padding</span>: 1px 3px;
+}
+
+<span style="color: #50fa7b;">#temperature.critical:hover</span> {
+    <span style="color: #bd93f9;">background-color</span>: <span style="color: #ffb86c;">@</span><span style="color: #ffffff; background-color: #FF0000;">red</span>;
+    <span style="color: #bd93f9;">color</span>: <span style="color: #ffb86c;">@background-darker</span>;
+}
+</pre>
+</div>
+</div>
+</li>
+
+<li><a id="orga1c6b21"></a>Tray<br />
+<div class="outline-text-5" id="text-orga1c6b21">
+<div class="org-src-container">
+<pre class="src src-css"><span style="color: #50fa7b;">#tray</span> {
+    <span style="color: #bd93f9;">background-color</span>: <span style="color: #ffb86c;">@background</span>;
+    <span style="color: #bd93f9;">padding</span>: 1px 6px;
+}
+
+<span style="color: #50fa7b;">#tray &gt; .passive</span> {
+    -gtk-icon-effect: dim;
+}
+
+<span style="color: #50fa7b;">#tray &gt; .needs-attention</span> {
+    -gtk-icon-effect: highlight;
+    <span style="color: #bd93f9;">background-color</span>: <span style="color: #ffb86c;">@</span><span style="color: #ffffff; background-color: #FF0000;">red</span>;
+}
+</pre>
+</div>
+</div>
+</li>
+
+<li><a id="org7344576"></a>Idle Inhibitor<br />
+<div class="outline-text-5" id="text-org7344576">
+<div class="org-src-container">
+<pre class="src src-css"><span style="color: #50fa7b;">#idle_inhibitor</span> {
+    <span style="color: #bd93f9;">background-color</span>: <span style="color: #ffb86c;">@selection</span>;
+}
+
+<span style="color: #50fa7b;">#idle_inhibitor.activated</span> {
+    <span style="color: #bd93f9;">background-color</span>: <span style="color: #ffb86c;">@foreground</span>;
+    <span style="color: #bd93f9;">color</span>: <span style="color: #ffb86c;">@selection</span>;
+}
+
+</pre>
+</div>
+</div>
+</li>
+
+<li><a id="org0d65fb0"></a>Privacy<br />
+<div class="outline-text-5" id="text-org0d65fb0">
+<div class="org-src-container">
+<pre class="src src-css"><span style="color: #50fa7b;">#privacy</span> {
+    <span style="color: #bd93f9;">padding</span>: 0;
+}
+
+<span style="color: #50fa7b;">#privacy-item</span> {
+    <span style="color: #bd93f9;">padding</span>: 0 5px;
+    <span style="color: #bd93f9;">color</span>: <span style="color: #000000; background-color: #ffffff;">white</span>;
+}
+
+<span style="color: #50fa7b;">#privacy-item.screenshare</span> {
+    <span style="color: #bd93f9;">background-color</span>: <span style="color: #ffffff; background-color: #cf5700;">#cf5700</span>;
+}
+
+<span style="color: #50fa7b;">#privacy-item.audio-in</span> {
+    <span style="color: #bd93f9;">background-color</span>: <span style="color: #ffffff; background-color: #1ca000;">#1ca000</span>;
+}
+
+<span style="color: #50fa7b;">#privacy-item.audio-out</span> {
+    <span style="color: #bd93f9;">background-color</span>: <span style="color: #ffffff; background-color: #0069d4;">#0069d4</span>;
+}
+</pre>
+</div>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-org7f29aeb" class="outline-2">
+<h2 id="org7f29aeb">FOOTNOTES</h2>
+<div class="outline-text-2" id="text-org7f29aeb">
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author: Henry Davies (HD)</p>
+<p class="date">Created: 2025-06-05 Thu 13:03</p>
+<p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>
