@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2025-06-12 Thu 20:56 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>NWG Wrapper Bindings Configuration</title>
+<meta name="author" content="Henry Davies" />
+<meta name="description" content="HD's personal NWG-Wrapper config." />
+<meta name="generator" content="Org Mode" />
+<link rel="stylesheet" type="text/css" href="https://fniessen.github.io/org-html-themes/src/readtheorg_theme/css/htmlize.css"/>
+<link rel="stylesheet" type="text/css" href="https://fniessen.github.io/org-html-themes/src/readtheorg_theme/css/readtheorg.css"/>
+<link rel="stylesheet" type="text/css" href="src/readtheorg_theme/css/search.css"/>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="https://fniessen.github.io/org-html-themes/src/lib/js/jquery.stickytableheaders.min.js"></script>
+<script type="text/javascript" src="https://fniessen.github.io/org-html-themes/src/readtheorg_theme/js/search.js"></script>
+<script type="text/javascript" src="https://fniessen.github.io/org-html-themes/src/readtheorg_theme/js/readtheorg.js"></script>
+<style>pre.src{background:#282a36;color:white;} </style>
+</head>
+<body>
+<div id="content" class="content">
+<h1 class="title">NWG Wrapper Bindings Configuration</h1>
+<div id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#orgcbd9240">1. About</a>
+<ul>
+<li><a href="#orgd76da57">1.1. My Configuration</a></li>
+</ul>
+</li>
+<li><a href="#org0f0dc21">2. Bindings</a>
+<ul>
+<li><a href="#org4b63dbf">2.1. Heading</a></li>
+<li><a href="#org5450ab0">2.2. General</a></li>
+<li><a href="#orgd3e284b">2.3. Hyprland Ecosystem</a></li>
+<li><a href="#orgb89a57c">2.4. Clipboard keybindings</a></li>
+<li><a href="#org0d2f1ff">2.5. Emacs keybindings</a></li>
+<li><a href="#org3062795">2.6. Kitty terminal keybindings</a></li>
+</ul>
+</li>
+<li><a href="#org35fb3da">3. Styling</a></li>
+<li><a href="#org3ca8cd9">4. FOOTER</a></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgcbd9240" class="outline-2">
+<h2 id="orgcbd9240"><span class="section-number-2">1.</span> About</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+<i><a href="https://github.com/nwg-piotr/nwg-wrapper">NWG-Wrapper</a></i> is a display script for Wayland compositors, similar to <i><a href="https://github.com/brndnmtthws/conky">Conky</a></i> for X11. NWG-Wrapper can be used with script, text, or markup files.  
+</p>
+</div>
+<div id="outline-container-orgd76da57" class="outline-3">
+<h3 id="orgd76da57"><span class="section-number-3">1.1.</span> My Configuration</h3>
+<div class="outline-text-3" id="text-1-1">
+<p>
+The main purpose of my NWG-Wrapper config is to provide an easily viewable cheatsheet of some of my less used key combinations for my <a href="../hypr/hyprland.html">Hyprland</a> and <a href="../emacs/README.html">Emacs</a> configurations.
+</p>
+
+<p>
+To achieve this simple cheatsheet I have configured NWG-Wrapper using Pango markup, and a simpe CSS style sheet.
+</p>
+
+<p>
+example screenshot:
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-org0f0dc21" class="outline-2">
+<h2 id="org0f0dc21"><span class="section-number-2">2.</span> Bindings</h2>
+<div class="outline-text-2" id="text-2">
+</div>
+<div id="outline-container-org4b63dbf" class="outline-3">
+<h3 id="org4b63dbf"><span class="section-number-3">2.1.</span> Heading</h3>
+<div class="outline-text-3" id="text-2-1">
+<p>
+This section includes the main heading to be displayed in NWG-Wrapper
+</p>
+<div class="org-src-container">
+<pre class="src src-html">&lt;<span style="color: #50fa7b;">span</span> <span style="color: #ffc9e8;">face</span>=<span style="color: #f1fa8c;">"monospace"</span>&gt;
+&lt;<span style="color: #50fa7b;">span</span> <span style="color: #ffc9e8;">size</span>=<span style="color: #f1fa8c;">"x-large"</span> <span style="color: #ffc9e8;">foreground</span>=<span style="color: #f1fa8c;">"#50fa7b"</span> <span style="color: #ffc9e8;">face</span>=<span style="color: #f1fa8c;">"serif"</span>&gt;Cheat sheet&lt;/<span style="color: #50fa7b;">span</span>&gt;
+&lt;<span style="color: #50fa7b;">span</span> <span style="color: #ffc9e8;">foreground</span>=<span style="color: #f1fa8c;">"#eeeeee"</span>&gt;
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org5450ab0" class="outline-3">
+<h3 id="org5450ab0"><span class="section-number-3">2.2.</span> General</h3>
+<div class="outline-text-3" id="text-2-2">
+<div class="org-src-container">
+<pre class="src src-html">&lt;<span style="color: #50fa7b;">span</span> <span style="color: #ffc9e8;">size</span>=<span style="color: #f1fa8c;">"x-large"</span> <span style="color: #ffc9e8;">foreground</span>=<span style="color: #f1fa8c;">"#50fa7b"</span> <span style="color: #ffc9e8;">face</span>=<span style="color: #f1fa8c;">"serif"</span>&gt;Hyprland&lt;/<span style="color: #50fa7b;">span</span>&gt;
+
+Web browser             &lt;<span style="color: #50fa7b;">span</span> <span style="color: #ffc9e8;">foreground</span>=<span style="color: #f1fa8c;">"#8be9fd"</span> <span style="color: #ffc9e8;">face</span>=<span style="color: #f1fa8c;">"serif"</span>&gt;Mod+B&lt;/<span style="color: #50fa7b;">span</span>&gt;
+Modify default browser  &lt;<span style="color: #50fa7b;">span</span> <span style="color: #ffc9e8;">foreground</span>=<span style="color: #f1fa8c;">"#8be9fd"</span> <span style="color: #ffc9e8;">face</span>=<span style="color: #f1fa8c;">"serif"</span>&gt;CTRL+ALT+[B,F,M]&lt;/<span style="color: #50fa7b;">span</span>&gt;
+Toggle Grouping         &lt;<span style="color: #50fa7b;">span</span> <span style="color: #ffc9e8;">foreground</span>=<span style="color: #f1fa8c;">"#8be9fd"</span> <span style="color: #ffc9e8;">face</span>=<span style="color: #f1fa8c;">"serif"</span>&gt;Mod+G&lt;/<span style="color: #50fa7b;">span</span>&gt;
+Toggle floating         &lt;<span style="color: #50fa7b;">span</span> <span style="color: #ffc9e8;">foreground</span>=<span style="color: #f1fa8c;">"#8be9fd"</span> <span style="color: #ffc9e8;">face</span>=<span style="color: #f1fa8c;">"serif"</span>&gt;Mod+V&lt;/<span style="color: #50fa7b;">span</span>&gt;
+
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-orgd3e284b" class="outline-3">
+<h3 id="orgd3e284b"><span class="section-number-3">2.3.</span> Hyprland Ecosystem</h3>
+<div class="outline-text-3" id="text-2-3">
+<p>
+this section includes keybindings related to programs in the "Hyprland ecosystem". In otherwords, these are programs intended to integrate with <i>Hyprland</i>. 
+</p>
+<div class="org-src-container">
+<pre class="src src-html">&lt;<span style="color: #50fa7b;">span</span> <span style="color: #ffc9e8;">size</span>=<span style="color: #f1fa8c;">"large"</span> <span style="color: #ffc9e8;">foreground</span>=<span style="color: #f1fa8c;">"#50fa7b"</span> <span style="color: #ffc9e8;">face</span>=<span style="color: #f1fa8c;">"serif"</span>&gt;Hyprland Ecosystem&lt;/<span style="color: #50fa7b;">span</span>&gt;
+Hyprpicker              &lt;<span style="color: #50fa7b;">span</span> <span style="color: #ffc9e8;">foreground</span>=<span style="color: #f1fa8c;">"#8be9fd"</span> <span style="color: #ffc9e8;">face</span>=<span style="color: #f1fa8c;">"serif"</span>&gt;Mod+CTRL+P&lt;/<span style="color: #50fa7b;">span</span>&gt;
+Hyprlock                &lt;<span style="color: #50fa7b;">span</span> <span style="color: #ffc9e8;">foreground</span>=<span style="color: #f1fa8c;">"#ff5555"</span> <span style="color: #ffc9e8;">face</span>=<span style="color: #f1fa8c;">"serif"</span>&gt;Mod+Shift+L&lt;/<span style="color: #50fa7b;">span</span>&gt;
+Wlogout                 &lt;<span style="color: #50fa7b;">span</span> <span style="color: #ffc9e8;">foreground</span>=<span style="color: #f1fa8c;">"#ff5555"</span> <span style="color: #ffc9e8;">face</span>=<span style="color: #f1fa8c;">"serif"</span>&gt;Mod+TAB+W&lt;/<span style="color: #50fa7b;">span</span>&gt;
+
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-orgb89a57c" class="outline-3">
+<h3 id="orgb89a57c"><span class="section-number-3">2.4.</span> Clipboard keybindings</h3>
+<div class="outline-text-3" id="text-2-4">
+<div class="org-src-container">
+<pre class="src src-html">&lt;<span style="color: #50fa7b;">span</span> <span style="color: #ffc9e8;">size</span>=<span style="color: #f1fa8c;">"large"</span> <span style="color: #ffc9e8;">foreground</span>=<span style="color: #f1fa8c;">"#50fa7b"</span> <span style="color: #ffc9e8;">face</span>=<span style="color: #f1fa8c;">"serif"</span>&gt;Cliphist&lt;/<span style="color: #50fa7b;">span</span>&gt;
+Show Clipboard          &lt;<span style="color: #50fa7b;">span</span> <span style="color: #ffc9e8;">foreground</span>=<span style="color: #f1fa8c;">"#8be9fd"</span> <span style="color: #ffc9e8;">face</span>=<span style="color: #f1fa8c;">"serif"</span>&gt;Mod+CTRL+V&lt;/<span style="color: #50fa7b;">span</span>&gt;
+Delete Clipboard Entry  &lt;<span style="color: #50fa7b;">span</span> <span style="color: #ffc9e8;">foreground</span>=<span style="color: #f1fa8c;">"#8be9fd"</span> <span style="color: #ffc9e8;">face</span>=<span style="color: #f1fa8c;">"serif"</span>&gt;Mod+CTRL+D&lt;/<span style="color: #50fa7b;">span</span>&gt;
+Wipe Clipboard          &lt;<span style="color: #50fa7b;">span</span> <span style="color: #ffc9e8;">foreground</span>=<span style="color: #f1fa8c;">"#8be9fd"</span> <span style="color: #ffc9e8;">face</span>=<span style="color: #f1fa8c;">"serif"</span>&gt;Mod+CTRL+E&lt;/<span style="color: #50fa7b;">span</span>&gt;
+
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org0d2f1ff" class="outline-3">
+<h3 id="org0d2f1ff"><span class="section-number-3">2.5.</span> Emacs keybindings</h3>
+<div class="outline-text-3" id="text-2-5">
+<div class="org-src-container">
+<pre class="src src-html">&lt;<span style="color: #50fa7b;">span</span> <span style="color: #ffc9e8;">size</span>=<span style="color: #f1fa8c;">"x-large"</span> <span style="color: #ffc9e8;">foreground</span>=<span style="color: #f1fa8c;">"#50fa7b"</span> <span style="color: #ffc9e8;">face</span>=<span style="color: #f1fa8c;">"serif"</span>&gt;HDmacs (Emacs)&lt;/<span style="color: #50fa7b;">span</span>&gt;
+Emacs                   &lt;<span style="color: #50fa7b;">span</span> <span style="color: #ffc9e8;">foreground</span>=<span style="color: #f1fa8c;">"#8be9fd"</span> <span style="color: #ffc9e8;">face</span>=<span style="color: #f1fa8c;">"serif"</span>&gt;Mod+E&lt;/<span style="color: #50fa7b;">span</span>&gt;
+Org Babel Tangle        &lt;<span style="color: #50fa7b;">span</span> <span style="color: #ffc9e8;">foreground</span>=<span style="color: #f1fa8c;">"#8be9fd"</span> <span style="color: #ffc9e8;">face</span>=<span style="color: #f1fa8c;">"serif"</span>&gt;C-c C-v T&lt;/<span style="color: #50fa7b;">span</span>&gt;
+
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org3062795" class="outline-3">
+<h3 id="org3062795"><span class="section-number-3">2.6.</span> Kitty terminal keybindings</h3>
+<div class="outline-text-3" id="text-2-6">
+<div class="org-src-container">
+<pre class="src src-html">&lt;<span style="color: #50fa7b;">span</span> <span style="color: #ffc9e8;">size</span>=<span style="color: #f1fa8c;">"large"</span> <span style="color: #ffc9e8;">foreground</span>=<span style="color: #f1fa8c;">"#50fa7b"</span> <span style="color: #ffc9e8;">face</span>=<span style="color: #f1fa8c;">"serif"</span>&gt;Kitty&lt;/<span style="color: #50fa7b;">span</span>&gt;
+Emoji picker        &lt;<span style="color: #50fa7b;">span</span> <span style="color: #ffc9e8;">foreground</span>=<span style="color: #f1fa8c;">"#8be9fd"</span> <span style="color: #ffc9e8;">face</span>=<span style="color: #f1fa8c;">"serif"</span>&gt;CTRL+Shift+U&lt;/<span style="color: #50fa7b;">span</span>&gt;
+&lt;/<span style="color: #50fa7b;">span</span>&gt;
+&lt;/<span style="color: #50fa7b;">span</span>&gt;
+</pre>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-org35fb3da" class="outline-2">
+<h2 id="org35fb3da"><span class="section-number-2">3.</span> Styling</h2>
+<div class="outline-text-2" id="text-3">
+<p>
+Simple CSS file to provide some extra styling to the markup file.
+</p>
+<div class="org-src-container">
+<pre class="src src-css"><span style="color: #50fa7b;">window</span> {
+        <span style="color: #bd93f9;">background-color</span>: rgba (0, 0, 0, 0.0);
+}
+
+<span style="color: #50fa7b;">#box-outer</span> {
+        <span style="color: #6272a4; font-style: italic;">/* </span><span style="color: #6272a4; font-style: italic;">Define attributes of the box surrounding icons here</span><span style="color: #6272a4; font-style: italic;"> */</span>
+        <span style="color: #bd93f9;">background-color</span>: rgba (255, 255, 255, 0.0)
+}
+
+<span style="color: #50fa7b;">#box-inner</span> {
+        <span style="color: #bd93f9;">background-color</span>: rgb <span style="color: #ffffff; background-color: #282a36;">#282a36cc</span>;
+        <span style="color: #bd93f9;">padding</span>: 0 20px 0 20px
+}
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org3ca8cd9" class="outline-2">
+<h2 id="org3ca8cd9"><span class="section-number-2">4.</span> FOOTER</h2>
+<div class="outline-text-2" id="text-4">
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author: Henry Davies</p>
+<p class="date">Created: 2025-06-12 Thu 20:56</p>
+<p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>
