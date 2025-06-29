@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2025-06-21 Sat 23:36 -->
+<!-- 2025-06-28 Sat 21:53 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Waybar Configuration</title>
@@ -27,55 +27,55 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org468b854">About</a></li>
-<li><a href="#org47041fa">CONFIG</a>
+<li><a href="#org78730d3">About</a></li>
+<li><a href="#orgd36994e">CONFIG</a>
 <ul>
-<li><a href="#org3fecf00">Waybar Position</a></li>
-<li><a href="#orgbc5282e">Module Declaration</a>
+<li><a href="#orga6722c9">Waybar Position</a></li>
+<li><a href="#orgf785a84">Module Declaration</a>
 <ul>
-<li><a href="#orgc6d87ac">Modules Left</a></li>
-<li><a href="#org1c45a42">Modules Center</a></li>
-<li><a href="#org5c1b3b5">Modules Right</a></li>
+<li><a href="#org805cc81">Modules Left</a></li>
+<li><a href="#org523a1e3">Modules Center</a></li>
+<li><a href="#orgb954e10">Modules Right</a></li>
 </ul>
 </li>
-<li><a href="#org7b21eb4">Module Definition</a>
+<li><a href="#orgce5b0fe">Module Definition</a>
 <ul>
-<li><a href="#org147d404">Modules Left</a></li>
-<li><a href="#org32e4359">Modules Center</a></li>
-<li><a href="#orgf56b351">Modules Right</a></li>
-<li><a href="#orgb4b3d2c">Un-used Modules</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a href="#org62c572d">CSS</a>
-<ul>
-<li><a href="#orga01da9b">Colors.css</a></li>
-<li><a href="#orgf6c484c">Style.css</a>
-<ul>
-<li><a href="#org4c8af7e">Import colors from <code>colors.css</code></a></li>
-<li><a href="#orgf8fde2a">Global Styling</a></li>
-<li><a href="#orgc212225">Module Styling</a></li>
+<li><a href="#orgba7d3fc">Modules Left</a></li>
+<li><a href="#org2818908">Modules Center</a></li>
+<li><a href="#org71ce6cc">Modules Right</a></li>
+<li><a href="#orge5b3f61">Un-used Modules</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="#orgded47b2">FOOTNOTES</a></li>
+<li><a href="#orga990f1f">CSS</a>
+<ul>
+<li><a href="#org0c94955">Colors.css</a></li>
+<li><a href="#org3e388a3">Style.css</a>
+<ul>
+<li><a href="#orga44c011">Import colors from <code>colors.css</code></a></li>
+<li><a href="#org3bcf40e">Global Styling</a></li>
+<li><a href="#orga97febe">Module Styling</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#orgafed0fb">FOOTNOTES</a></li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org468b854" class="outline-2">
-<h2 id="org468b854">About</h2>
-<div class="outline-text-2" id="text-org468b854">
+<div id="outline-container-org78730d3" class="outline-2">
+<h2 id="org78730d3">About</h2>
+<div class="outline-text-2" id="text-org78730d3">
 <p width="800px" align="center">
 Personal Gruvbox theme for <i>Waybar</i>.  
-<img src="./images/bar-demo.png" alt="bar-demo.png" width="800px" align="center" />
+<img src="./images/gruvbox_bar_demo.png" alt="gruvbox_bar_demo.png" width="800px" align="center" />
 </p>
 </div>
 </div>
-<div id="outline-container-org47041fa" class="outline-2">
-<h2 id="org47041fa">CONFIG</h2>
-<div class="outline-text-2" id="text-org47041fa">
+<div id="outline-container-orgd36994e" class="outline-2">
+<h2 id="orgd36994e">CONFIG</h2>
+<div class="outline-text-2" id="text-orgd36994e">
 <div class="org-src-container">
 <pre class="src src-jsonc"><span style="color: #6272a4; font-style: italic;">// </span><span style="color: #6272a4; font-style: italic;">-*- mode: jsonc -*-</span>
 </pre>
@@ -87,9 +87,9 @@ Personal Gruvbox theme for <i>Waybar</i>.
 </pre>
 </div>
 </div>
-<div id="outline-container-org3fecf00" class="outline-3">
-<h3 id="org3fecf00">Waybar Position</h3>
-<div class="outline-text-3" id="text-org3fecf00">
+<div id="outline-container-orga6722c9" class="outline-3">
+<h3 id="orga6722c9">Waybar Position</h3>
+<div class="outline-text-3" id="text-orga6722c9">
 <p>
 Define the location, width, and hieght of <i>Waybar</i>
 </p>
@@ -103,16 +103,16 @@ Define the location, width, and hieght of <i>Waybar</i>
 </div>
 </div>
 </div>
-<div id="outline-container-orgbc5282e" class="outline-3">
-<h3 id="orgbc5282e">Module Declaration</h3>
-<div class="outline-text-3" id="text-orgbc5282e">
+<div id="outline-container-orgf785a84" class="outline-3">
+<h3 id="orgf785a84">Module Declaration</h3>
+<div class="outline-text-3" id="text-orgf785a84">
 <p>
 This section will name each module I want included on my <i>Waybar</i>; along with the location of each module.
 </p>
 </div>
-<div id="outline-container-orgc6d87ac" class="outline-4">
-<h4 id="orgc6d87ac">Modules Left</h4>
-<div class="outline-text-4" id="text-orgc6d87ac">
+<div id="outline-container-org805cc81" class="outline-4">
+<h4 id="org805cc81">Modules Left</h4>
+<div class="outline-text-4" id="text-org805cc81">
 <p>
 Select the modules to show on the left portion of <i>Waybar</i>
 </p>
@@ -129,9 +129,9 @@ Select the modules to show on the left portion of <i>Waybar</i>
 </div>
 </div>
 </div>
-<div id="outline-container-org1c45a42" class="outline-4">
-<h4 id="org1c45a42">Modules Center</h4>
-<div class="outline-text-4" id="text-org1c45a42">
+<div id="outline-container-org523a1e3" class="outline-4">
+<h4 id="org523a1e3">Modules Center</h4>
+<div class="outline-text-4" id="text-org523a1e3">
 <p>
 Select the modules to show on the center portion of <i>Waybar</i>
 </p>
@@ -143,9 +143,9 @@ Select the modules to show on the center portion of <i>Waybar</i>
 </div>
 </div>
 </div>
-<div id="outline-container-org5c1b3b5" class="outline-4">
-<h4 id="org5c1b3b5">Modules Right</h4>
-<div class="outline-text-4" id="text-org5c1b3b5">
+<div id="outline-container-orgb954e10" class="outline-4">
+<h4 id="orgb954e10">Modules Right</h4>
+<div class="outline-text-4" id="text-orgb954e10">
 <p>
 Select the modules to show on the right portion of <i>Waybar</i>
 </p>
@@ -166,16 +166,16 @@ Select the modules to show on the right portion of <i>Waybar</i>
 </div>
 </div>
 </div>
-<div id="outline-container-org7b21eb4" class="outline-3">
-<h3 id="org7b21eb4">Module Definition</h3>
-<div class="outline-text-3" id="text-org7b21eb4">
+<div id="outline-container-orgce5b0fe" class="outline-3">
+<h3 id="orgce5b0fe">Module Definition</h3>
+<div class="outline-text-3" id="text-orgce5b0fe">
 <p>
 This section will include the module configuration for each module included in the <i>Module Declation</i> section. 
 </p>
 </div>
-<div id="outline-container-org147d404" class="outline-4">
-<h4 id="org147d404">Modules Left</h4>
-<div class="outline-text-4" id="text-org147d404">
+<div id="outline-container-orgba7d3fc" class="outline-4">
+<h4 id="orgba7d3fc">Modules Left</h4>
+<div class="outline-text-4" id="text-orgba7d3fc">
 <p>
 Configuration for the clock module 
 </p>
@@ -258,21 +258,21 @@ Configuration for the "custom/media" module
 </div>
 </div>
 </div>
-<div id="outline-container-org32e4359" class="outline-4">
-<h4 id="org32e4359">Modules Center</h4>
-<div class="outline-text-4" id="text-org32e4359">
+<div id="outline-container-org2818908" class="outline-4">
+<h4 id="org2818908">Modules Center</h4>
+<div class="outline-text-4" id="text-org2818908">
 <p>
 Configuration for the "hyprland/window" module
 </p>
 </div>
 </div>
-<div id="outline-container-orgf56b351" class="outline-4">
-<h4 id="orgf56b351">Modules Right</h4>
-<div class="outline-text-4" id="text-orgf56b351">
+<div id="outline-container-org71ce6cc" class="outline-4">
+<h4 id="org71ce6cc">Modules Right</h4>
+<div class="outline-text-4" id="text-org71ce6cc">
 </div>
 <ul class="org-ul">
-<li><a id="orgad37ff4"></a>Submap<br />
-<div class="outline-text-5" id="text-orgad37ff4">
+<li><a id="org514e87a"></a>Submap<br />
+<div class="outline-text-5" id="text-org514e87a">
 <div class="org-src-container">
 <pre class="src src-jsonc"><span style="color: #ff79c6; font-style: italic;">"hyprland/submap"</span>: {
   <span style="color: #ff79c6; font-style: italic;">"format"</span>: <span style="color: #f1fa8c;">"Submap: {}"</span>
@@ -281,8 +281,8 @@ Configuration for the "hyprland/window" module
 </div>
 </div>
 </li>
-<li><a id="org302a89c"></a>I/O<br />
-<div class="outline-text-5" id="text-org302a89c">
+<li><a id="org090e5ba"></a>I/O<br />
+<div class="outline-text-5" id="text-org090e5ba">
 <p>
 Configuration for the idle<sub>inhibitor</sub> module
 </p>
@@ -353,8 +353,8 @@ Configuration for the network module
 </div>
 </div>
 </li>
-<li><a id="org7561ee4"></a>Monitoring<br />
-<div class="outline-text-5" id="text-org7561ee4">
+<li><a id="orgef25afa"></a>Monitoring<br />
+<div class="outline-text-5" id="text-orgef25afa">
 <p>
 Configuration for the temperature module
 </p>
@@ -443,9 +443,9 @@ Configuration for the battery module
 </li>
 </ul>
 </div>
-<div id="outline-container-orgb4b3d2c" class="outline-4">
-<h4 id="orgb4b3d2c">Un-used Modules</h4>
-<div class="outline-text-4" id="text-orgb4b3d2c">
+<div id="outline-container-orge5b3f61" class="outline-4">
+<h4 id="orge5b3f61">Un-used Modules</h4>
+<div class="outline-text-4" id="text-orge5b3f61">
 <p>
 This section includes modules from the default <i>Waybar</i> configuration file which I do not use. These modules are placed here for reference only, and are not used in my running configuration.
 </p>
@@ -532,31 +532,31 @@ This section includes modules from the default <i>Waybar</i> configuration file 
 </div>
 </div>
 </div>
-<div id="outline-container-org62c572d" class="outline-2">
-<h2 id="org62c572d">CSS</h2>
-<div class="outline-text-2" id="text-org62c572d">
+<div id="outline-container-orga990f1f" class="outline-2">
+<h2 id="orga990f1f">CSS</h2>
+<div class="outline-text-2" id="text-orga990f1f">
 <p>
 there are two files used to style waybar using CSS. 
 </p>
 </div>
-<div id="outline-container-orga01da9b" class="outline-3">
-<h3 id="orga01da9b"><a href="./colors.css">Colors.css</a></h3>
-<div class="outline-text-3" id="text-orga01da9b">
+<div id="outline-container-org0c94955" class="outline-3">
+<h3 id="org0c94955"><a href="./colors.css">Colors.css</a></h3>
+<div class="outline-text-3" id="text-org0c94955">
 <p>
 This file defines all the colors I will use to style <i>Waybar</i>
 </p>
 </div>
 </div>
-<div id="outline-container-orgf6c484c" class="outline-3">
-<h3 id="orgf6c484c"><a href="./style.css">Style.css</a></h3>
-<div class="outline-text-3" id="text-orgf6c484c">
+<div id="outline-container-org3e388a3" class="outline-3">
+<h3 id="org3e388a3"><a href="./style.css">Style.css</a></h3>
+<div class="outline-text-3" id="text-org3e388a3">
 <p>
 This file uses the colors from <a href="./colors.css">colors.css</a> to style the modules of <i>Waybar</i> to whatever look I want. 
 </p>
 </div>
-<div id="outline-container-org4c8af7e" class="outline-4">
-<h4 id="org4c8af7e">Import colors from <code>colors.css</code></h4>
-<div class="outline-text-4" id="text-org4c8af7e">
+<div id="outline-container-orga44c011" class="outline-4">
+<h4 id="orga44c011">Import colors from <code>colors.css</code></h4>
+<div class="outline-text-4" id="text-orga44c011">
 <p>
 Before I can style anything in the <a href="./style.css">style.css</a> file; I need to imprt the pre-difined colors from <a href="./colors.css">colors.css</a>  
 </p>
@@ -566,9 +566,9 @@ Before I can style anything in the <a href="./style.css">style.css</a> file; I n
 </div>
 </div>
 </div>
-<div id="outline-container-orgf8fde2a" class="outline-4">
-<h4 id="orgf8fde2a">Global Styling</h4>
-<div class="outline-text-4" id="text-orgf8fde2a">
+<div id="outline-container-org3bcf40e" class="outline-4">
+<h4 id="org3bcf40e">Global Styling</h4>
+<div class="outline-text-4" id="text-org3bcf40e">
 <p>
 Set the font, and font size globally
 </p>
@@ -581,8 +581,8 @@ Set the font, and font size globally
 </div>
 </div>
 <ul class="org-ul">
-<li><a id="org93fe855"></a>Window<br />
-<div class="outline-text-5" id="text-org93fe855">
+<li><a id="orgc399e58"></a>Window<br />
+<div class="outline-text-5" id="text-orgc399e58">
 <div class="org-src-container">
 <pre class="src src-css"><span style="color: #50fa7b;">window#waybar</span> {
     <span style="color: #bd93f9;">background-color</span>: <span style="color: #ffb86c;">@background-darker</span>;
@@ -599,8 +599,8 @@ Set the font, and font size globally
 </div>
 </div>
 </li>
-<li><a id="org4a94aee"></a>Button<br />
-<div class="outline-text-5" id="text-org4a94aee">
+<li><a id="org3aa2634"></a>Button<br />
+<div class="outline-text-5" id="text-org3aa2634">
 <div class="org-src-container">
 <pre class="src src-css"><span style="color: #50fa7b;">button</span> {
     <span style="color: #6272a4; font-style: italic;">/* </span><span style="color: #6272a4; font-style: italic;">Use box-shadow instead of border so the text isn't offset</span><span style="color: #6272a4; font-style: italic;"> */</span>
@@ -621,13 +621,13 @@ Set the font, and font size globally
 </li>
 </ul>
 </div>
-<div id="outline-container-orgc212225" class="outline-4">
-<h4 id="orgc212225">Module Styling</h4>
-<div class="outline-text-4" id="text-orgc212225">
+<div id="outline-container-orga97febe" class="outline-4">
+<h4 id="orga97febe">Module Styling</h4>
+<div class="outline-text-4" id="text-orga97febe">
 </div>
 <ul class="org-ul">
-<li><a id="org959ccd1"></a>Hover Rules<br />
-<div class="outline-text-5" id="text-org959ccd1">
+<li><a id="orga8dca19"></a>Hover Rules<br />
+<div class="outline-text-5" id="text-orga8dca19">
 <div class="org-src-container">
 <pre class="src src-css"><span style="color: #50fa7b;">#pulseaudio:hover</span> {
     <span style="color: #bd93f9;">background-color</span>: <span style="color: #ffb86c;">@</span><span style="color: #000000; background-color: #FFFF00;">yellow</span>;
@@ -648,8 +648,8 @@ Set the font, and font size globally
 </div>
 </div>
 </li>
-<li><a id="org0e12666"></a>Mode<br />
-<div class="outline-text-5" id="text-org0e12666">
+<li><a id="org25b8df3"></a>Mode<br />
+<div class="outline-text-5" id="text-org25b8df3">
 <p>
 styling for submodes like window resizing or screenshot menus. I don't use this on Hyprland, but do on SwayWM.
 </p>
@@ -678,8 +678,8 @@ styling for submodes like window resizing or screenshot menus. I don't use this 
 </div>
 </div>
 </li>
-<li><a id="org4daa6b8"></a>Workspaces<br />
-<div class="outline-text-5" id="text-org4daa6b8">
+<li><a id="org613383d"></a>Workspaces<br />
+<div class="outline-text-5" id="text-org613383d">
 <div class="org-src-container">
 <pre class="src src-css"><span style="color: #50fa7b;">#workspaces</span> {
     <span style="color: #bd93f9;">margin</span>: 0 4px;
@@ -723,8 +723,8 @@ styling for submodes like window resizing or screenshot menus. I don't use this 
 </div>
 </div>
 </li>
-<li><a id="org69b97e8"></a>Clock<br />
-<div class="outline-text-5" id="text-org69b97e8">
+<li><a id="orgf378074"></a>Clock<br />
+<div class="outline-text-5" id="text-orgf378074">
 <div class="org-src-container">
 <pre class="src src-css"><span style="color: #50fa7b;">#clock</span> {
     <span style="color: #bd93f9;">padding</span>: 1px 8px;
@@ -735,8 +735,8 @@ styling for submodes like window resizing or screenshot menus. I don't use this 
 </div>
 </div>
 </li>
-<li><a id="orgc1ac0a1"></a>Battery<br />
-<div class="outline-text-5" id="text-orgc1ac0a1">
+<li><a id="orgd10e244"></a>Battery<br />
+<div class="outline-text-5" id="text-orgd10e244">
 <div class="org-src-container">
 <pre class="src src-css"><span style="color: #50fa7b;">#battery</span> {
     <span style="color: #bd93f9;">background-color</span>: <span style="color: #ffb86c;">@</span><span style="color: #000000; background-color: #00FFFF;">cyan</span>;
@@ -793,8 +793,8 @@ styling for submodes like window resizing or screenshot menus. I don't use this 
 </div>
 </div>
 </li>
-<li><a id="orge014ebd"></a>CPU<br />
-<div class="outline-text-5" id="text-orge014ebd">
+<li><a id="org777537b"></a>CPU<br />
+<div class="outline-text-5" id="text-org777537b">
 <div class="org-src-container">
 <pre class="src src-css"><span style="color: #50fa7b;">#cpu</span> {
     <span style="color: #bd93f9;">background-color</span>: <span style="color: #ffb86c;">@background-darker</span>;
@@ -809,8 +809,8 @@ styling for submodes like window resizing or screenshot menus. I don't use this 
 </div>
 </div>
 </li>
-<li><a id="org13e193d"></a>Memory<br />
-<div class="outline-text-5" id="text-org13e193d">
+<li><a id="org89113a5"></a>Memory<br />
+<div class="outline-text-5" id="text-org89113a5">
 <div class="org-src-container">
 <pre class="src src-css"><span style="color: #50fa7b;">#memory</span> {
     <span style="color: #bd93f9;">background-color</span>: <span style="color: #ffb86c;">@background-darker</span>;
@@ -837,8 +837,8 @@ styling for submodes like window resizing or screenshot menus. I don't use this 
 </div>
 </div>
 </li>
-<li><a id="orgce06bce"></a>Backlight<br />
-<div class="outline-text-5" id="text-orgce06bce">
+<li><a id="orgc7474ba"></a>Backlight<br />
+<div class="outline-text-5" id="text-orgc7474ba">
 <div class="org-src-container">
 <pre class="src src-css"><span style="color: #50fa7b;">#backlight</span> {
     <span style="color: #bd93f9;">color</span>: <span style="color: #ffb86c;">@</span><span style="color: #000000; background-color: #FFFF00;">yellow</span>;
@@ -855,8 +855,8 @@ styling for submodes like window resizing or screenshot menus. I don't use this 
 </div>
 </div>
 </li>
-<li><a id="orge77b094"></a>Network<br />
-<div class="outline-text-5" id="text-orge77b094">
+<li><a id="org8a5b4b8"></a>Network<br />
+<div class="outline-text-5" id="text-org8a5b4b8">
 <div class="org-src-container">
 <pre class="src src-css"><span style="color: #50fa7b;">#network</span> {
     <span style="color: #bd93f9;">background-color</span>: <span style="color: #ffb86c;">@</span><span style="color: #ffffff; background-color: #800080;">purple</span>;
@@ -872,8 +872,8 @@ styling for submodes like window resizing or screenshot menus. I don't use this 
 </div>
 </div>
 </li>
-<li><a id="orgffdc114"></a>Audio<br />
-<div class="outline-text-5" id="text-orgffdc114">
+<li><a id="org58829e9"></a>Audio<br />
+<div class="outline-text-5" id="text-org58829e9">
 <div class="org-src-container">
 <pre class="src src-css"><span style="color: #50fa7b;">#pulseaudio</span> {
     <span style="color: #bd93f9;">background-color</span>: <span style="color: #ffb86c;">@comment</span>;
@@ -899,10 +899,10 @@ styling for submodes like window resizing or screenshot menus. I don't use this 
 </div>
 </div>
 </li>
-<li><a id="orgf5f1fd3"></a>Custom Modules<br />
+<li><a id="orgd3595d0"></a>Custom Modules<br />
 <ul class="org-ul">
-<li><a id="org74bdf78"></a>Media<br />
-<div class="outline-text-6" id="text-org74bdf78">
+<li><a id="org11e54df"></a>Media<br />
+<div class="outline-text-6" id="text-org11e54df">
 <div class="org-src-container">
 <pre class="src src-css"><span style="color: #50fa7b;">#custom-media</span> {
     <span style="color: #bd93f9;">background-color</span>: <span style="color: #ffb86c;">@background-darker</span>;
@@ -931,8 +931,8 @@ styling for submodes like window resizing or screenshot menus. I don't use this 
 </div>
 </div>
 </li>
-<li><a id="orgcc642b8"></a>Rofi<br />
-<div class="outline-text-6" id="text-orgcc642b8">
+<li><a id="org230d89b"></a>Rofi<br />
+<div class="outline-text-6" id="text-org230d89b">
 <div class="org-src-container">
 <pre class="src src-css"> <span style="color: #50fa7b;">#custom-rofi</span> {
     <span style="color: #bd93f9;">background-color</span>: <span style="color: #ffb86c;">@background</span>;
@@ -945,8 +945,8 @@ styling for submodes like window resizing or screenshot menus. I don't use this 
 </li>
 </ul>
 </li>
-<li><a id="org84d9d8f"></a>Temperature<br />
-<div class="outline-text-5" id="text-org84d9d8f">
+<li><a id="org645b07e"></a>Temperature<br />
+<div class="outline-text-5" id="text-org645b07e">
 <div class="org-src-container">
 <pre class="src src-css"><span style="color: #50fa7b;">#temperature</span> {
     <span style="color: #bd93f9;">color</span>: <span style="color: #ffb86c;">@</span><span style="color: #000000; background-color: #FFA500;">orange</span>;
@@ -973,8 +973,8 @@ styling for submodes like window resizing or screenshot menus. I don't use this 
 </div>
 </div>
 </li>
-<li><a id="org78d94b6"></a>Tray<br />
-<div class="outline-text-5" id="text-org78d94b6">
+<li><a id="org920e7be"></a>Tray<br />
+<div class="outline-text-5" id="text-org920e7be">
 <div class="org-src-container">
 <pre class="src src-css"><span style="color: #50fa7b;">#tray</span> {
     <span style="color: #bd93f9;">background-color</span>: <span style="color: #ffb86c;">@background</span>;
@@ -993,8 +993,8 @@ styling for submodes like window resizing or screenshot menus. I don't use this 
 </div>
 </div>
 </li>
-<li><a id="org9e8a3b0"></a>Idle Inhibitor<br />
-<div class="outline-text-5" id="text-org9e8a3b0">
+<li><a id="org2d4f560"></a>Idle Inhibitor<br />
+<div class="outline-text-5" id="text-org2d4f560">
 <div class="org-src-container">
 <pre class="src src-css"><span style="color: #50fa7b;">#idle_inhibitor</span> {
     <span style="color: #bd93f9;">background-color</span>: <span style="color: #ffb86c;">@selection</span>;
@@ -1009,8 +1009,8 @@ styling for submodes like window resizing or screenshot menus. I don't use this 
 </div>
 </div>
 </li>
-<li><a id="org9ac9c2d"></a>Privacy<br />
-<div class="outline-text-5" id="text-org9ac9c2d">
+<li><a id="orgd53ca29"></a>Privacy<br />
+<div class="outline-text-5" id="text-orgd53ca29">
 <div class="org-src-container">
 <pre class="src src-css"><span style="color: #50fa7b;">#privacy</span> {
     <span style="color: #bd93f9;">padding</span>: 0;
@@ -1040,9 +1040,9 @@ styling for submodes like window resizing or screenshot menus. I don't use this 
 </div>
 </div>
 </div>
-<div id="outline-container-orgded47b2" class="outline-2">
-<h2 id="orgded47b2">FOOTNOTES</h2>
-<div class="outline-text-2" id="text-orgded47b2">
+<div id="outline-container-orgafed0fb" class="outline-2">
+<h2 id="orgafed0fb">FOOTNOTES</h2>
+<div class="outline-text-2" id="text-orgafed0fb">
 <ol class="org-ol">
 <li>specify the background color, and font color fo source code blocks</li>
 </ol>
@@ -1054,7 +1054,7 @@ styling for submodes like window resizing or screenshot menus. I don't use this 
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: Henry Davies (HD)</p>
-<p class="date">Created: 2025-06-21 Sat 23:36</p>
+<p class="date">Created: 2025-06-28 Sat 21:53</p>
 <p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
