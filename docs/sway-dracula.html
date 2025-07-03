@@ -1,0 +1,795 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2025-07-02 Wed 21:44 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Sway Config</title>
+<meta name="author" content="Henry Davies (HD)" />
+<meta name="description" content="This is an org-mode document intended to make my SwayWM Configuration more legible." />
+<meta name="generator" content="Org Mode" />
+<link rel="stylesheet" type="text/css" href="https://fniessen.github.io/org-html-themes/src/readtheorg_theme/css/htmlize.css"/>
+<link rel="stylesheet" type="text/css" href="https://fniessen.github.io/org-html-themes/src/readtheorg_theme/css/readtheorg.css"/>
+<link rel="stylesheet" type="text/css" href="src/readtheorg_theme/css/search.css"/>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="https://fniessen.github.io/org-html-themes/src/lib/js/jquery.stickytableheaders.min.js"></script>
+<script type="text/javascript" src="https://fniessen.github.io/org-html-themes/src/readtheorg_theme/js/search.js"></script>
+<script type="text/javascript" src="https://fniessen.github.io/org-html-themes/src/readtheorg_theme/js/readtheorg.js"></script>
+<style>pre.src{background:#282a36;color:white;} </style>
+<style>code{background:#f8f8f2;color:#6272a4;} </style>
+</head>
+<body>
+<div id="content" class="content">
+<h1 class="title">Sway Config</h1>
+<div id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#org416296b">1. About This Config</a></li>
+<li><a href="#org8bfef30">2. Personal Config</a>
+<ul>
+<li><a href="#org254ddff">2.1. Variables</a></li>
+<li><a href="#org0c9edcc">2.2. Input Configuration</a>
+<ul>
+<li><a href="#orgb5835d4">2.2.1. Touchpad</a></li>
+<li><a href="#org7b39df6">2.2.2. Keybindings</a></li>
+<li><a href="#orgb31c395">2.2.3. Movement</a></li>
+</ul>
+</li>
+<li><a href="#org46230af">2.3. Output Configuration</a>
+<ul>
+<li><a href="#orga90e4e1">2.3.1. Brightness Control</a></li>
+<li><a href="#org038dec6">2.3.2. Display</a></li>
+<li><a href="#org3f4a977">2.3.3. Screen Capture</a></li>
+<li><a href="#orgc5ae91e">2.3.4. Sound Control</a></li>
+</ul>
+</li>
+<li><a href="#org21c8238">2.4. Power Configuration</a>
+<ul>
+<li><a href="#org8905301">2.4.1. Exit Mode</a></li>
+<li><a href="#org4470269">2.4.2. Swayidle</a></li>
+<li><a href="#org2efc574">2.4.3. Swaylock</a></li>
+</ul>
+</li>
+<li><a href="#orge939f1e">2.5. Auto-starts</a></li>
+<li><a href="#org4b35298">2.6. Styling</a>
+<ul>
+<li><a href="#org971de9f">2.6.1. Status Bar</a></li>
+<li><a href="#org964ac6d">2.6.2. Sway gaps</a></li>
+<li><a href="#orgc393d23">2.6.3. GTK Themes</a></li>
+</ul>
+</li>
+<li><a href="#org9e76efd">2.7. Includes</a></li>
+</ul>
+</li>
+<li><a href="#orgbe4f518">3. Deprecated Configs</a></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org416296b" class="outline-2">
+<h2 id="org416296b"><span class="section-number-2">1.</span> About This Config</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+SwayWM Official Website (<a href="https://swaywm.org">https://swaywm.org</a>)
+Read `man 5 sway` for a complete reference.
+</p>
+</div>
+</div>
+<div id="outline-container-org8bfef30" class="outline-2">
+<h2 id="org8bfef30"><span class="section-number-2">2.</span> Personal Config</h2>
+<div class="outline-text-2" id="text-2">
+<p>
+<b>Set mod variable</b>
+</p>
+<ul class="org-ul">
+<li>Mod1=Alt</li>
+<li>Mod4=Super</li>
+</ul>
+<div class="org-src-container">
+<pre class="src src-conf">set $mod Mod4
+</pre>
+</div>
+
+<p>
+<b>To do an in place reload of the configuration file use</b> <code>$mod+Ctrl+r</code>
+</p>
+<div class="org-src-container">
+<pre class="src src-conf"><span style="color: #6272a4; font-style: italic;">#</span><span style="color: #6272a4; font-style: italic;">Reload the configuration file</span>
+bindsym $mod+Ctrl+r reload
+</pre>
+</div>
+</div>
+<div id="outline-container-org254ddff" class="outline-3">
+<h3 id="org254ddff"><span class="section-number-3">2.1.</span> Variables</h3>
+<div class="outline-text-3" id="text-2-1">
+<p>
+Set various variables for use later in this config
+</p>
+
+<p>
+<b>Home row direction keys, like vim</b>
+</p>
+<div class="org-src-container">
+<pre class="src src-conf">set $left h
+set $down j
+set $up k
+set $right l
+</pre>
+</div>
+
+<p>
+<b>Set browser, term, menu, lock, and fm variables</b>
+</p>
+<div class="org-src-container">
+<pre class="src src-conf">set $browser qutebrowser
+set $fm pcmanfm
+set $term kitty
+set $lock swaylock
+<span style="color: #6272a4; font-style: italic;"># </span><span style="color: #6272a4; font-style: italic;">Note: pass the final command to swaymsg so that the resulting window can be opened</span>
+<span style="color: #6272a4; font-style: italic;"># </span><span style="color: #6272a4; font-style: italic;">on the original workspace that the command was run on.</span>
+<span style="color: #6272a4; font-style: italic;">#</span><span style="color: #6272a4; font-style: italic;">set $menu fuzzel | swaymsg exec --</span>
+set $menu rofi -show combi -combi-modi drun,run,recursivebrowser | swaymsg exec --
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org0c9edcc" class="outline-3">
+<h3 id="org0c9edcc"><span class="section-number-3">2.2.</span> Input Configuration</h3>
+<div class="outline-text-3" id="text-2-2">
+</div>
+<div id="outline-container-orgb5835d4" class="outline-4">
+<h4 id="orgb5835d4"><span class="section-number-4">2.2.1.</span> Touchpad</h4>
+<div class="outline-text-4" id="text-2-2-1">
+<p>
+<b>touchpad configuration</b>
+    You can get the names of your inputs by running: <code>swaymsg -t get_inputs</code>. Read `man 5 sway-input` for more information about this section.
+</p>
+<div class="org-src-container">
+<pre class="src src-conf">input <span style="color: #f1fa8c;">"1267:40:Elan_Touchpad"</span> {
+    dwt enabled
+    tap enabled
+    natural_scroll enabled
+    middle_emulation enabled
+}
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org7b39df6" class="outline-4">
+<h4 id="org7b39df6"><span class="section-number-4">2.2.2.</span> Keybindings</h4>
+<div class="outline-text-4" id="text-2-2-2">
+</div>
+<ol class="org-ol">
+<li><a id="orgff705c8"></a>Functions<br />
+<div class="outline-text-5" id="text-2-2-2-1">
+<p>
+<b>Resize Mode</b>
+Resize a container (window) with keyboard instead of mouse
+</p>
+<ul class="org-ul">
+<li>left will shrink the containers width</li>
+<li>right will grow the containers width</li>
+<li>up will shrink the containers height</li>
+<li>down will grow the containers height</li>
+</ul>
+<div class="org-src-container">
+<pre class="src src-conf"> <span style="color: #bd93f9;">mode </span><span style="color: #bd93f9;">"resize"</span> {
+    bindsym $left resize shrink width 10px
+    bindsym $down resize grow height 10px
+    bindsym $up resize shrink height 10px
+    bindsym $right resize grow width 10px
+
+    <span style="color: #6272a4; font-style: italic;"># </span><span style="color: #6272a4; font-style: italic;">Ditto, with arrow keys</span>
+    bindsym Left resize shrink width 10px
+    bindsym Down resize grow height 10px
+    bindsym Up resize shrink height 10px
+    bindsym Right resize grow width 10px
+
+    <span style="color: #6272a4; font-style: italic;"># </span><span style="color: #6272a4; font-style: italic;">Return to default mode</span>
+    bindsym Return mode <span style="color: #f1fa8c;">"default"</span>
+    bindsym Escape mode <span style="color: #f1fa8c;">"default"</span>
+}
+
+bindsym $mod+r mode <span style="color: #f1fa8c;">"resize"</span>
+</pre>
+</div>
+
+<p>
+<b>Kill Focused Window</b>
+</p>
+<div class="org-src-container">
+<pre class="src src-conf">bindsym $mod+Shift+q kill , exec --no-startup-id mpv /usr/share/sounds/Oxygen-Window-Close.ogg
+</pre>
+</div>
+
+<p>
+<b>Alt Tab</b>
+</p>
+<div class="org-src-container">
+<pre class="src src-conf">bindsym Alt+Tab workspace back_and_forth
+</pre>
+</div>
+</div>
+</li>
+<li><a id="org84228b6"></a>Scratchpad<br />
+<div class="outline-text-5" id="text-2-2-2-2">
+<p>
+Sway has a "scratchpad", which is a bag of holding for windows. You can send windows there and get them back later.
+</p>
+<div class="org-src-container">
+<pre class="src src-conf"><span style="color: #6272a4; font-style: italic;"># </span><span style="color: #6272a4; font-style: italic;">Move the currently focused window to the scratchpad</span>
+bindsym $mod+Shift+minus move scratchpad , exec --no-startup-id mpv /usr/share/sounds/Oxygen-Window-Minimize.ogg
+
+<span style="color: #6272a4; font-style: italic;"># </span><span style="color: #6272a4; font-style: italic;">Show the next scratchpad window or hide the focused scratchpad window.</span>
+<span style="color: #6272a4; font-style: italic;"># </span><span style="color: #6272a4; font-style: italic;">If there are multiple scratchpad windows, this command cycles through them.</span>
+bindsym $mod+minus scratchpad show , exec --no-startup-id mpv /usr/share/sounds/Oxygen-Window-Maximize.ogg
+</pre>
+</div>
+
+<p>
+Drag floating windows by holding down $mod and left mouse button. Resize them with right mouse button + $mod follow. Despite the name, also works for non-floating windows. Change normal to inverse to use left mouse button for resizing and right mouse button for dragging.
+</p>
+<div class="org-src-container">
+<pre class="src src-conf">floating_modifier $mod normal
+</pre>
+</div>
+</div>
+</li>
+<li><a id="orgba5d9c4"></a>Applications<br />
+<div class="outline-text-5" id="text-2-2-2-3">
+<p>
+<b>Open a Terminal</b>
+</p>
+<div class="org-src-container">
+<pre class="src src-conf">bindsym $mod+Return exec $term
+</pre>
+</div>
+
+<p>
+<b>Open Run Launcher</b>
+</p>
+<div class="org-src-container">
+<pre class="src src-conf"><span style="color: #6272a4; font-style: italic;">#</span><span style="color: #6272a4; font-style: italic;">bindsym $mod+d exec $menu , exec --no-startup-id mpv /usr/share/sounds/freedesktop/stereo/bell.oga</span>
+bindsym $mod+d exec $menu
+</pre>
+</div>
+
+<p>
+<b>Open Emacs</b>
+</p>
+<div class="org-src-container">
+<pre class="src src-conf">bindsym $mod+e exec emacs
+</pre>
+</div>
+
+<p>
+<b>Open File Manager</b>
+</p>
+<div class="org-src-container">
+<pre class="src src-conf">bindsym $mod+m exec $fm
+</pre>
+</div>
+
+<p>
+<b>Open Internet Browser</b>
+</p>
+<div class="org-src-container">
+<pre class="src src-conf">bindsym $mod+b exec $browser
+</pre>
+</div>
+</div>
+</li>
+</ol>
+</div>
+<div id="outline-container-orgb31c395" class="outline-4">
+<h4 id="orgb31c395"><span class="section-number-4">2.2.3.</span> Movement</h4>
+<div class="outline-text-4" id="text-2-2-3">
+</div>
+<ol class="org-ol">
+<li><a id="org147f36b"></a>Focus<br />
+<div class="outline-text-5" id="text-2-2-3-1">
+<p>
+<b>Move your focus around using HJKL</b>
+</p>
+<div class="org-src-container">
+<pre class="src src-conf">bindsym $mod+$left focus left
+bindsym $mod+$down focus down
+bindsym $mod+$up focus up
+bindsym $mod+$right focus right
+</pre>
+</div>
+
+<p>
+<b>Move your focus around using arrow keys</b>
+</p>
+<div class="org-src-container">
+<pre class="src src-conf">bindsym $mod+Left focus left
+bindsym $mod+Down focus down
+bindsym $mod+Up focus up
+bindsym $mod+Right focus right
+</pre>
+</div>
+
+<p>
+<b>Move the focused window with same keys, just add Shift</b>
+</p>
+
+<div class="org-src-container">
+<pre class="src src-conf">bindsym $mod+Shift+$left move left
+bindsym $mod+Shift+$down move down
+bindsym $mod+Shift+$up move up
+bindsym $mod+Shift+$right move right
+<span style="color: #6272a4; font-style: italic;"># </span><span style="color: #6272a4; font-style: italic;">Ditto, with arrow keys</span>
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Down move down
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Right move right
+</pre>
+</div>
+
+<p>
+<b>Move focus to the parent container</b>
+</p>
+<div class="org-src-container">
+<pre class="src src-conf">bindsym $mod+a focus parent
+</pre>
+</div>
+
+<p>
+<b>Switch focus to workspace with urgent window automatically</b>
+</p>
+<div class="org-src-container">
+<pre class="src src-conf"><span style="color: #ffc9e8;">for_window [urgent</span>=latest] focus
+</pre>
+</div>
+</div>
+</li>
+<li><a id="org31574ed"></a>Workspaces<br />
+<div class="outline-text-5" id="text-2-2-3-2">
+<p>
+can have more than 10 workspaces
+note: workspaces can have any name you want, not just numbers.
+we just use 1-10 as the default.
+</p>
+<div class="org-src-container">
+<pre class="src src-conf">bindsym $mod+1 workspace 1
+bindsym $mod+2 workspace 2
+bindsym $mod+3 workspace 3
+bindsym $mod+4 workspace 4
+bindsym $mod+5 workspace 5
+bindsym $mod+6 workspace 6
+bindsym $mod+7 workspace 7
+bindsym $mod+8 workspace 8
+bindsym $mod+9 workspace 9
+bindsym $mod+0 workspace 10
+</pre>
+</div>
+
+<p>
+<b>move focused container to workspace</b>
+</p>
+<div class="org-src-container">
+<pre class="src src-conf">bindsym $mod+shift+1 move container to workspace 1
+bindsym $mod+shift+2 move container to workspace 2
+bindsym $mod+shift+3 move container to workspace 3
+bindsym $mod+shift+4 move container to workspace 4
+bindsym $mod+shift+5 move container to workspace 5
+bindsym $mod+shift+6 move container to workspace 6
+bindsym $mod+shift+7 move container to workspace 7
+bindsym $mod+shift+8 move container to workspace 8
+bindsym $mod+shift+9 move container to workspace 9
+bindsym $mod+shift+0 move container to workspace 10
+</pre>
+</div>
+
+<p>
+<b>Assigning apps to specific Workspaces</b>
+</p>
+<ul class="org-ul">
+<li>I would like to automatically separate Twitch and Discord tabs to workspaces 4 and 6 respectively. However this does not seem feasible at the moment, so I've just sent my browser i use for these sites to workspace 4.</li>
+</ul>
+<div class="org-src-container">
+<pre class="src src-conf"><span style="color: #ffc9e8;">assign [app_id</span>=<span style="color: #f1fa8c;">"qutebrowser"</span>] <span style="color: #f1fa8c;">"1"</span>
+<span style="color: #ffc9e8;">assign [app_id</span>=<span style="color: #f1fa8c;">"firefox"</span>] <span style="color: #f1fa8c;">"1"</span>
+<span style="color: #ffc9e8;">assign [title</span>=<span style="color: #f1fa8c;">"newsboat"</span>] <span style="color: #f1fa8c;">"2"</span>
+<span style="color: #ffc9e8;">assign [title</span>=<span style="color: #f1fa8c;">"cmus"</span>] <span style="color: #f1fa8c;">"2"</span>
+<span style="color: #ffc9e8;">assign [class</span>=<span style="color: #f1fa8c;">"Emacs"</span>] <span style="color: #f1fa8c;">"3"</span>
+<span style="color: #ffc9e8;">assign [app_id</span>=<span style="color: #f1fa8c;">"brave-browser"</span>] <span style="color: #f1fa8c;">"4"</span>
+<span style="color: #ffc9e8;">assign [class</span>=<span style="color: #f1fa8c;">"steam"</span>] <span style="color: #f1fa8c;">"5"</span>
+</pre>
+</div>
+</div>
+</li>
+<li><a id="orgf9c8872"></a>Layout stuff<br />
+<div class="outline-text-5" id="text-2-2-3-3">
+<p>
+You can "split" the current object of focus with $mod+y or mod+x for horizontal and vertical splits respectively.
+</p>
+<div class="org-src-container">
+<pre class="src src-conf">bindsym $mod+y splith
+bindsym $mod+x splitv
+</pre>
+</div>
+<p>
+toggle fullscreen for the current focus
+</p>
+<div class="org-src-container">
+<pre class="src src-conf">bindsym $mod+f fullscreen
+</pre>
+</div>
+<p>
+Toggle current container between tiling and floating Mode and swap focus between tiling and floating areas
+</p>
+<div class="org-src-container">
+<pre class="src src-conf">bindsym $mod+Shift+space floating toggle
+bindsym $mod+space focus mode_toggle
+</pre>
+</div>
+
+<p>
+Switch the current container between different layout styles
+</p>
+<div class="org-src-container">
+<pre class="src src-conf">bindsym $mod+c layout stacking
+bindsym $mod+t layout tabbed
+bindsym $mod+s layout toggle split
+</pre>
+</div>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div id="outline-container-org46230af" class="outline-3">
+<h3 id="org46230af"><span class="section-number-3">2.3.</span> Output Configuration</h3>
+<div class="outline-text-3" id="text-2-3">
+</div>
+<div id="outline-container-orga90e4e1" class="outline-4">
+<h4 id="orga90e4e1"><span class="section-number-4">2.3.1.</span> Brightness Control</h4>
+<div class="outline-text-4" id="text-2-3-1">
+<p>
+<b>Bind brightness controls to laptop brightness keys F5 and F6 (non func lock action)</b>
+</p>
+<div class="org-src-container">
+<pre class="src src-conf">bindsym XF86MonBrightnessUp exec light -A 10
+bindsym XF86MonBrightnessDown exec light -U 10
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org038dec6" class="outline-4">
+<h4 id="org038dec6"><span class="section-number-4">2.3.2.</span> Display</h4>
+<div class="outline-text-4" id="text-2-3-2">
+<p>
+You can get the names of your outputs by running: swaymsg -t get<sub>outputs</sub>
+</p>
+
+<p>
+<b>Display settings for laptop display</b>
+</p>
+<div class="org-src-container">
+<pre class="src src-conf"><span style="color: #6272a4; font-style: italic;">#</span><span style="color: #6272a4; font-style: italic;">output eDP-1 resolution 3840x2160 position 1920,1920 bg /usr/share/wallpapers/deepin/Sunset_of_the_Lake_Nam_by_Wang_Jinyu.jpg fill</span>
+<span style="color: #6272a4; font-style: italic;">#</span><span style="color: #6272a4; font-style: italic;">output eDP-1 resolution 3840x2160 position 0,0 bg /usr/share/wallpapers/DarkestHour/contents/images/1920x1080.jpg fill</span>
+output eDP-1 resolution 3840x2160 position 0,0 bg /home/user/Pictures/wallpapers/wallpapers/Lofi_Cat.png fill
+<span style="color: #6272a4; font-style: italic;">#</span><span style="color: #6272a4; font-style: italic;">output eDP-2 resolution 3840x2160 position 1920,1920 bg /usr/share/wallpapers/deepin/Sunset_of_the_Lake_Nam_by_Wang_Jinyu.jpg fill</span>
+</pre>
+</div>
+
+<p>
+<b>Display settings for external HDMI monitor</b>
+</p>
+<div class="org-src-container">
+<pre class="src src-conf">output HDMI-A-1 resolution 3840x2160 position 3840,1920  bg /usr/share/wallpapers/summer_1am/contents/images/2560x1600.jpg fill scale 2.0
+output HDMI-A-2 resolution 3840x2160 position 3840,1920  bg /usr/share/wallpapers/summer_1am/contents/images/2560x1600.jpg fill scale 2.0
+output HDMI-A-3 resolution 3840x2160 position 3840,1920  bg /usr/share/wallpapers/summer_1am/contents/images/2560x1600.jpg fill scale 2.0
+output HDMI-A-4 resolution 3840x2160 position 3840,1920  bg /usr/share/wallpapers/summer_1am/contents/images/2560x1600.jpg fill scale 2.0
+</pre>
+</div>
+
+<p>
+<b>Display settings for external Display Port monitor</b>
+</p>
+<div class="org-src-container">
+<pre class="src src-conf">output DP-1 resolution 1920x1200 position 0,1920 bg /usr/share/wallpapers/Cluster/contents/images/3840x2160.png fill
+output DP-2 resolution 1920x1200 position 0,1920 bg /usr/share/wallpapers/Cluster/contents/images/3840x2160.png fill
+output DP-3 resolution 1920x1200 position 0,1920 bg /usr/share/wallpapers/Cluster/contents/images/3840x2160.png fill
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org3f4a977" class="outline-4">
+<h4 id="org3f4a977"><span class="section-number-4">2.3.3.</span> Screen Capture</h4>
+<div class="outline-text-4" id="text-2-3-3">
+<p>
+<b>Screenshot tool</b>
+a simple screen shot mode using grim and slurp commands
+</p>
+<div class="org-src-container">
+<pre class="src src-conf">set $screenshot 1 selected, 2 whole, 3 selected clipboard, 4 whole clipboard, 5 swappy
+<span style="color: #bd93f9;">mode </span><span style="color: #bd93f9;">"$screenshot"</span> {
+    bindsym 1 exec <span style="color: #f1fa8c;">'grim -g "$(slurp)" ~/ps_$(date +"%Y%m%d%H%M%S").png'</span>, mode <span style="color: #f1fa8c;">"default"</span>
+    bindsym 2 exec <span style="color: #f1fa8c;">'grim ~/ps_$(date +"%Y%m%d%H%M%S").png'</span>, mode <span style="color: #f1fa8c;">"default"</span> , exec --no-startup-id mpv /usr/share/sounds/freedesktop/stereo/camera-shutter.oga
+    bindsym 3 exec <span style="color: #f1fa8c;">'grim -g "$(slurp)" - | wl-copy'</span>, mode <span style="color: #f1fa8c;">"default"</span>
+    bindsym 4 exec <span style="color: #f1fa8c;">'grim - | wl-copy'</span>, mode <span style="color: #f1fa8c;">"default"</span>
+    bindsym 5 exec <span style="color: #f1fa8c;">'grim -g "$(slurp)" - | swappy -f -'</span>, mode <span style="color: #f1fa8c;">"default"</span>
+
+<span style="color: #6272a4; font-style: italic;"># </span><span style="color: #6272a4; font-style: italic;">back to normal: Enter or Escape</span>
+    bindsym Return mode <span style="color: #f1fa8c;">"default"</span>
+    bindsym Escape mode <span style="color: #f1fa8c;">"default"</span>
+    bindsym $mod+Print mode <span style="color: #f1fa8c;">"default"</span>
+}
+
+bindsym $mod+Print mode <span style="color: #f1fa8c;">"$screenshot"</span>
+</pre>
+</div>
+
+<p>
+<b>Color Picker tool</b>
+a simple mode to find the hex value of any colored pixel on your display
+</p>
+<div class="org-src-container">
+<pre class="src src-conf"><span style="color: #6272a4; font-style: italic;"># </span><span style="color: #6272a4; font-style: italic;">define color picker command</span>
+bindsym $mod+Shift+p exec grim -g <span style="color: #f1fa8c;">"$(slurp -p)"</span> -t ppm - | convert - -format <span style="color: #f1fa8c;">'%[pixel:p{0,0}]'</span> txt:- | tail -n 1 | cut -d <span style="color: #f1fa8c;">' '</span> -f 4 | wl-copy
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-orgc5ae91e" class="outline-4">
+<h4 id="orgc5ae91e"><span class="section-number-4">2.3.4.</span> Sound Control</h4>
+<div class="outline-text-4" id="text-2-3-4">
+<p>
+Bind audio controls to keyboard media keys
+</p>
+<div class="org-src-container">
+<pre class="src src-conf">bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
+bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +5%
+bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -5%
+bindsym XF86AudioMicMute exec pactl set-source-mute @DEFAULT_SOURCE@ toggle
+</pre>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-org21c8238" class="outline-3">
+<h3 id="org21c8238"><span class="section-number-3">2.4.</span> Power Configuration</h3>
+<div class="outline-text-3" id="text-2-4">
+</div>
+<div id="outline-container-org8905301" class="outline-4">
+<h4 id="org8905301"><span class="section-number-4">2.4.1.</span> Exit Mode</h4>
+<div class="outline-text-4" id="text-2-4-1">
+<div class="org-src-container">
+<pre class="src src-conf"><span style="color: #6272a4; font-style: italic;"># </span><span style="color: #6272a4; font-style: italic;">exit mode</span>
+set $exit <span style="color: #f1fa8c;">"exit: [s]leep, [p]oweroff, [r]eboot, [l]ogout"</span>
+<span style="color: #6272a4; font-style: italic;">#</span><span style="color: #6272a4; font-style: italic;">, [w]indows"</span>
+<span style="color: #bd93f9;">mode $exit</span> {
+    <span style="color: #bd93f9;">bindsym --to-code</span> {
+        s exec systemctl suspend, mode <span style="color: #f1fa8c;">"default"</span>
+        p exec systemctl poweroff
+        r exec systemctl reboot
+        l exec swaymsg exit
+       <span style="color: #6272a4; font-style: italic;"># </span><span style="color: #6272a4; font-style: italic;">w exec reboot-to-windows-somehow-lol.sh</span>
+
+        Return mode <span style="color: #f1fa8c;">"default"</span>
+        Escape mode <span style="color: #f1fa8c;">"default"</span>
+        $mod+x mode <span style="color: #f1fa8c;">"default"</span>
+    }
+}
+
+bindsym --to-code $mod+p mode $exit
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org4470269" class="outline-4">
+<h4 id="org4470269"><span class="section-number-4">2.4.2.</span> Swayidle</h4>
+<div class="outline-text-4" id="text-2-4-2">
+<p>
+This will lock your screen after 300 seconds of inactivity, then turn off your displays after another 270 seconds, and turn your screens back on when resumed. It will also lock your screen before your computer goes to sleep.d
+</p>
+<div class="org-src-container">
+<pre class="src src-conf">exec_always swayidle -w \
+   timeout 300 <span style="color: #f1fa8c;">'$lock'</span> \
+   timeout 570 <span style="color: #f1fa8c;">'swaymsg "output * dpms off"'</span> \
+   resume <span style="color: #f1fa8c;">'swaymsg "output * dpms on"'</span> \
+   before-sleep <span style="color: #f1fa8c;">'$lock'</span>
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org2efc574" class="outline-4">
+<h4 id="org2efc574"><span class="section-number-4">2.4.3.</span> Swaylock</h4>
+<div class="outline-text-4" id="text-2-4-3">
+<p>
+Bind $lock to <code>$mod+Ctrl+l</code> and cause $lock to execute upon laptop lid close
+</p>
+<div class="org-src-container">
+<pre class="src src-conf"><span style="color: #6272a4; font-style: italic;"># </span><span style="color: #6272a4; font-style: italic;">Screen lock</span>
+bindsym $mod+Ctrl+l exec $lock
+
+<span style="color: #6272a4; font-style: italic;">## </span><span style="color: #6272a4; font-style: italic;">Swaylock on lid closed</span>
+bindswitch --reload --locked lid:on exec $lock
+</pre>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-orge939f1e" class="outline-3">
+<h3 id="orge939f1e"><span class="section-number-3">2.5.</span> Auto-starts</h3>
+<div class="outline-text-3" id="text-2-5">
+<p>
+Selected programs which execute upon the start of SwayWM
+</p>
+
+<p>
+<b>Programs which will execute upon SwayWM startup, and every time SwayWM config file is reloaded</b>
+</p>
+<div class="org-src-container">
+<pre class="src src-conf">exec_always /usr/libexec/polkit-gnome-authentication-agent-1
+
+exec_always swaync
+
+exec_always nwg-wrapper -t bindings.pango -c bindings.css -p right -mr 50 -mt 150 -o eDP-1
+exec_always nwg-wrapper -s date-wttr.sh -r 1800000 -c date-wttr.css -p right -a start -mr 50 -mt 50 -o eDP-1
+</pre>
+</div>
+
+<p>
+<b>Programs which will only execute upon SwayWM startup (not upon config reload)</b>
+</p>
+<div class="org-src-container">
+<pre class="src src-conf">exec ckb-next -b
+
+<span style="color: #6272a4; font-style: italic;"># </span><span style="color: #6272a4; font-style: italic;">Enable Master/Stack layout</span>
+<span style="color: #6272a4; font-style: italic;"># </span><span style="color: #6272a4; font-style: italic;">Default with splitting 50:50</span>
+exec /home/user/.local/bin/stacki3 45
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org4b35298" class="outline-3">
+<h3 id="org4b35298"><span class="section-number-3">2.6.</span> Styling</h3>
+<div class="outline-text-3" id="text-2-6">
+</div>
+<div id="outline-container-org971de9f" class="outline-4">
+<h4 id="org971de9f"><span class="section-number-4">2.6.1.</span> Status Bar</h4>
+<div class="outline-text-4" id="text-2-6-1">
+<p>
+Set <a href="https://github.com/Alexays/waybar">Waybar</a> as the default status bar for sway
+</p>
+<div class="org-src-container">
+<pre class="src src-conf"><span style="color: #bd93f9;">bar</span> {
+swaybar_command launch-waybar
+}
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org964ac6d" class="outline-4">
+<h4 id="org964ac6d"><span class="section-number-4">2.6.2.</span> Sway gaps</h4>
+<div class="outline-text-4" id="text-2-6-2">
+<p>
+<b>Global Sway Gaps Settings</b>
+set inner/outer gaps
+</p>
+<div class="org-src-container">
+<pre class="src src-conf">gaps inner 10
+gaps outer 5
+</pre>
+</div>
+<p>
+Additionally you can issue commands with the following syntax. This is useful to bind keys to changing the gap size.
+    <code>gaps inner|outer current|all set|plus|minus &lt;px&gt;</code>
+    <code>gaps inner all set 10</code>
+    <code>gaps outer all plus 5</code>
+</p>
+
+<p>
+<b>Smart gaps</b>
+gaps used if only more than one container on the workspace)
+</p>
+<ul class="org-ul">
+<li><code>smart_gaps on</code> smart borders (draw borders around container only if it is not the only container on the workspace).</li>
+<li><code>on|no_gaps</code> (on=always active and no<sub>gaps</sub>=only active if the gap size to the edge of the screen is 0)</li>
+</ul>
+<div class="org-src-container">
+<pre class="src src-conf">smart_gaps on
+</pre>
+</div>
+
+<p>
+<b>Smart Borders</b>
+Same as smart gaps, but for borders
+</p>
+<div class="org-src-container">
+<pre class="src src-conf">smart_borders on
+default_border pixel 2
+</pre>
+</div>
+
+<p>
+<b>Custom window borders + per app customization</b>
+</p>
+<div class="org-src-container">
+<pre class="src src-conf">client.focused <span style="color: #f1fa8c;">"#5f5faf"</span> <span style="color: #f1fa8c;">"#5f5faf"</span> <span style="color: #f1fa8c;">"#ffffff"</span> <span style="color: #f1fa8c;">"#5f5faf"</span>
+<span style="color: #ffc9e8;">for_window [class</span>=<span style="color: #f1fa8c;">"balena-etcher"</span>] border pixel 2
+<span style="color: #ffc9e8;">for_window [class</span>=<span style="color: #f1fa8c;">"steam"</span>] border pixel 2
+<span style="color: #ffc9e8;">for_window [app_id</span>=<span style="color: #f1fa8c;">"nm-applet"</span>] border pixel 2
+<span style="color: #ffc9e8;">for_window [app_id</span>=<span style="color: #f1fa8c;">"nm-connection-editor"</span>] floating enable
+<span style="color: #ffc9e8;">for_window [app_id</span>=<span style="color: #f1fa8c;">"system-config-printer"</span>] border pixel 2
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-orgc393d23" class="outline-4">
+<h4 id="orgc393d23"><span class="section-number-4">2.6.3.</span> GTK Themes</h4>
+<div class="outline-text-4" id="text-2-6-3">
+<p>
+Set my preferred <a href="https://gtk.org">GTK</a> theme
+</p>
+<div class="org-src-container">
+<pre class="src src-conf"><span style="color: #bd93f9;">exec_always</span> {
+gsettings set org.gnome.desktop.interface color-scheme prefer-dark
+gsettings set $gnome-schema gtk-theme <span style="color: #f1fa8c;">'Dracula'</span>
+}
+</pre>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-org9e76efd" class="outline-3">
+<h3 id="org9e76efd"><span class="section-number-3">2.7.</span> Includes</h3>
+<div class="outline-text-3" id="text-2-7">
+<div class="org-src-container">
+<pre class="src src-conf">include /etc/sway/config.d/*
+</pre>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-orgbe4f518" class="outline-2">
+<h2 id="orgbe4f518"><span class="section-number-2">3.</span> Deprecated Configs</h2>
+<div class="outline-text-2" id="text-3">
+<p>
+A collection of settings recently removed from my sway config. Keeping them here incase a reversion is desired/needed.
+</p>
+
+<p>
+Previous autotiling script. Uses dwindle layout opposed to master stack layout of current autotiling script
+<code>exec_always /home/user/.local/bin/autotiling -w 1 3 5 7 9</code>
+</p>
+
+<p>
+Program for night mode functionality. schedule functionality didn't work properly. may look into alternatives in future.
+<code>exec_always /usr/bin/gammastep</code>
+<code>exec_always /usr/bin/gammastep-indicator</code>
+</p>
+
+<p>
+Enable network-manager-applet on startup. found this to be unnecessary for my current config. Keeping here for future reference, if i want to use it.
+<code>exec_always nm-applet --indicator</code>
+Enable blueman-applet on startup. same story as nm-applet
+<code>exec blueman-applet</code>
+</p>
+
+<p>
+Previous value for menu variable. Now using fuzzel. but keeping this incase of reversion to rofi
+<code>set $menu rofi -show combi -modes combi -combi-modes "drun,run,ssh,filebrowser" -hide-scrollbar true | swaymsg exec --</code>
+</p>
+
+<p>
+Start KDE Connect on startup. I Was Using KDE along side Sway for a time and experimented using kdeconnect to sync stuff between my laptop and my Android phone. I've since moved away from KDE and kdeconnect as I found i wasn't really using the provided features. Leaving this here incase I decide to tryout kdeconnect again in the future.
+<code>exec_always kdeconnect-cli -l</code>
+</p>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author: Henry Davies (HD)</p>
+<p class="date">Created: 2025-07-02 Wed 21:44</p>
+<p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>
