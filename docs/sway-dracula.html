@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2025-07-03 Thu 04:50 -->
+<!-- 2025-07-04 Fri 06:58 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>SwayWM Dracula Config</title>
@@ -28,54 +28,54 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#orgf69b470">1. About This Config</a></li>
-<li><a href="#orgfbf30d6">2. Personal Config</a>
+<li><a href="#org985a2ff">1. About This Config</a></li>
+<li><a href="#org655b6fe">2. Personal Config</a>
 <ul>
-<li><a href="#orgca4462d">2.1. Variables</a></li>
-<li><a href="#org4fb33f7">2.2. Input Configuration</a>
+<li><a href="#org50de897">2.1. Variables</a></li>
+<li><a href="#orge97d21a">2.2. Input Configuration</a>
 <ul>
-<li><a href="#org42380a6">2.2.1. Touchpad</a></li>
-<li><a href="#orgf792b55">2.2.2. Keybindings</a></li>
-<li><a href="#org85fa77c">2.2.3. Movement</a></li>
+<li><a href="#org3c02227">2.2.1. Touchpad</a></li>
+<li><a href="#org75d6076">2.2.2. Keybindings</a></li>
+<li><a href="#org84fdfa4">2.2.3. Movement</a></li>
 </ul>
 </li>
-<li><a href="#org5914a33">2.3. Output Configuration</a>
+<li><a href="#org41b6d22">2.3. Output Configuration</a>
 <ul>
-<li><a href="#org56d3e7c">2.3.1. Brightness Control</a></li>
-<li><a href="#orgd7de852">2.3.2. Display</a></li>
-<li><a href="#org09ffafa">2.3.3. Screen Capture</a></li>
-<li><a href="#org941c859">2.3.4. Sound Control</a></li>
+<li><a href="#org3ae6cdc">2.3.1. Brightness Control</a></li>
+<li><a href="#org730717b">2.3.2. Display</a></li>
+<li><a href="#orgcf93119">2.3.3. Screen Capture</a></li>
+<li><a href="#org51fb980">2.3.4. Sound Control</a></li>
 </ul>
 </li>
-<li><a href="#org0e65306">2.4. Power Configuration</a>
+<li><a href="#orgdaa6852">2.4. Power Configuration</a>
 <ul>
-<li><a href="#orgb41b752">2.4.1. Exit Mode</a></li>
-<li><a href="#orgb0e2df7">2.4.2. Swayidle</a></li>
-<li><a href="#orgfa2bf70">2.4.3. Swaylock</a></li>
+<li><a href="#orgbdc8790">2.4.1. Exit Mode</a></li>
+<li><a href="#orgc97baaf">2.4.2. Swayidle</a></li>
+<li><a href="#orga96a097">2.4.3. Swaylock</a></li>
 </ul>
 </li>
-<li><a href="#org9a50c7a">2.5. Auto-starts</a></li>
-<li><a href="#orgbf8ee05">2.6. Styling</a>
+<li><a href="#orgc4bed8c">2.5. Auto-starts</a></li>
+<li><a href="#orgb759254">2.6. Styling</a>
 <ul>
-<li><a href="#orgfc9f876">2.6.1. Status Bar</a></li>
-<li><a href="#org2548682">2.6.2. Sway gaps</a></li>
-<li><a href="#orgc6acd20">2.6.3. GTK Themes</a></li>
+<li><a href="#orgc4ea419">2.6.1. Status Bar</a></li>
+<li><a href="#org83e684d">2.6.2. Sway gaps</a></li>
+<li><a href="#org2a86ace">2.6.3. GTK Themes</a></li>
 </ul>
 </li>
-<li><a href="#orgac1e424">2.7. Includes</a></li>
+<li><a href="#org50f1608">2.7. Includes</a></li>
 </ul>
 </li>
-<li><a href="#orgd87bc8f">3. Deprecated Configs</a></li>
+<li><a href="#orgf2692a6">3. Deprecated Configs</a></li>
 </ul>
 </div>
 </div>
 
-<div id="org382e0a2" class="figure">
-<p><img src="./~/Pictures/dev/sway-logo.png" alt="sway-logo.png" />
+<div id="org28cf682" class="figure">
+<p><img src="./images/sway-dracula-logo.png" alt="sway-dracula-logo.png" />
 </p>
 </div>
-<div id="outline-container-orgf69b470" class="outline-2">
-<h2 id="orgf69b470"><span class="section-number-2">1.</span> About This Config</h2>
+<div id="outline-container-org985a2ff" class="outline-2">
+<h2 id="org985a2ff"><span class="section-number-2">1.</span> About This Config</h2>
 <div class="outline-text-2" id="text-1">
 <p>
 SwayWM Official Website (<a href="https://swaywm.org">https://swaywm.org</a>)
@@ -83,15 +83,15 @@ Read `man 5 sway` for a complete reference.
 </p>
 </div>
 </div>
-<div id="outline-container-orgfbf30d6" class="outline-2">
-<h2 id="orgfbf30d6"><span class="section-number-2">2.</span> Personal Config</h2>
+<div id="outline-container-org655b6fe" class="outline-2">
+<h2 id="org655b6fe"><span class="section-number-2">2.</span> Personal Config</h2>
 <div class="outline-text-2" id="text-2">
 <p>
 <b>Set mod variable</b>
 </p>
 <ul class="org-ul">
-<li>Mod1=Alt</li>
-<li>Mod4=Super</li>
+<li>Mod1 = <code>ALT</code></li>
+<li>Mod4 = <code>SUPER</code></li>
 </ul>
 <div class="org-src-container">
 <pre class="src src-conf">set $mod Mod4
@@ -107,8 +107,8 @@ bindsym $mod+Ctrl+r reload
 </pre>
 </div>
 </div>
-<div id="outline-container-orgca4462d" class="outline-3">
-<h3 id="orgca4462d"><span class="section-number-3">2.1.</span> Variables</h3>
+<div id="outline-container-org50de897" class="outline-3">
+<h3 id="org50de897"><span class="section-number-3">2.1.</span> Variables</h3>
 <div class="outline-text-3" id="text-2-1">
 <p>
 Set various variables for use later in this config
@@ -130,9 +130,17 @@ set $right l
 </p>
 <div class="org-src-container">
 <pre class="src src-conf">set $browser qutebrowser
-set $fm pcmanfm
+set $fm thunar
 set $term kitty
-set $lock swaylock
+<span style="color: #6272a4; font-style: italic;">#</span><span style="color: #6272a4; font-style: italic;">set $lock swaylock</span>
+</pre>
+</div>
+
+<p>
+<b>Note:</b> Using swaylock may make more sense on a system which does not have Hyprland installed. Unfortunately regular swaylock (as opposed to swaylock-effects) has limited customization potential.
+</p>
+<div class="org-src-container">
+<pre class="src src-conf">set $lock hyprlock 
 <span style="color: #6272a4; font-style: italic;"># </span><span style="color: #6272a4; font-style: italic;">Note: pass the final command to swaymsg so that the resulting window can be opened</span>
 <span style="color: #6272a4; font-style: italic;"># </span><span style="color: #6272a4; font-style: italic;">on the original workspace that the command was run on.</span>
 <span style="color: #6272a4; font-style: italic;">#</span><span style="color: #6272a4; font-style: italic;">set $menu fuzzel | swaymsg exec --</span>
@@ -141,12 +149,12 @@ set $menu rofi -show combi -combi-modi drun,run,recursivebrowser | swaymsg exec 
 </div>
 </div>
 </div>
-<div id="outline-container-org4fb33f7" class="outline-3">
-<h3 id="org4fb33f7"><span class="section-number-3">2.2.</span> Input Configuration</h3>
+<div id="outline-container-orge97d21a" class="outline-3">
+<h3 id="orge97d21a"><span class="section-number-3">2.2.</span> Input Configuration</h3>
 <div class="outline-text-3" id="text-2-2">
 </div>
-<div id="outline-container-org42380a6" class="outline-4">
-<h4 id="org42380a6"><span class="section-number-4">2.2.1.</span> Touchpad</h4>
+<div id="outline-container-org3c02227" class="outline-4">
+<h4 id="org3c02227"><span class="section-number-4">2.2.1.</span> Touchpad</h4>
 <div class="outline-text-4" id="text-2-2-1">
 <p>
 <b>touchpad configuration</b>
@@ -163,12 +171,12 @@ set $menu rofi -show combi -combi-modi drun,run,recursivebrowser | swaymsg exec 
 </div>
 </div>
 </div>
-<div id="outline-container-orgf792b55" class="outline-4">
-<h4 id="orgf792b55"><span class="section-number-4">2.2.2.</span> Keybindings</h4>
+<div id="outline-container-org75d6076" class="outline-4">
+<h4 id="org75d6076"><span class="section-number-4">2.2.2.</span> Keybindings</h4>
 <div class="outline-text-4" id="text-2-2-2">
 </div>
 <ol class="org-ol">
-<li><a id="org47f3d56"></a>Functions<br />
+<li><a id="orgeab128f"></a>Functions<br />
 <div class="outline-text-5" id="text-2-2-2-1">
 <p>
 <b>Resize Mode</b>
@@ -219,7 +227,7 @@ bindsym $mod+r mode <span style="color: #f1fa8c;">"resize"</span>
 </div>
 </div>
 </li>
-<li><a id="orgfbfdfed"></a>Scratchpad<br />
+<li><a id="org94135e4"></a>Scratchpad<br />
 <div class="outline-text-5" id="text-2-2-2-2">
 <p>
 Sway has a "scratchpad", which is a bag of holding for windows. You can send windows there and get them back later.
@@ -243,7 +251,7 @@ Drag floating windows by holding down $mod and left mouse button. Resize them wi
 </div>
 </div>
 </li>
-<li><a id="orge0b0040"></a>Applications<br />
+<li><a id="org67126e9"></a>Applications<br />
 <div class="outline-text-5" id="text-2-2-2-3">
 <p>
 <b>Open a Terminal</b>
@@ -289,12 +297,12 @@ bindsym $mod+d exec $menu
 </li>
 </ol>
 </div>
-<div id="outline-container-org85fa77c" class="outline-4">
-<h4 id="org85fa77c"><span class="section-number-4">2.2.3.</span> Movement</h4>
+<div id="outline-container-org84fdfa4" class="outline-4">
+<h4 id="org84fdfa4"><span class="section-number-4">2.2.3.</span> Movement</h4>
 <div class="outline-text-4" id="text-2-2-3">
 </div>
 <ol class="org-ol">
-<li><a id="org9776bf3"></a>Focus<br />
+<li><a id="orge2e9598"></a>Focus<br />
 <div class="outline-text-5" id="text-2-2-3-1">
 <p>
 <b>Move your focus around using HJKL</b>
@@ -352,7 +360,7 @@ bindsym $mod+Shift+Right move right
 </div>
 </div>
 </li>
-<li><a id="orga32c73d"></a>Workspaces<br />
+<li><a id="org8404bd1"></a>Workspaces<br />
 <div class="outline-text-5" id="text-2-2-3-2">
 <p>
 can have more than 10 workspaces
@@ -408,7 +416,7 @@ bindsym $mod+shift+0 move container to workspace 10
 </div>
 </div>
 </li>
-<li><a id="orgf5758e6"></a>Layout stuff<br />
+<li><a id="orgfff8961"></a>Layout stuff<br />
 <div class="outline-text-5" id="text-2-2-3-3">
 <p>
 You can "split" the current object of focus with $mod+y or mod+x for horizontal and vertical splits respectively.
@@ -448,12 +456,12 @@ bindsym $mod+s layout toggle split
 </ol>
 </div>
 </div>
-<div id="outline-container-org5914a33" class="outline-3">
-<h3 id="org5914a33"><span class="section-number-3">2.3.</span> Output Configuration</h3>
+<div id="outline-container-org41b6d22" class="outline-3">
+<h3 id="org41b6d22"><span class="section-number-3">2.3.</span> Output Configuration</h3>
 <div class="outline-text-3" id="text-2-3">
 </div>
-<div id="outline-container-org56d3e7c" class="outline-4">
-<h4 id="org56d3e7c"><span class="section-number-4">2.3.1.</span> Brightness Control</h4>
+<div id="outline-container-org3ae6cdc" class="outline-4">
+<h4 id="org3ae6cdc"><span class="section-number-4">2.3.1.</span> Brightness Control</h4>
 <div class="outline-text-4" id="text-2-3-1">
 <p>
 <b>Bind brightness controls to laptop brightness keys F5 and F6 (non func lock action)</b>
@@ -465,8 +473,8 @@ bindsym XF86MonBrightnessDown exec light -U 10
 </div>
 </div>
 </div>
-<div id="outline-container-orgd7de852" class="outline-4">
-<h4 id="orgd7de852"><span class="section-number-4">2.3.2.</span> Display</h4>
+<div id="outline-container-org730717b" class="outline-4">
+<h4 id="org730717b"><span class="section-number-4">2.3.2.</span> Display</h4>
 <div class="outline-text-4" id="text-2-3-2">
 <p>
 You can get the names of your outputs by running: swaymsg -t get<sub>outputs</sub>
@@ -476,10 +484,11 @@ You can get the names of your outputs by running: swaymsg -t get<sub>outputs</su
 <b>Display settings for laptop display</b>
 </p>
 <div class="org-src-container">
-<pre class="src src-conf"><span style="color: #6272a4; font-style: italic;">#</span><span style="color: #6272a4; font-style: italic;">output eDP-1 resolution 3840x2160 position 1920,1920 bg /usr/share/wallpapers/deepin/Sunset_of_the_Lake_Nam_by_Wang_Jinyu.jpg fill</span>
-<span style="color: #6272a4; font-style: italic;">#</span><span style="color: #6272a4; font-style: italic;">output eDP-1 resolution 3840x2160 position 0,0 bg /usr/share/wallpapers/DarkestHour/contents/images/1920x1080.jpg fill</span>
-output eDP-1 resolution 3840x2160 position 0,0 bg /home/user/Pictures/wallpapers/wallpapers/Lofi_Cat.png fill
-<span style="color: #6272a4; font-style: italic;">#</span><span style="color: #6272a4; font-style: italic;">output eDP-2 resolution 3840x2160 position 1920,1920 bg /usr/share/wallpapers/deepin/Sunset_of_the_Lake_Nam_by_Wang_Jinyu.jpg fill</span>
+<pre class="src src-conf"><span style="color: #6272a4; font-style: italic;"># </span><span style="color: #6272a4; font-style: italic;">Laptop Output</span>
+output eDP-1 resolution 3840x2160 position 0,0 bg /home/user/.local/share/wallpapers/Lofi_Cat.png fill
+
+<span style="color: #6272a4; font-style: italic;"># </span><span style="color: #6272a4; font-style: italic;">virtual Wlroots output (used for testing)</span>
+output WL-1 resolution 3840x2160 position 0,0 bg /home/user/.local/share/wallpapers/testing.jpg fill
 </pre>
 </div>
 
@@ -505,8 +514,8 @@ output DP-3 resolution 1920x1200 position 0,1920 bg /usr/share/wallpapers/Cluste
 </div>
 </div>
 </div>
-<div id="outline-container-org09ffafa" class="outline-4">
-<h4 id="org09ffafa"><span class="section-number-4">2.3.3.</span> Screen Capture</h4>
+<div id="outline-container-orgcf93119" class="outline-4">
+<h4 id="orgcf93119"><span class="section-number-4">2.3.3.</span> Screen Capture</h4>
 <div class="outline-text-4" id="text-2-3-3">
 <p>
 <b>Screenshot tool</b>
@@ -542,8 +551,8 @@ bindsym $mod+Shift+p exec grim -g <span style="color: #f1fa8c;">"$(slurp -p)"</s
 </div>
 </div>
 </div>
-<div id="outline-container-org941c859" class="outline-4">
-<h4 id="org941c859"><span class="section-number-4">2.3.4.</span> Sound Control</h4>
+<div id="outline-container-org51fb980" class="outline-4">
+<h4 id="org51fb980"><span class="section-number-4">2.3.4.</span> Sound Control</h4>
 <div class="outline-text-4" id="text-2-3-4">
 <p>
 Bind audio controls to keyboard media keys
@@ -558,12 +567,12 @@ bindsym XF86AudioMicMute exec pactl set-source-mute @DEFAULT_SOURCE@ toggle
 </div>
 </div>
 </div>
-<div id="outline-container-org0e65306" class="outline-3">
-<h3 id="org0e65306"><span class="section-number-3">2.4.</span> Power Configuration</h3>
+<div id="outline-container-orgdaa6852" class="outline-3">
+<h3 id="orgdaa6852"><span class="section-number-3">2.4.</span> Power Configuration</h3>
 <div class="outline-text-3" id="text-2-4">
 </div>
-<div id="outline-container-orgb41b752" class="outline-4">
-<h4 id="orgb41b752"><span class="section-number-4">2.4.1.</span> Exit Mode</h4>
+<div id="outline-container-orgbdc8790" class="outline-4">
+<h4 id="orgbdc8790"><span class="section-number-4">2.4.1.</span> Exit Mode</h4>
 <div class="outline-text-4" id="text-2-4-1">
 <div class="org-src-container">
 <pre class="src src-conf"><span style="color: #6272a4; font-style: italic;"># </span><span style="color: #6272a4; font-style: italic;">exit mode</span>
@@ -588,8 +597,8 @@ bindsym --to-code $mod+p mode $exit
 </div>
 </div>
 </div>
-<div id="outline-container-orgb0e2df7" class="outline-4">
-<h4 id="orgb0e2df7"><span class="section-number-4">2.4.2.</span> Swayidle</h4>
+<div id="outline-container-orgc97baaf" class="outline-4">
+<h4 id="orgc97baaf"><span class="section-number-4">2.4.2.</span> Swayidle</h4>
 <div class="outline-text-4" id="text-2-4-2">
 <p>
 This will lock your screen after 300 seconds of inactivity, then turn off your displays after another 270 seconds, and turn your screens back on when resumed. It will also lock your screen before your computer goes to sleep.d
@@ -604,8 +613,8 @@ This will lock your screen after 300 seconds of inactivity, then turn off your d
 </div>
 </div>
 </div>
-<div id="outline-container-orgfa2bf70" class="outline-4">
-<h4 id="orgfa2bf70"><span class="section-number-4">2.4.3.</span> Swaylock</h4>
+<div id="outline-container-orga96a097" class="outline-4">
+<h4 id="orga96a097"><span class="section-number-4">2.4.3.</span> Swaylock</h4>
 <div class="outline-text-4" id="text-2-4-3">
 <p>
 Bind $lock to <code>$mod+Ctrl+l</code> and cause $lock to execute upon laptop lid close
@@ -621,8 +630,8 @@ bindswitch --reload --locked lid:on exec $lock
 </div>
 </div>
 </div>
-<div id="outline-container-org9a50c7a" class="outline-3">
-<h3 id="org9a50c7a"><span class="section-number-3">2.5.</span> Auto-starts</h3>
+<div id="outline-container-orgc4bed8c" class="outline-3">
+<h3 id="orgc4bed8c"><span class="section-number-3">2.5.</span> Auto-starts</h3>
 <div class="outline-text-3" id="text-2-5">
 <p>
 Selected programs which execute upon the start of SwayWM
@@ -645,7 +654,9 @@ exec_always nwg-wrapper -s date-wttr.sh -r 1800000 -c date-wttr.css -p right -a 
 <b>Programs which will only execute upon SwayWM startup (not upon config reload)</b>
 </p>
 <div class="org-src-container">
-<pre class="src src-conf">exec ckb-next -b
+<pre class="src src-conf"><span style="color: #6272a4; font-style: italic;"># </span><span style="color: #6272a4; font-style: italic;">force reload of waybar at the Sway load.</span>
+exec swaymsg <span style="color: #f1fa8c;">"workspace 1; exec ~/.local/bin/launch-waybar"</span>
+exec ckb-next -b
 
 <span style="color: #6272a4; font-style: italic;"># </span><span style="color: #6272a4; font-style: italic;">Enable Master/Stack layout</span>
 <span style="color: #6272a4; font-style: italic;"># </span><span style="color: #6272a4; font-style: italic;">Default with splitting 50:50</span>
@@ -654,26 +665,26 @@ exec /home/user/.local/bin/stacki3 45
 </div>
 </div>
 </div>
-<div id="outline-container-orgbf8ee05" class="outline-3">
-<h3 id="orgbf8ee05"><span class="section-number-3">2.6.</span> Styling</h3>
+<div id="outline-container-orgb759254" class="outline-3">
+<h3 id="orgb759254"><span class="section-number-3">2.6.</span> Styling</h3>
 <div class="outline-text-3" id="text-2-6">
 </div>
-<div id="outline-container-orgfc9f876" class="outline-4">
-<h4 id="orgfc9f876"><span class="section-number-4">2.6.1.</span> Status Bar</h4>
+<div id="outline-container-orgc4ea419" class="outline-4">
+<h4 id="orgc4ea419"><span class="section-number-4">2.6.1.</span> Status Bar</h4>
 <div class="outline-text-4" id="text-2-6-1">
 <p>
 Set <a href="https://github.com/Alexays/waybar">Waybar</a> as the default status bar for sway
 </p>
 <div class="org-src-container">
 <pre class="src src-conf"><span style="color: #bd93f9;">bar</span> {
-swaybar_command launch-waybar
+swaybar_command waybar
 }
 </pre>
 </div>
 </div>
 </div>
-<div id="outline-container-org2548682" class="outline-4">
-<h4 id="org2548682"><span class="section-number-4">2.6.2.</span> Sway gaps</h4>
+<div id="outline-container-org83e684d" class="outline-4">
+<h4 id="org83e684d"><span class="section-number-4">2.6.2.</span> Sway gaps</h4>
 <div class="outline-text-4" id="text-2-6-2">
 <p>
 <b>Global Sway Gaps Settings</b>
@@ -728,8 +739,8 @@ default_border pixel 2
 </div>
 </div>
 </div>
-<div id="outline-container-orgc6acd20" class="outline-4">
-<h4 id="orgc6acd20"><span class="section-number-4">2.6.3.</span> GTK Themes</h4>
+<div id="outline-container-org2a86ace" class="outline-4">
+<h4 id="org2a86ace"><span class="section-number-4">2.6.3.</span> GTK Themes</h4>
 <div class="outline-text-4" id="text-2-6-3">
 <p>
 Set my preferred <a href="https://gtk.org">GTK</a> theme
@@ -744,8 +755,8 @@ gsettings set $gnome-schema gtk-theme <span style="color: #f1fa8c;">'Dracula'</s
 </div>
 </div>
 </div>
-<div id="outline-container-orgac1e424" class="outline-3">
-<h3 id="orgac1e424"><span class="section-number-3">2.7.</span> Includes</h3>
+<div id="outline-container-org50f1608" class="outline-3">
+<h3 id="org50f1608"><span class="section-number-3">2.7.</span> Includes</h3>
 <div class="outline-text-3" id="text-2-7">
 <div class="org-src-container">
 <pre class="src src-conf">include /etc/sway/config.d/*
@@ -754,8 +765,8 @@ gsettings set $gnome-schema gtk-theme <span style="color: #f1fa8c;">'Dracula'</s
 </div>
 </div>
 </div>
-<div id="outline-container-orgd87bc8f" class="outline-2">
-<h2 id="orgd87bc8f"><span class="section-number-2">3.</span> Deprecated Configs</h2>
+<div id="outline-container-orgf2692a6" class="outline-2">
+<h2 id="orgf2692a6"><span class="section-number-2">3.</span> Deprecated Configs</h2>
 <div class="outline-text-2" id="text-3">
 <p>
 A collection of settings recently removed from my sway config. Keeping them here incase a reversion is desired/needed.
@@ -793,7 +804,7 @@ Start KDE Connect on startup. I Was Using KDE along side Sway for a time and exp
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: Henry Davies (HD)</p>
-<p class="date">Created: 2025-07-03 Thu 04:50</p>
+<p class="date">Created: 2025-07-04 Fri 06:58</p>
 <p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
