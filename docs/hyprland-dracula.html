@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2025-07-18 Fri 09:39 -->
+<!-- 2025-08-05 Tue 02:07 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>HD's Hyprland Config</title>
@@ -28,99 +28,51 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org6e120a4">BACKGROUD</a>
+<li><a href="#orgdf5c748">BACKGROUD</a>
 <ul>
-<li><a href="#org6a23332">What is Hyprland?</a></li>
-<li><a href="#org1465241">How do I use Hyprland?</a>
-<ul>
-<li><a href="#org8c42842">Screenshots</a></li>
+<li><a href="#org967831e">What is Hyprland?</a></li>
+<li><a href="#orgdb9d504">How do I use Hyprland?</a></li>
+<li><a href="#orgf02b75d">Reloading this config</a></li>
 </ul>
 </li>
-<li><a href="#org87077f1">Reloading this config</a></li>
+<li><a href="#orge5f3fe9">ESSENTIAL PROGRAM CONFIGURATIONS</a>
+<ul>
+<li><a href="#org6892392">Hypr-Idle</a></li>
+<li><a href="#org2a3722c">Hypr-Lock</a></li>
+<li><a href="#org2e69bc1">Hypr-Paper</a></li>
+<li><a href="#org1a76a53">NWG Wrapper</a></li>
+<li><a href="#orgb5d16b5">Rofi</a></li>
+<li><a href="#org2d11926">SwayNC</a></li>
+<li><a href="#org96ea8a2">Waybar</a></li>
 </ul>
 </li>
-<li><a href="#org3cacfb4">ESSENTIAL PROGRAM CONFIGURATIONS</a>
+<li><a href="#org8812705">HYPRLAND CONFIGURATION</a>
 <ul>
-<li><a href="#org63d8855">Hypr-Idle</a></li>
-<li><a href="#org34df904">Hypr-Lock</a></li>
-<li><a href="#org71de7fa">Hypr-Paper</a></li>
-<li><a href="#orgf36e28e">NWG Wrapper</a></li>
-<li><a href="#org557a5aa">Rofi</a></li>
-<li><a href="#org9145ab6">SwayNC</a></li>
-<li><a href="#org83b64d5">Waybar</a></li>
-</ul>
-</li>
-<li><a href="#orgbcbcc9d">HYPRLAND CONFIGURATION</a>
-<ul>
-<li><a href="#org02a2295">Variables</a>
-<ul>
-<li><a href="#org511735c">Environment Variables</a></li>
-</ul>
-</li>
-<li><a href="#org145ee32">Autostarts</a>
-<ul>
-<li><a href="#org5601bd6">Necessary for proper system functionality</a></li>
-<li><a href="#org47a39a2">User applications</a></li>
-</ul>
-</li>
-<li><a href="#org5e964b1">Permisions</a>
-<ul>
-<li><a href="#org98914ae">Enable Permisions</a></li>
-<li><a href="#orgac7b4c1">Screencopy Permisions</a></li>
-<li><a href="#orgc08fa97">Plugin Permisions</a></li>
-</ul>
-</li>
-<li><a href="#orgab56815">Input Configuration</a>
-<ul>
-<li><a href="#org6ee1bd4">Per-device Input Configuration</a></li>
-</ul>
-</li>
-<li><a href="#org1b22145">Keybindings</a>
-<ul>
-<li><a href="#org242e7e0">Critical</a></li>
-<li><a href="#org7327de4">Layout</a></li>
-<li><a href="#orgf3aa9cc">Move Focus</a></li>
-<li><a href="#org12c3d02">Workspaces</a></li>
-<li><a href="#org055f759">Resizing Windows</a></li>
-<li><a href="#orgf2b1801"><code>SUPER</code> + <code>CTRL</code> Keybindings</a></li>
-<li><a href="#org4380705">Hyprshot</a></li>
-<li><a href="#org6d754e7">Volume Control</a></li>
-<li><a href="#org3576664">Brightness Control</a></li>
-<li><a href="#orgbafe367">Default Web Browser Switching</a></li>
-<li><a href="#org95ad1d5">Screen Capture</a></li>
-</ul>
-</li>
-<li><a href="#org049b3d2">Monitor Configuration</a></li>
-<li><a href="#orga495742">Decoration</a>
-<ul>
-<li><a href="#orga1f33c1">General</a></li>
-<li><a href="#orgaf985d7">Animations</a></li>
-<li><a href="#org84fa960">Disable Default Wallpaper</a></li>
-</ul>
-</li>
-<li><a href="#org56300d5">Layout</a>
-<ul>
-<li><a href="#org6affb7b">General</a></li>
-<li><a href="#org92aa7b8">Window Rules</a></li>
-</ul>
-</li>
+<li><a href="#org84b1e97">Variables</a></li>
+<li><a href="#orga42d6aa">Autostarts</a></li>
+<li><a href="#org124293e">Permisions</a></li>
+<li><a href="#org93b0bf3">Input Configuration</a></li>
+<li><a href="#org9ab0617">Keybindings</a></li>
+<li><a href="#orgb93d31b">Monitor Configuration</a></li>
+<li><a href="#orge714110">Decoration</a></li>
+<li><a href="#org829b094">Layout</a></li>
 </ul>
 </li>
 </ul>
 </div>
 </div>
 
-<div id="orgaec5a67" class="figure">
+<div id="org7574e33" class="figure">
 <p><img src="./images/hyprland-org.png" alt="hyprland-org.png" />
 </p>
 </div>
-<div id="outline-container-org6e120a4" class="outline-2">
-<h2 id="org6e120a4">BACKGROUD</h2>
-<div class="outline-text-2" id="text-org6e120a4">
+<div id="outline-container-orgdf5c748" class="outline-2">
+<h2 id="orgdf5c748">BACKGROUD</h2>
+<div class="outline-text-2" id="text-orgdf5c748">
 </div>
-<div id="outline-container-org6a23332" class="outline-3">
-<h3 id="org6a23332">What is Hyprland?</h3>
-<div class="outline-text-3" id="text-org6a23332">
+<div id="outline-container-org967831e" class="outline-3">
+<h3 id="org967831e">What is Hyprland?</h3>
+<div class="outline-text-3" id="text-org967831e">
 <blockquote>
 <p>
 Hyprland is an independent tiling Wayland compositor written in C++. Noteworthy features of Hyprland include dynamic tiling, tabbed windows, a clean and readable C++ code-base, and a custom renderer that provides window animations, rounded corners, and Dual-Kawase Blur on transparent windows. General usage and configuration is thoroughly documented at Hyprland wiki. &#x2013; <a href="https://wiki.archlinux.org/title/Hyprland">https://wiki.archlinux.org/title/Hyprland</a>
@@ -128,13 +80,13 @@ Hyprland is an independent tiling Wayland compositor written in C++. Noteworthy 
 </blockquote>
 </div>
 </div>
-<div id="outline-container-org1465241" class="outline-3">
-<h3 id="org1465241">How do I use Hyprland?</h3>
-<div class="outline-text-3" id="text-org1465241">
+<div id="outline-container-orgdb9d504" class="outline-3">
+<h3 id="orgdb9d504">How do I use Hyprland?</h3>
+<div class="outline-text-3" id="text-orgdb9d504">
 </div>
-<div id="outline-container-org8c42842" class="outline-4">
-<h4 id="org8c42842">Screenshots</h4>
-<div class="outline-text-4" id="text-org8c42842">
+<div id="outline-container-orge13da98" class="outline-4">
+<h4 id="orge13da98">Screenshots</h4>
+<div class="outline-text-4" id="text-orge13da98">
 <p width="800px" align="center">
 <img src="./images/2025-03-06-example_hyprshot.png" alt="2025-03-06-example_hyprshot.png" width="800px" align="center" />
 <img src="./images/2025-03-06-example-runner_hyprshot.png" alt="2025-03-06-example-runner_hyprshot.png" />
@@ -142,9 +94,9 @@ Hyprland is an independent tiling Wayland compositor written in C++. Noteworthy 
 </div>
 </div>
 </div>
-<div id="outline-container-org87077f1" class="outline-3">
-<h3 id="org87077f1">Reloading this config</h3>
-<div class="outline-text-3" id="text-org87077f1">
+<div id="outline-container-orgf02b75d" class="outline-3">
+<h3 id="orgf02b75d">Reloading this config</h3>
+<div class="outline-text-3" id="text-orgf02b75d">
 <p>
 To ensure that changes made in this file are saved to the <a href="./hyprland.conf">hyprland config</a> we need to do three things: 
 </p>
@@ -157,58 +109,59 @@ To ensure that changes made in this file are saved to the <a href="./hyprland.co
 </div>
 </div>
 </div>
-<div id="outline-container-org3cacfb4" class="outline-2">
-<h2 id="org3cacfb4">ESSENTIAL PROGRAM CONFIGURATIONS</h2>
-<div class="outline-text-2" id="text-org3cacfb4">
+<div id="outline-container-orge5f3fe9" class="outline-2">
+<h2 id="orge5f3fe9">ESSENTIAL PROGRAM CONFIGURATIONS</h2>
+<div class="outline-text-2" id="text-orge5f3fe9">
 <p>
 This section includes links to the configuration files used by <i>non Hyprland</i> packages to create a functionally complete Hyprland Window Manager/Desktop Environment.
 </p>
 </div>
-<div id="outline-container-org63d8855" class="outline-3">
-<h3 id="org63d8855"><a href="file:///home/user/.config/hypr/hypridle.conf">Hypr-Idle</a></h3>
+<div id="outline-container-org6892392" class="outline-3">
+<h3 id="org6892392"><a href="file:///home/user/.config/hypr/hypridle.conf">Hypr-Idle</a></h3>
 </div>
-<div id="outline-container-org34df904" class="outline-3">
-<h3 id="org34df904"><a href="file:///home/user/.config/hypr/hyprlock.conf">Hypr-Lock</a></h3>
+<div id="outline-container-org2a3722c" class="outline-3">
+<h3 id="org2a3722c"><a href="file:///home/user/.config/hypr/hyprlock.conf">Hypr-Lock</a></h3>
 </div>
-<div id="outline-container-org71de7fa" class="outline-3">
-<h3 id="org71de7fa"><a href="file:///home/user/.config/hypr/hyprpaper.conf">Hypr-Paper</a></h3>
+<div id="outline-container-org2e69bc1" class="outline-3">
+<h3 id="org2e69bc1"><a href="file:///home/user/.config/hypr/hyprpaper.conf">Hypr-Paper</a></h3>
 </div>
-<div id="outline-container-orgf36e28e" class="outline-3">
-<h3 id="orgf36e28e"><a href="../nwg-wrapper/bindings.html">NWG Wrapper</a></h3>
+<div id="outline-container-org1a76a53" class="outline-3">
+<h3 id="org1a76a53"><a href="../nwg-wrapper/bindings.html">NWG Wrapper</a></h3>
 </div>
-<div id="outline-container-org557a5aa" class="outline-3">
-<h3 id="org557a5aa"><a href="../rofi/config.rasi">Rofi</a></h3>
+<div id="outline-container-orgb5d16b5" class="outline-3">
+<h3 id="orgb5d16b5"><a href="../rofi/config.rasi">Rofi</a></h3>
 </div>
-<div id="outline-container-org9145ab6" class="outline-3">
-<h3 id="org9145ab6">SwayNC</h3>
-<div class="outline-text-3" id="text-org9145ab6">
+<div id="outline-container-org2d11926" class="outline-3">
+<h3 id="org2d11926">SwayNC</h3>
+<div class="outline-text-3" id="text-org2d11926">
 <ul class="org-ul">
 <li><a href="file:///home/user/.config/swaync/config.json">Config</a></li>
 <li><a href="file:///home/user/.config/swaync/style.css">style.css</a></li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org83b64d5" class="outline-3">
-<h3 id="org83b64d5"><a href="../waybar/waybar.html">Waybar</a></h3>
+<div id="outline-container-org96ea8a2" class="outline-3">
+<h3 id="org96ea8a2"><a href="../waybar/waybar.html">Waybar</a></h3>
 </div>
 </div>
-<div id="outline-container-orgbcbcc9d" class="outline-2">
-<h2 id="orgbcbcc9d">HYPRLAND CONFIGURATION</h2>
-<div class="outline-text-2" id="text-orgbcbcc9d">
+<div id="outline-container-org8812705" class="outline-2">
+<h2 id="org8812705">HYPRLAND CONFIGURATION</h2>
+<div class="outline-text-2" id="text-org8812705">
 </div>
-<div id="outline-container-org02a2295" class="outline-3">
-<h3 id="org02a2295">Variables</h3>
-<div class="outline-text-3" id="text-org02a2295">
+<div id="outline-container-org84b1e97" class="outline-3">
+<h3 id="org84b1e97">Variables</h3>
+<div class="outline-text-3" id="text-org84b1e97">
 <p>
 <b>Essential</b> environment variables
 </p>
 <div class="org-src-container">
-<pre class="src src-conf"><span style="color: #ffc9e8;">env</span> = WLR_NO_HARDWARE_CURSORS, 1
+<pre class="src src-conf"><span style="color: #ffc9e8;">env</span> = WLR_NO_HARDWARE_CURSORS,1
 <span style="color: #ffc9e8;">$mainMod</span> = SUPER
 <span style="color: #ffc9e8;">$terminal</span> = kitty
 <span style="color: #ffc9e8;">$menu</span> = rofi -show combi -combi-modi drun,run,recursivebrowser 
 <span style="color: #ffc9e8;">$filemenu</span> = rofi -show combi -combi-modi window,recursivebrowser,ssh 
 <span style="color: #ffc9e8;">$editor</span> = emacsclient -ca <span style="color: #f1fa8c;">""</span>
+<span style="color: #ffc9e8;">$controlpanel</span> = ~/.local/bin/overrides-gui
 </pre>
 </div>
 
@@ -221,9 +174,9 @@ This section includes links to the configuration files used by <i>non Hyprland</
 </pre>
 </div>
 </div>
-<div id="outline-container-org511735c" class="outline-4">
-<h4 id="org511735c">Environment Variables</h4>
-<div class="outline-text-4" id="text-org511735c">
+<div id="outline-container-org08536f9" class="outline-4">
+<h4 id="org08536f9">Environment Variables</h4>
+<div class="outline-text-4" id="text-org08536f9">
 <p>
 Some default env vars.
 </p>
@@ -235,28 +188,28 @@ Some default env vars.
 </div>
 </div>
 </div>
-<div id="outline-container-org145ee32" class="outline-3">
-<h3 id="org145ee32">Autostarts</h3>
-<div class="outline-text-3" id="text-org145ee32">
+<div id="outline-container-orga42d6aa" class="outline-3">
+<h3 id="orga42d6aa">Autostarts</h3>
+<div class="outline-text-3" id="text-orga42d6aa">
 <p>
 Autostarts are programs which are executed when Hyprland starts. Bellow are the autostart configurations for my system.
 </p>
 </div>
-<div id="outline-container-org5601bd6" class="outline-4">
-<h4 id="org5601bd6">Necessary for proper system functionality</h4>
-<div class="outline-text-4" id="text-org5601bd6">
+<div id="outline-container-org4e3e02f" class="outline-4">
+<h4 id="org4e3e02f">Necessary for proper system functionality</h4>
+<div class="outline-text-4" id="text-org4e3e02f">
 </div>
 <ul class="org-ul">
-<li><a id="orgadcdd86"></a>KDE Policy Kit<br />
-<div class="outline-text-5" id="text-orgadcdd86">
+<li><a id="org6d8d64e"></a>KDE Policy Kit<br />
+<div class="outline-text-5" id="text-org6d8d64e">
 <div class="org-src-container">
 <pre class="src src-conf"><span style="color: #ffc9e8;">exec-once</span> = systemctl --user start plasma-polkit-agent
 </pre>
 </div>
 </div>
 </li>
-<li><a id="orgcd1cc70"></a>Waybar and NMapplet<br />
-<div class="outline-text-5" id="text-orgcd1cc70">
+<li><a id="orgd209f3d"></a>Waybar and NMapplet<br />
+<div class="outline-text-5" id="text-orgd209f3d">
 <div class="org-src-container">
 <pre class="src src-conf"><span style="color: #ffc9e8;">exec-once</span> = waybar 
 <span style="color: #ffc9e8;">exec-once</span> = nm-applet --indicator 
@@ -264,32 +217,32 @@ Autostarts are programs which are executed when Hyprland starts. Bellow are the 
 </div>
 </div>
 </li>
-<li><a id="org462ca1b"></a><b>Hypridle</b><br />
-<div class="outline-text-5" id="text-org462ca1b">
+<li><a id="org04ac47f"></a><b>Hypridle</b><br />
+<div class="outline-text-5" id="text-org04ac47f">
 <div class="org-src-container">
 <pre class="src src-conf"><span style="color: #ffc9e8;">exec-once</span> = hypridle
 </pre>
 </div>
 </div>
 </li>
-<li><a id="org8d0d0bf"></a>Hyprpaper<br />
-<div class="outline-text-5" id="text-org8d0d0bf">
+<li><a id="org6e4fd91"></a>Hyprpaper<br />
+<div class="outline-text-5" id="text-org6e4fd91">
 <div class="org-src-container">
 <pre class="src src-conf"><span style="color: #ffc9e8;">exec-once</span> = hyprpaper
 </pre>
 </div>
 </div>
 </li>
-<li><a id="orgeeb825f"></a><b>SwayNC</b><br />
-<div class="outline-text-5" id="text-orgeeb825f">
+<li><a id="orgc9d191f"></a><b>SwayNC</b><br />
+<div class="outline-text-5" id="text-orgc9d191f">
 <div class="org-src-container">
 <pre class="src src-conf"><span style="color: #ffc9e8;">exec-once</span> = swaync -c ~/.config/swaync/config.json -s ~/.config/swaync/style.css 
 </pre>
 </div>
 </div>
 </li>
-<li><a id="org8cbde6b"></a>Cliphist<br />
-<div class="outline-text-5" id="text-org8cbde6b">
+<li><a id="org0b28d09"></a>Cliphist<br />
+<div class="outline-text-5" id="text-org0b28d09">
 <p>
 Start Clipist 
 </p>
@@ -311,8 +264,8 @@ Stores only image data
 </div>
 </div>
 </li>
-<li><a id="org55186aa"></a>Playerctl<br />
-<div class="outline-text-5" id="text-org55186aa">
+<li><a id="org38fb7f7"></a>Playerctl<br />
+<div class="outline-text-5" id="text-org38fb7f7">
 <p>
 start playrctl daemon
 </p>
@@ -322,8 +275,8 @@ start playrctl daemon
 </div>
 </div>
 </li>
-<li><a id="orga0836e8"></a>Low Battery Script<br />
-<div class="outline-text-5" id="text-orga0836e8">
+<li><a id="orgee6e042"></a>Low Battery Script<br />
+<div class="outline-text-5" id="text-orgee6e042">
 <p>
 Start a script to notify the user when the battery is low.
 </p>
@@ -333,8 +286,8 @@ Start a script to notify the user when the battery is low.
 </div>
 </div>
 </li>
-<li><a id="org293da03"></a>Bluelight Script<br />
-<div class="outline-text-5" id="text-org293da03">
+<li><a id="orged2e1f8"></a>Bluelight Script<br />
+<div class="outline-text-5" id="text-orged2e1f8">
 <p>
 Run my bluelight script which sets a <code>hyprsunset</code> value. 
 </p>
@@ -348,8 +301,8 @@ Normaly this script would run once an hour via <code>cron</code>; however, at ti
 </p>
 </div>
 </li>
-<li><a id="org95ba38f"></a>Greyscale Script<br />
-<div class="outline-text-5" id="text-org95ba38f">
+<li><a id="org61e5833"></a>Greyscale Script<br />
+<div class="outline-text-5" id="text-org61e5833">
 <p>
 Run my greyscale script which enables/disables a shader for Hyprland.
 </p>
@@ -365,13 +318,13 @@ Normaly this script would run once an hour via <code>cron</code>; however, at ti
 </li>
 </ul>
 </div>
-<div id="outline-container-org47a39a2" class="outline-4">
-<h4 id="org47a39a2">User applications</h4>
-<div class="outline-text-4" id="text-org47a39a2">
+<div id="outline-container-org12aa952" class="outline-4">
+<h4 id="org12aa952">User applications</h4>
+<div class="outline-text-4" id="text-org12aa952">
 </div>
 <ul class="org-ul">
-<li><a id="org4769d6b"></a>Emacs<br />
-<div class="outline-text-5" id="text-org4769d6b">
+<li><a id="org1a38a77"></a>Emacs<br />
+<div class="outline-text-5" id="text-org1a38a77">
 <p>
 Start the Emacs daemon, and Emacs client upon user login
 </p>
@@ -381,16 +334,16 @@ Start the Emacs daemon, and Emacs client upon user login
 </div>
 </div>
 </li>
-<li><a id="orgc77c5d5"></a>Browser<br />
-<div class="outline-text-5" id="text-orgc77c5d5">
+<li><a id="org04bc1d6"></a>Browser<br />
+<div class="outline-text-5" id="text-org04bc1d6">
 <div class="org-src-container">
 <pre class="src src-conf"><span style="color: #ffc9e8;">exec-once</span> = $browser
 </pre>
 </div>
 </div>
 </li>
-<li><a id="org3c7bcea"></a>NWG-Wrapper<br />
-<div class="outline-text-5" id="text-org3c7bcea">
+<li><a id="org29e9858"></a>NWG-Wrapper<br />
+<div class="outline-text-5" id="text-org29e9858">
 <div class="org-src-container">
 <pre class="src src-conf"><span style="color: #ffc9e8;">exec-once</span> = nwg-wrapper -t bindings.pango -c style.css -p left -a start -mt 20 -ml 20 -j left
 </pre>
@@ -400,9 +353,9 @@ Start the Emacs daemon, and Emacs client upon user login
 </ul>
 </div>
 </div>
-<div id="outline-container-org5e964b1" class="outline-3">
-<h3 id="org5e964b1">Permisions</h3>
-<div class="outline-text-3" id="text-org5e964b1">
+<div id="outline-container-org124293e" class="outline-3">
+<h3 id="org124293e">Permisions</h3>
+<div class="outline-text-3" id="text-org124293e">
 <blockquote>
 <p>
 If you have hyprland-qtutils installed, you can make use of Hyprland’s built-in permission system.
@@ -418,30 +371,31 @@ Permissions work a bit like Android ones. If an app tries to do something sensit
 </p>
 </blockquote>
 </div>
-<div id="outline-container-org98914ae" class="outline-4">
-<h4 id="org98914ae">Enable Permisions</h4>
-<div class="outline-text-4" id="text-org98914ae">
+<div id="outline-container-orgc350e12" class="outline-4">
+<h4 id="orgc350e12">Enable Permisions</h4>
+<div class="outline-text-4" id="text-orgc350e12">
 <div class="org-src-container">
 <pre class="src src-conf"><span style="color: #ffc9e8;">ecosystem:enforce_permissions</span> = true
 </pre>
 </div>
 </div>
 </div>
-<div id="outline-container-orgac7b4c1" class="outline-4">
-<h4 id="orgac7b4c1">Screencopy Permisions</h4>
-<div class="outline-text-4" id="text-orgac7b4c1">
+<div id="outline-container-org5d4c9e8" class="outline-4">
+<h4 id="org5d4c9e8">Screencopy Permisions</h4>
+<div class="outline-text-4" id="text-org5d4c9e8">
 <div class="org-src-container">
 <pre class="src src-conf"><span style="color: #ffc9e8;">permission</span> = /usr/bin/grim, screencopy, allow
 <span style="color: #ffc9e8;">permission</span> = /usr/bin/hyprshot, screencopy, allow
+<span style="color: #ffc9e8;">permission</span> = /usr/bin/hyprlock, screencopy, allow
 <span style="color: #ffc9e8;">permission</span> = /usr/bin/hyprpicker, screencopy, allow
 <span style="color: #ffc9e8;">permission</span> = /usr/(lib|libexec|lib64)/xdg-desktop-portal-hyprland, screencopy, ask
 </pre>
 </div>
 </div>
 </div>
-<div id="outline-container-orgc08fa97" class="outline-4">
-<h4 id="orgc08fa97">Plugin Permisions</h4>
-<div class="outline-text-4" id="text-orgc08fa97">
+<div id="outline-container-orga50b235" class="outline-4">
+<h4 id="orga50b235">Plugin Permisions</h4>
+<div class="outline-text-4" id="text-orga50b235">
 <p>
 Deny <code>hyprctl</code> from loading 3rd party plugins. If a plugin needs to be loaded change this to <code>ask</code>, or <code>allow</code>.
 </p>
@@ -452,9 +406,9 @@ Deny <code>hyprctl</code> from loading 3rd party plugins. If a plugin needs to b
 </div>
 </div>
 </div>
-<div id="outline-container-orgab56815" class="outline-3">
-<h3 id="orgab56815">Input Configuration</h3>
-<div class="outline-text-3" id="text-orgab56815">
+<div id="outline-container-org93b0bf3" class="outline-3">
+<h3 id="org93b0bf3">Input Configuration</h3>
+<div class="outline-text-3" id="text-org93b0bf3">
 <div class="org-src-container">
 <pre class="src src-conf"><span style="color: #bd93f9;">input</span> {
     <span style="color: #ffc9e8;">kb_layout</span> = us
@@ -482,8 +436,8 @@ Deny <code>hyprctl</code> from loading 3rd party plugins. If a plugin needs to b
         <span style="color: #ffc9e8;">natural_scroll</span> = no
     }
 
-    <span style="color: #ffc9e8;">sensitivity</span> = 0 <span style="color: #6272a4; font-style: italic;"># </span><span style="color: #6272a4; font-style: italic;">-1.0 to 1.0, 0 means no modification.</span>
-}
+    <span style="color: #ffc9e8;">sensitivity</span> = 0 <span style="color: #6272a4; font-style: italic;"># </span><span style="color: #6272a4; font-style: italic;">-1.0 to 1.0, 0 means no modification.
+</span>}
 </pre>
 </div>
 
@@ -501,9 +455,9 @@ Deny <code>hyprctl</code> from loading 3rd party plugins. If a plugin needs to b
 </pre>
 </div>
 </div>
-<div id="outline-container-org6ee1bd4" class="outline-4">
-<h4 id="org6ee1bd4">Per-device Input Configuration</h4>
-<div class="outline-text-4" id="text-org6ee1bd4">
+<div id="outline-container-orgf2e35f2" class="outline-4">
+<h4 id="orgf2e35f2">Per-device Input Configuration</h4>
+<div class="outline-text-4" id="text-orgf2e35f2">
 <p>
 See <a href="https://wiki.hyprland.org/Configuring/Keywords/#per-device-input-configs">https://wiki.hyprland.org/Configuring/Keywords/#per-device-input-configs</a> for more
 </p>
@@ -517,13 +471,13 @@ See <a href="https://wiki.hyprland.org/Configuring/Keywords/#per-device-input-co
 </div>
 </div>
 </div>
-<div id="outline-container-org1b22145" class="outline-3">
-<h3 id="org1b22145">Keybindings</h3>
-<div class="outline-text-3" id="text-org1b22145">
+<div id="outline-container-org9ab0617" class="outline-3">
+<h3 id="org9ab0617">Keybindings</h3>
+<div class="outline-text-3" id="text-org9ab0617">
 </div>
-<div id="outline-container-org242e7e0" class="outline-4">
-<h4 id="org242e7e0">Critical</h4>
-<div class="outline-text-4" id="text-org242e7e0">
+<div id="outline-container-org02f2937" class="outline-4">
+<h4 id="org02f2937">Critical</h4>
+<div class="outline-text-4" id="text-org02f2937">
 <p>
 These are keybindings which are critical for proper system functionality
 </p>
@@ -534,14 +488,15 @@ These are keybindings which are critical for proper system functionality
 <span style="color: #ffc9e8;">bind</span> = $mainMod, M, exec, $fileManager
 <span style="color: #ffc9e8;">bind</span> = $mainMod, V, togglefloating, 
 <span style="color: #ffc9e8;">bind</span> = $mainMod, D, exec, $menu
+<span style="color: #ffc9e8;">bind</span> = $mainMod, O, exec, $controlpanel
 <span style="color: #ffc9e8;">bind</span> = ALT, TAB, exec, $filemenu
 <span style="color: #ffc9e8;">bind</span> = $mainMod $shiftmod, C, exec, ~/dotfiles/hypr/scripts/reloads.sh
 </pre>
 </div>
 </div>
 <ul class="org-ul">
-<li><a id="org8593615"></a>Important<br />
-<div class="outline-text-5" id="text-org8593615">
+<li><a id="orgbccdcf5"></a>Important<br />
+<div class="outline-text-5" id="text-orgbccdcf5">
 <p>
 Keybinding for Hyprlock
 </p>
@@ -562,25 +517,25 @@ Keybinding for Wlogout
 </li>
 </ul>
 </div>
-<div id="outline-container-org7327de4" class="outline-4">
-<h4 id="org7327de4">Layout</h4>
-<div class="outline-text-4" id="text-org7327de4">
+<div id="outline-container-org5ab2825" class="outline-4">
+<h4 id="org5ab2825">Layout</h4>
+<div class="outline-text-4" id="text-org5ab2825">
 </div>
 <ul class="org-ul">
-<li><a id="orgb708907"></a>Dwindle<br />
-<div class="outline-text-5" id="text-orgb708907">
+<li><a id="orge959b92"></a>Dwindle<br />
+<div class="outline-text-5" id="text-orge959b92">
 <div class="org-src-container">
-<pre class="src src-conf"><span style="color: #ffc9e8;">bind</span> = $mainMod, P, pseudo, <span style="color: #6272a4; font-style: italic;"># </span><span style="color: #6272a4; font-style: italic;">dwindle</span>
-<span style="color: #ffc9e8;">bind</span> = $mainMod, U, togglesplit, <span style="color: #6272a4; font-style: italic;"># </span><span style="color: #6272a4; font-style: italic;">dwindle</span>
+<pre class="src src-conf"><span style="color: #ffc9e8;">bind</span> = $mainMod, P, pseudo, <span style="color: #6272a4; font-style: italic;"># </span><span style="color: #6272a4; font-style: italic;">dwindle
+</span><span style="color: #ffc9e8;">bind</span> = $mainMod, U, togglesplit, <span style="color: #6272a4; font-style: italic;"># </span><span style="color: #6272a4; font-style: italic;">dwindle</span>
 </pre>
 </div>
 </div>
 </li>
 </ul>
 </div>
-<div id="outline-container-orgf3aa9cc" class="outline-4">
-<h4 id="orgf3aa9cc">Move Focus</h4>
-<div class="outline-text-4" id="text-orgf3aa9cc">
+<div id="outline-container-org9f35dfe" class="outline-4">
+<h4 id="org9f35dfe">Move Focus</h4>
+<div class="outline-text-4" id="text-org9f35dfe">
 <p>
 Move focus with <code>$mainMod</code> + arrow keys
 </p>
@@ -604,13 +559,13 @@ Move focus with <code>$mainMod</code> + <code>HJKL</code> keys
 </div>
 </div>
 </div>
-<div id="outline-container-org12c3d02" class="outline-4">
-<h4 id="org12c3d02">Workspaces</h4>
-<div class="outline-text-4" id="text-org12c3d02">
+<div id="outline-container-org8323e4b" class="outline-4">
+<h4 id="org8323e4b">Workspaces</h4>
+<div class="outline-text-4" id="text-org8323e4b">
 </div>
 <ul class="org-ul">
-<li><a id="orge699880"></a>Switch to Workspace (x)<br />
-<div class="outline-text-5" id="text-orge699880">
+<li><a id="org418923c"></a>Switch to Workspace (x)<br />
+<div class="outline-text-5" id="text-org418923c">
 <p>
 Switch workspaces with <code>$mainMod</code> + <code>[0-9]</code>
 </p>
@@ -637,8 +592,8 @@ Switch to the "special" or "scratchpad" workspace
 </div>
 </div>
 </li>
-<li><a id="org4f4070e"></a><b>Move Windows to Workspace (x)</b><br />
-<div class="outline-text-5" id="text-org4f4070e">
+<li><a id="org02d29b3"></a><b>Move Windows to Workspace (x)</b><br />
+<div class="outline-text-5" id="text-org02d29b3">
 <p>
 Move active window to a workspace with <code>$mainMod</code> + <code>SHIFT</code> + <code>[0-9]</code>
 </p>
@@ -665,8 +620,8 @@ Move active window to "special" workspace
 </div>
 </div>
 </li>
-<li><a id="org8e3cb98"></a>Scroll Through Workspaces<br />
-<div class="outline-text-5" id="text-org8e3cb98">
+<li><a id="org4f507cd"></a>Scroll Through Workspaces<br />
+<div class="outline-text-5" id="text-org4f507cd">
 <p>
 Scroll through existing workspaces with <code>$mainMod</code> + scroll
 </p>
@@ -679,9 +634,9 @@ Scroll through existing workspaces with <code>$mainMod</code> + scroll
 </li>
 </ul>
 </div>
-<div id="outline-container-org055f759" class="outline-4">
-<h4 id="org055f759">Resizing Windows</h4>
-<div class="outline-text-4" id="text-org055f759">
+<div id="outline-container-org24a49f2" class="outline-4">
+<h4 id="org24a49f2">Resizing Windows</h4>
+<div class="outline-text-4" id="text-org24a49f2">
 <p>
 Toggle window fullscreen
 </p>
@@ -700,8 +655,8 @@ Move/resize windows with <code>$mainMod</code> + LMB/RMB and dragging
 </div>
 </div>
 <ul class="org-ul">
-<li><a id="orgce89726"></a>Window Grouping<br />
-<div class="outline-text-5" id="text-orgce89726">
+<li><a id="orgda3ad77"></a>Window Grouping<br />
+<div class="outline-text-5" id="text-orgda3ad77">
 <p>
 Toggle window group (sway tabbed mode)
 </p>
@@ -720,9 +675,9 @@ Toggle window group (sway tabbed mode)
 </li>
 </ul>
 </div>
-<div id="outline-container-orgf2b1801" class="outline-4">
-<h4 id="orgf2b1801"><code>SUPER</code> + <code>CTRL</code> Keybindings</h4>
-<div class="outline-text-4" id="text-orgf2b1801">
+<div id="outline-container-org354297a" class="outline-4">
+<h4 id="org354297a"><code>SUPER</code> + <code>CTRL</code> Keybindings</h4>
+<div class="outline-text-4" id="text-org354297a">
 <p>
 The below bindings all begin with the <code>$mainMod</code> (super) and <code>CTRL</code> keys. <del>I intend to move these keybinds to a <a href="https://wiki.hyprland.org/Configuring/Binds/#submaps">submap</a> at some point. Unfortunately, currently <span class="timestamp-wrapper"><span class="timestamp">&lt;2024-12-03 Tue&gt; </span></span> the submap configuration does not seem to actually execute the given commands. It also repeatedly broke other essential binds ex: <code>SUPER+Q</code>, <code>SUPER+D</code></del>
 </p>
@@ -736,18 +691,18 @@ The below bindings all begin with the <code>$mainMod</code> (super) and <code>CT
 </p>
 </div>
 <ul class="org-ul">
-<li><a id="org299450e"></a>Clipboard<br />
-<div class="outline-text-5" id="text-org299450e">
+<li><a id="org965a958"></a>Clipboard<br />
+<div class="outline-text-5" id="text-org965a958">
 <div class="org-src-container">
-<pre class="src src-conf"><span style="color: #6272a4; font-style: italic;">#</span><span style="color: #6272a4; font-style: italic;">bind=$mainMod CTRL,V,exec,cliphist list | rofi -dmenu | cliphist decode | wl-copy</span>
-<span style="color: #6272a4; font-style: italic;">#</span><span style="color: #6272a4; font-style: italic;">bind=$mainMod CTRL,D,exec,cliphist list | rofi -dmenu | cliphist delete</span>
-<span style="color: #6272a4; font-style: italic;">#</span><span style="color: #6272a4; font-style: italic;">bind=$mainMod CTRL,E,exec,cliphist list | rofi -dmenu | cliphist wipe </span>
+<pre class="src src-conf"><span style="color: #6272a4; font-style: italic;">#</span><span style="color: #6272a4; font-style: italic;">bind=$mainMod CTRL,V,exec,cliphist list | rofi -dmenu | cliphist decode | wl-copy
+</span><span style="color: #6272a4; font-style: italic;">#</span><span style="color: #6272a4; font-style: italic;">bind=$mainMod CTRL,D,exec,cliphist list | rofi -dmenu | cliphist delete
+</span><span style="color: #6272a4; font-style: italic;">#</span><span style="color: #6272a4; font-style: italic;">bind=$mainMod CTRL,E,exec,cliphist list | rofi -dmenu | cliphist wipe </span>
 </pre>
 </div>
 </div>
 <ul class="org-ul">
-<li><a id="org9ab8db8"></a>Clipboard submap<br />
-<div class="outline-text-6" id="text-org9ab8db8">
+<li><a id="org016897c"></a>Clipboard submap<br />
+<div class="outline-text-6" id="text-org016897c">
 <p>
 Switch to submap called <i>clipboard</i>
 </p>
@@ -758,8 +713,8 @@ Switch to submap called <i>clipboard</i>
 </div>
 </div>
 </li>
-<li><a id="org73a6324"></a>Define submap keybindings<br />
-<div class="outline-text-6" id="text-org73a6324">
+<li><a id="org215af1c"></a>Define submap keybindings<br />
+<div class="outline-text-6" id="text-org215af1c">
 <div class="org-src-container">
 <pre class="src src-conf"><span style="color: #ffc9e8;">bind</span> =, V,exec,cliphist list | rofi -dmenu | cliphist decode | wl-copy
 <span style="color: #ffc9e8;">bind</span> =, D,exec,cliphist list | rofi -dmenu | cliphist delete
@@ -768,8 +723,8 @@ Switch to submap called <i>clipboard</i>
 </div>
 </div>
 </li>
-<li><a id="orgc83a32e"></a>Reset submap<br />
-<div class="outline-text-6" id="text-orgc83a32e">
+<li><a id="org4a07db0"></a>Reset submap<br />
+<div class="outline-text-6" id="text-org4a07db0">
 <div class="org-src-container">
 <pre class="src src-conf"><span style="color: #ffc9e8;">bind</span> =, delete, submap, reset 
 <span style="color: #ffc9e8;">submap</span> = reset
@@ -781,16 +736,16 @@ Switch to submap called <i>clipboard</i>
 </li>
 </ul>
 </div>
-<div id="outline-container-org4380705" class="outline-4">
-<h4 id="org4380705">Hyprshot</h4>
-<div class="outline-text-4" id="text-org4380705">
+<div id="outline-container-org434b805" class="outline-4">
+<h4 id="org434b805">Hyprshot</h4>
+<div class="outline-text-4" id="text-org434b805">
 <p>
 similar to the <code>SUPER</code> + <code>CTRL</code> keybindings the below keybindings all use the <code>PRINT</code> key. Currently this is not the first key in all of the binds; however when i get around to implimenting submaps i will make the <code>PRINT</code> key the primary key.
 </p>
 </div>
 <ul class="org-ul">
-<li><a id="org81d7e42"></a>Define submap<br />
-<div class="outline-text-5" id="text-org81d7e42">
+<li><a id="orgdb1a9da"></a>Define submap<br />
+<div class="outline-text-5" id="text-orgdb1a9da">
 <div class="org-src-container">
 <pre class="src src-conf"><span style="color: #ffc9e8;">bind</span> = ALT, P, submap, Screencopy
 <span style="color: #ffc9e8;">submap</span> = Screencopy
@@ -798,8 +753,8 @@ similar to the <code>SUPER</code> + <code>CTRL</code> keybindings the below keyb
 </div>
 </div>
 </li>
-<li><a id="orgd976528"></a>Hyprshot<br />
-<div class="outline-text-5" id="text-orgd976528">
+<li><a id="org7da73ae"></a>Hyprshot<br />
+<div class="outline-text-5" id="text-org7da73ae">
 <div class="org-src-container">
 <pre class="src src-conf"><span style="color: #ffc9e8;">bind</span> =, O, exec, hyprshot --freeze -m output -t 7500 -o ~/Pictures/Screenshots/
 <span style="color: #ffc9e8;">bind</span> =, W, exec, hyprshot --freeze -m window -t 7500 -o ~/Pictures/Screenshots/
@@ -808,34 +763,34 @@ similar to the <code>SUPER</code> + <code>CTRL</code> keybindings the below keyb
 </div>
 </div>
 </li>
-<li><a id="org79c068b"></a>Color Picker<br />
-<div class="outline-text-5" id="text-org79c068b">
+<li><a id="orgb979328"></a>Color Picker<br />
+<div class="outline-text-5" id="text-orgb979328">
 <div class="org-src-container">
 <pre class="src src-conf"><span style="color: #ffc9e8;">bind</span>=, P,exec,hyprpicker -a -f hex
 </pre>
 </div>
 </div>
 </li>
-<li><a id="org7bc3122"></a>Reset Submap<br />
-<div class="outline-text-5" id="text-org7bc3122">
+<li><a id="org2379364"></a>Reset Submap<br />
+<div class="outline-text-5" id="text-org2379364">
 <div class="org-src-container">
 <pre class="src src-conf"><span style="color: #ffc9e8;">bind</span> =, delete, submap, reset 
 <span style="color: #ffc9e8;">submap</span> = reset
 </pre>
 </div>
 <div class="org-src-container">
-<pre class="src src-conf"><span style="color: #6272a4; font-style: italic;"># </span><span style="color: #6272a4; font-style: italic;">bind =, PRINT, exec, hyprshot --freeze -m output -t 7500</span>
- <span style="color: #6272a4; font-style: italic;">#</span><span style="color: #6272a4; font-style: italic;">bind = $mainMod, PRINT, exec, hyprshot --freeze -m window -t 7500</span>
- <span style="color: #6272a4; font-style: italic;">#</span><span style="color: #6272a4; font-style: italic;">bind = $shiftMod, PRINT, exec, hyprshot --freeze -m region -t 7500</span>
+<pre class="src src-conf"><span style="color: #6272a4; font-style: italic;"># </span><span style="color: #6272a4; font-style: italic;">bind =, PRINT, exec, hyprshot --freeze -m output -t 7500
+</span> <span style="color: #6272a4; font-style: italic;">#</span><span style="color: #6272a4; font-style: italic;">bind = $mainMod, PRINT, exec, hyprshot --freeze -m window -t 7500
+</span> <span style="color: #6272a4; font-style: italic;">#</span><span style="color: #6272a4; font-style: italic;">bind = $shiftMod, PRINT, exec, hyprshot --freeze -m region -t 7500</span>
 </pre>
 </div>
 </div>
 </li>
 </ul>
 </div>
-<div id="outline-container-org6d754e7" class="outline-4">
-<h4 id="org6d754e7">Volume Control</h4>
-<div class="outline-text-4" id="text-org6d754e7">
+<div id="outline-container-org0184635" class="outline-4">
+<h4 id="org0184635">Volume Control</h4>
+<div class="outline-text-4" id="text-org0184635">
 <p>
 Use Media keys to control volume settings
 </p>
@@ -855,9 +810,9 @@ Set microphone key to toggle microphone mute
 </div>
 </div>
 </div>
-<div id="outline-container-org3576664" class="outline-4">
-<h4 id="org3576664">Brightness Control</h4>
-<div class="outline-text-4" id="text-org3576664">
+<div id="outline-container-orgc5c6c3f" class="outline-4">
+<h4 id="orgc5c6c3f">Brightness Control</h4>
+<div class="outline-text-4" id="text-orgc5c6c3f">
 <div class="org-src-container">
 <pre class="src src-conf"><span style="color: #ffc9e8;">binde</span> = ,XF86MonBrightnessDown, exec, brightnessctl set 10%-
 <span style="color: #ffc9e8;">binde</span> = ,XF86MonBrightnessUp, exec, brightnessctl set 10%+
@@ -865,9 +820,9 @@ Set microphone key to toggle microphone mute
 </div>
 </div>
 </div>
-<div id="outline-container-orgbafe367" class="outline-4">
-<h4 id="orgbafe367">Default Web Browser Switching</h4>
-<div class="outline-text-4" id="text-orgbafe367">
+<div id="outline-container-orgbce1d17" class="outline-4">
+<h4 id="orgbce1d17">Default Web Browser Switching</h4>
+<div class="outline-text-4" id="text-orgbce1d17">
 <p>
 similar to the <code>SUPER</code> + <code>CTRL</code> keybindings the below keybindings all use the <code>CTRL</code> + <code>ALT</code> key combination. When i get around to implimenting submaps i will make the <code>CTRL</code> +	<code>ALT</code> combo the submap trigger.
 </p>
@@ -888,9 +843,9 @@ Execute the default web browser
 </div>
 </div>
 </div>
-<div id="outline-container-org95ad1d5" class="outline-4">
-<h4 id="org95ad1d5">Screen Capture</h4>
-<div class="outline-text-4" id="text-org95ad1d5">
+<div id="outline-container-org87f1778" class="outline-4">
+<h4 id="org87f1778">Screen Capture</h4>
+<div class="outline-text-4" id="text-org87f1778">
 <p>
 <b>Bind to capture an output</b>
 </p>
@@ -915,9 +870,9 @@ Execute the default web browser
 </div>
 </div>
 </div>
-<div id="outline-container-org049b3d2" class="outline-3">
-<h3 id="org049b3d2">Monitor Configuration</h3>
-<div class="outline-text-3" id="text-org049b3d2">
+<div id="outline-container-orgb93d31b" class="outline-3">
+<h3 id="orgb93d31b">Monitor Configuration</h3>
+<div class="outline-text-3" id="text-orgb93d31b">
 <p>
 Set the the defoault monitor preference
 </p>
@@ -956,32 +911,32 @@ Specify configuration for <i>HML HDMI Monitor</i>
 </div>
 </div>
 </div>
-<div id="outline-container-orga495742" class="outline-3">
-<h3 id="orga495742">Decoration</h3>
-<div class="outline-text-3" id="text-orga495742">
+<div id="outline-container-orge714110" class="outline-3">
+<h3 id="orge714110">Decoration</h3>
+<div class="outline-text-3" id="text-orge714110">
 </div>
-<div id="outline-container-orga1f33c1" class="outline-4">
-<h4 id="orga1f33c1">General</h4>
-<div class="outline-text-4" id="text-orga1f33c1">
+<div id="outline-container-org20731e0" class="outline-4">
+<h4 id="org20731e0">General</h4>
+<div class="outline-text-4" id="text-org20731e0">
 <p>
 Enable rounding of window corners
 </p>
 <div class="org-src-container">
 <pre class="src src-conf"><span style="color: #bd93f9;">decoration</span> {
-    <span style="color: #6272a4; font-style: italic;"># </span><span style="color: #6272a4; font-style: italic;">See https://wiki.hyprland.org/Configuring/Variables/ for more</span>
-
+    <span style="color: #6272a4; font-style: italic;"># </span><span style="color: #6272a4; font-style: italic;">See https://wiki.hyprland.org/Configuring/Variables/ for more
+</span>
     <span style="color: #ffc9e8;">rounding</span> = 6
 </pre>
 </div>
 </div>
 <ul class="org-ul">
-<li><a id="orge3ec985"></a>Shaders<br />
-<div class="outline-text-5" id="text-orge3ec985">
+<li><a id="org7b7e9a9"></a>Shaders<br />
+<div class="outline-text-5" id="text-org7b7e9a9">
 <p>
 Enable a screen shader based on the provided shadder file. In this case the provided file is a shader file which enables a greyscale effect. 
 </p>
 <div class="org-src-container">
-<pre class="src src-conf"><span style="color: #6272a4; font-style: italic;">#</span><span style="color: #6272a4; font-style: italic;">screen_shader = ~/dotfiles/hypr/shaders/greyscale-shader.glsl</span>
+<pre class="src src-conf"><span style="color: #ffc9e8;">screen_shader</span> = ~/dotfiles/hypr/shaders/greyscale-shader.glsl
 </pre>
 </div>
 
@@ -989,14 +944,14 @@ Enable a screen shader based on the provided shadder file. In this case the prov
 bellow is an example of this shader in action:
 </p>
 
-<div id="org49ceac2" class="figure">
+<div id="org80c8e98" class="figure">
 <p><img src="./images/hypr-greyscale.png" alt="hypr-greyscale.png" width="800px" align="center" />
 </p>
 </div>
 </div>
 </li>
-<li><a id="org0e4cb81"></a>Blur<br />
-<div class="outline-text-5" id="text-org0e4cb81">
+<li><a id="orgba5efd2"></a>Blur<br />
+<div class="outline-text-5" id="text-orgba5efd2">
 <p>
 Configure blur and drop shadow. These settings are currently disabled; though i am leaving them in (just commented out) so i can quickly re-enable in future if I desire.    
 </p>
@@ -1009,10 +964,10 @@ Configure blur and drop shadow. These settings are currently disabled; though i 
         <span style="color: #ffc9e8;">passes</span> = 1
     }
 
-<span style="color: #6272a4; font-style: italic;">#    </span><span style="color: #6272a4; font-style: italic;">drop_shadow = yes</span>
-<span style="color: #6272a4; font-style: italic;">#    </span><span style="color: #6272a4; font-style: italic;">shadow_range = 4</span>
-<span style="color: #6272a4; font-style: italic;">#    </span><span style="color: #6272a4; font-style: italic;">shadow_render_power = 3</span>
-<span style="color: #6272a4; font-style: italic;">#    </span><span style="color: #6272a4; font-style: italic;">col.shadow = rgba(1a1a1aee)</span>
+<span style="color: #6272a4; font-style: italic;">#    </span><span style="color: #6272a4; font-style: italic;">drop_shadow = yes
+</span><span style="color: #6272a4; font-style: italic;">#    </span><span style="color: #6272a4; font-style: italic;">shadow_range = 4
+</span><span style="color: #6272a4; font-style: italic;">#    </span><span style="color: #6272a4; font-style: italic;">shadow_render_power = 3
+</span><span style="color: #6272a4; font-style: italic;">#    </span><span style="color: #6272a4; font-style: italic;">col.shadow = rgba(1a1a1aee)</span>
 </pre>
 </div>
 
@@ -1022,10 +977,10 @@ Configure blur and drop shadow. These settings are currently disabled; though i 
 </div>
 </div>
 </li>
-<li><a id="org2ab123e"></a>Border Decorations<br />
+<li><a id="org9e3f482"></a>Border Decorations<br />
 <ul class="org-ul">
-<li><a id="org3197429"></a>Dracula Theme<br />
-<div class="outline-text-6" id="text-org3197429">
+<li><a id="orge2c676d"></a>Dracula Theme<br />
+<div class="outline-text-6" id="text-orge2c676d">
 <div class="org-src-container">
 <pre class="src src-conf"><span style="color: #bd93f9;">general</span> {
     <span style="color: #ffc9e8;">col.active_border</span> = rgb(44475a) rgb(bd93f9) 90deg
@@ -1052,8 +1007,8 @@ non-gradient alternative
 darker alternative
 </p>
 <div class="org-src-container">
-<pre class="src src-conf"><span style="color: #ffc9e8;">col.active_border</span> = rgb(44475a) <span style="color: #6272a4; font-style: italic;"># </span><span style="color: #6272a4; font-style: italic;">or rgb(6272a4)</span>
-<span style="color: #ffc9e8;">col.inactive_border</span> = rgb(282a36)
+<pre class="src src-conf"><span style="color: #ffc9e8;">col.active_border</span> = rgb(44475a) <span style="color: #6272a4; font-style: italic;"># </span><span style="color: #6272a4; font-style: italic;">or rgb(6272a4)
+</span><span style="color: #ffc9e8;">col.inactive_border</span> = rgb(282a36)
 <span style="color: #ffc9e8;">col.group_border</span> = rgb(bd93f9)
 <span style="color: #ffc9e8;">col.group_border_active</span> = rgb(44475a) <span style="color: #6272a4; font-style: italic;"># </span><span style="color: #6272a4; font-style: italic;">or rgb(6272a4)</span>
 </pre>
@@ -1065,8 +1020,8 @@ darker alternative
 </div>
 </div>
 </li>
-<li><a id="orgbc3d210"></a>Gruvbox Theme<br />
-<div class="outline-text-6" id="text-orgbc3d210">
+<li><a id="orgf78483a"></a>Gruvbox Theme<br />
+<div class="outline-text-6" id="text-orgf78483a">
 <div class="org-src-container">
 <pre class="src src-conf"><span style="color: #bd93f9;">general</span> {
     <span style="color: #ffc9e8;">col.active_border</span> = rgba(fabd2fff) rgba(8ec07caa) 90deg
@@ -1093,8 +1048,8 @@ non-gradient alternative
 darker alternative
 </p>
 <div class="org-src-container">
-<pre class="src src-conf"><span style="color: #ffc9e8;">col.active_border</span> = rgb(44475a) <span style="color: #6272a4; font-style: italic;"># </span><span style="color: #6272a4; font-style: italic;">or rgb(6272a4)</span>
-<span style="color: #ffc9e8;">col.inactive_border</span> = rgb(282a36)
+<pre class="src src-conf"><span style="color: #ffc9e8;">col.active_border</span> = rgb(44475a) <span style="color: #6272a4; font-style: italic;"># </span><span style="color: #6272a4; font-style: italic;">or rgb(6272a4)
+</span><span style="color: #ffc9e8;">col.inactive_border</span> = rgb(282a36)
 <span style="color: #ffc9e8;">col.group_border</span> = rgb(bd93f9)
 <span style="color: #ffc9e8;">col.group_border_active</span> = rgb(44475a) <span style="color: #6272a4; font-style: italic;"># </span><span style="color: #6272a4; font-style: italic;">or rgb(6272a4)</span>
 </pre>
@@ -1108,27 +1063,27 @@ darker alternative
 </li>
 </ul>
 </li>
-<li><a id="org95def3d"></a>Group Decorations<br />
-<div class="outline-text-5" id="text-org95def3d">
+<li><a id="org46f6bd8"></a>Group Decorations<br />
+<div class="outline-text-5" id="text-org46f6bd8">
 <p>
 Decorations for when windows are grouped together.
 </p>
 </div>
 <ul class="org-ul">
-<li><a id="org1a87dd2"></a>Dracula theme<br />
-<div class="outline-text-6" id="text-org1a87dd2">
+<li><a id="orgd9ab5d4"></a>Dracula theme<br />
+<div class="outline-text-6" id="text-orgd9ab5d4">
 <div class="org-src-container">
 <pre class="src src-conf"><span style="color: #bd93f9;">group</span> {
-      <span style="color: #6272a4; font-style: italic;">#</span><span style="color: #6272a4; font-style: italic;">col.border_active = rgba(bd93f9ff) rgba(ff79c6ff) rgba(ffb86caa) rgba(8be9fdaa) 45deg</span>
-      <span style="color: #ffc9e8;">col.border_active</span> = rgba(bd93f9ff) rgba(8be9fdaa) 45deg
+      <span style="color: #6272a4; font-style: italic;">#</span><span style="color: #6272a4; font-style: italic;">col.border_active = rgba(bd93f9ff) rgba(ff79c6ff) rgba(ffb86caa) rgba(8be9fdaa) 45deg
+</span>      <span style="color: #ffc9e8;">col.border_active</span> = rgba(bd93f9ff) rgba(8be9fdaa) 45deg
     <span style="color: #bd93f9;">groupbar</span> {
         <span style="color: #ffc9e8;">enabled</span> = true
         <span style="color: #ffc9e8;">gradients</span> = true
         <span style="color: #ffc9e8;">font_size</span> = 16
         <span style="color: #ffc9e8;">font_family</span> = JetBrains Mono
         <span style="color: #ffc9e8;">height</span> = 24
-        <span style="color: #ffc9e8;">text_color</span> = rgba(f8f8f2ff) <span style="color: #6272a4; font-style: italic;">#</span><span style="color: #6272a4; font-style: italic;">white</span>
-        <span style="color: #ffc9e8;">col.active</span> = rgb(bd93f9) rgb(44475a) 90deg
+        <span style="color: #ffc9e8;">text_color</span> = rgba(f8f8f2ff) <span style="color: #6272a4; font-style: italic;">#</span><span style="color: #6272a4; font-style: italic;">white
+</span>        <span style="color: #ffc9e8;">col.active</span> = rgb(bd93f9) rgb(44475a) 90deg
         <span style="color: #ffc9e8;">col.inactive</span> = rgba(282a36dd)
     }
 }
@@ -1136,8 +1091,8 @@ Decorations for when windows are grouped together.
 </div>
 </div>
 </li>
-<li><a id="orgfd45bf9"></a>Gruvbox theme<br />
-<div class="outline-text-6" id="text-orgfd45bf9">
+<li><a id="org72bc99b"></a>Gruvbox theme<br />
+<div class="outline-text-6" id="text-org72bc99b">
 <div class="org-src-container">
 <pre class="src src-conf"><span style="color: #bd93f9;">group</span> {
       <span style="color: #ffc9e8;">col.border_active</span> = rgba(fabd2fff) rgba(8ec07caa) 45deg
@@ -1159,29 +1114,29 @@ Decorations for when windows are grouped together.
 </li>
 </ul>
 </li>
-<li><a id="org6c09801"></a>Backup decoration settings<br />
-<div class="outline-text-5" id="text-org6c09801">
+<li><a id="orgde0ce0a"></a>Backup decoration settings<br />
+<div class="outline-text-5" id="text-orgde0ce0a">
 <p>
 this is a copy of the default decoration settings; copied here for reference. they are not copied to the running configuration. 
 </p>
 
 <div class="org-src-container">
 <pre class="src src-conf"><span style="color: #bd93f9;">decoration</span> {
-<span style="color: #6272a4; font-style: italic;">#    </span><span style="color: #6272a4; font-style: italic;">col.shadow = rgba(1E202966)</span>
-
-    <span style="color: #6272a4; font-style: italic;"># </span><span style="color: #6272a4; font-style: italic;">suggested shadow setting</span>
-    <span style="color: #6272a4; font-style: italic;">#</span><span style="color: #6272a4; font-style: italic;">drop_shadow = yes</span>
-    <span style="color: #6272a4; font-style: italic;">#</span><span style="color: #6272a4; font-style: italic;">shadow_range = 60</span>
-    <span style="color: #6272a4; font-style: italic;">#</span><span style="color: #6272a4; font-style: italic;">shadow_offset = 1 2</span>
-    <span style="color: #6272a4; font-style: italic;">#</span><span style="color: #6272a4; font-style: italic;">shadow_render_power = 3</span>
-    <span style="color: #6272a4; font-style: italic;">#</span><span style="color: #6272a4; font-style: italic;">shadow_scale = 0.97</span>
-}
+<span style="color: #6272a4; font-style: italic;">#    </span><span style="color: #6272a4; font-style: italic;">col.shadow = rgba(1E202966)
+</span>
+    <span style="color: #6272a4; font-style: italic;"># </span><span style="color: #6272a4; font-style: italic;">suggested shadow setting
+</span>    <span style="color: #6272a4; font-style: italic;">#</span><span style="color: #6272a4; font-style: italic;">drop_shadow = yes
+</span>    <span style="color: #6272a4; font-style: italic;">#</span><span style="color: #6272a4; font-style: italic;">shadow_range = 60
+</span>    <span style="color: #6272a4; font-style: italic;">#</span><span style="color: #6272a4; font-style: italic;">shadow_offset = 1 2
+</span>    <span style="color: #6272a4; font-style: italic;">#</span><span style="color: #6272a4; font-style: italic;">shadow_render_power = 3
+</span>    <span style="color: #6272a4; font-style: italic;">#</span><span style="color: #6272a4; font-style: italic;">shadow_scale = 0.97
+</span>}
 </pre>
 </div>
 </div>
 </li>
-<li><a id="org4904997"></a>Performance Enhancements<br />
-<div class="outline-text-5" id="text-org4904997">
+<li><a id="orgb046ccb"></a>Performance Enhancements<br />
+<div class="outline-text-5" id="text-orgb046ccb">
 <p>
 Disable some things to improve performance/improve battery life.
 </p>
@@ -1195,9 +1150,9 @@ Disable some things to improve performance/improve battery life.
 </li>
 </ul>
 </div>
-<div id="outline-container-orgaf985d7" class="outline-4">
-<h4 id="orgaf985d7">Animations</h4>
-<div class="outline-text-4" id="text-orgaf985d7">
+<div id="outline-container-org05a8d10" class="outline-4">
+<h4 id="org05a8d10">Animations</h4>
+<div class="outline-text-4" id="text-org05a8d10">
 <p>
 Some default animations, see <a href="https://wiki.hyprland.org/Configuring/Animations/">https://wiki.hyprland.org/Configuring/Animations/</a> for more
 </p>
@@ -1218,9 +1173,9 @@ Some default animations, see <a href="https://wiki.hyprland.org/Configuring/Anim
 </div>
 </div>
 </div>
-<div id="outline-container-org84fa960" class="outline-4">
-<h4 id="org84fa960">Disable Default Wallpaper</h4>
-<div class="outline-text-4" id="text-org84fa960">
+<div id="outline-container-orgcc0c0a8" class="outline-4">
+<h4 id="orgcc0c0a8">Disable Default Wallpaper</h4>
+<div class="outline-text-4" id="text-orgcc0c0a8">
 <p>
 See <a href="https://wiki.hyprland.org/Configuring/Variables/">https://wiki.hyprland.org/Configuring/Variables/</a> for more
 </p>
@@ -1237,13 +1192,13 @@ Set to 0 or 1 to disable the anime mascot wallpapers
 </div>
 </div>
 </div>
-<div id="outline-container-org56300d5" class="outline-3">
-<h3 id="org56300d5">Layout</h3>
-<div class="outline-text-3" id="text-org56300d5">
+<div id="outline-container-org829b094" class="outline-3">
+<h3 id="org829b094">Layout</h3>
+<div class="outline-text-3" id="text-org829b094">
 </div>
-<div id="outline-container-org6affb7b" class="outline-4">
-<h4 id="org6affb7b">General</h4>
-<div class="outline-text-4" id="text-org6affb7b">
+<div id="outline-container-org8bc25d2" class="outline-4">
+<h4 id="org8bc25d2">General</h4>
+<div class="outline-text-4" id="text-org8bc25d2">
 <p>
 Set the gap and border variables for hypland
 </p>
@@ -1274,8 +1229,8 @@ Please see <a href="https://wiki.hyprland.org/Configuring/Tearing/">https://wiki
 </div>
 </div>
 <ul class="org-ul">
-<li><a id="org2209f97"></a>Define the Dwindle layout<br />
-<div class="outline-text-5" id="text-org2209f97">
+<li><a id="org0b07b11"></a>Define the Dwindle layout<br />
+<div class="outline-text-5" id="text-org0b07b11">
 <p>
 See <a href="https://wiki.hyprland.org/Configuring/Dwindle-Layout/">https://wiki.hyprland.org/Configuring/Dwindle-Layout/</a> for more
 </p>
@@ -1299,8 +1254,8 @@ You probably want this
 </div>
 </div>
 </li>
-<li><a id="orgbf00136"></a>Master Layout<br />
-<div class="outline-text-5" id="text-orgbf00136">
+<li><a id="org278db45"></a>Master Layout<br />
+<div class="outline-text-5" id="text-org278db45">
 <p>
 See <a href="https://wiki.hyprland.org/Configuring/Master-Layout/">https://wiki.hyprland.org/Configuring/Master-Layout/</a> for more
 </p>
@@ -1313,8 +1268,8 @@ See <a href="https://wiki.hyprland.org/Configuring/Master-Layout/">https://wiki.
 </div>
 </div>
 </li>
-<li><a id="org29f2251"></a>Gestures<br />
-<div class="outline-text-5" id="text-org29f2251">
+<li><a id="org3c5348d"></a>Gestures<br />
+<div class="outline-text-5" id="text-org3c5348d">
 <p>
 Enable "workspace swipe"; to use the touchpad to move between Hyprland workspaces.
 </p>
@@ -1328,13 +1283,13 @@ Enable "workspace swipe"; to use the touchpad to move between Hyprland workspace
 </li>
 </ul>
 </div>
-<div id="outline-container-org92aa7b8" class="outline-4">
-<h4 id="org92aa7b8">Window Rules</h4>
-<div class="outline-text-4" id="text-org92aa7b8">
+<div id="outline-container-org4807c28" class="outline-4">
+<h4 id="org4807c28">Window Rules</h4>
+<div class="outline-text-4" id="text-org4807c28">
 </div>
 <ul class="org-ul">
-<li><a id="org3b301e1"></a>Examples<br />
-<div class="outline-text-5" id="text-org3b301e1">
+<li><a id="org570bb9c"></a>Examples<br />
+<div class="outline-text-5" id="text-org570bb9c">
 <p>
 Example windowrule v1
 </p>
@@ -1354,8 +1309,8 @@ See <a href="https://wiki.hyprland.org/Configuring/Window-Rules/">https://wiki.h
 </p>
 </div>
 </li>
-<li><a id="orgf093ff0"></a>V2 Window Rules<br />
-<div class="outline-text-5" id="text-orgf093ff0">
+<li><a id="org31d5464"></a>V2 Window Rules<br />
+<div class="outline-text-5" id="text-org31d5464">
 <p>
 Check if a window is xwayland
 </p>
@@ -1373,8 +1328,8 @@ You'll probably like this.
 </div>
 </div>
 <ul class="org-ul">
-<li><a id="orgcf2f3b0"></a>Floats<br />
-<div class="outline-text-6" id="text-orgcf2f3b0">
+<li><a id="orgaa67d32"></a>Floats<br />
+<div class="outline-text-6" id="text-orgaa67d32">
 <p>
 Force YAD windows to float 
 </p>
@@ -1384,8 +1339,8 @@ Force YAD windows to float
 </div>
 </div>
 </li>
-<li><a id="org083107d"></a>Workspace assignments<br />
-<div class="outline-text-6" id="text-org083107d">
+<li><a id="orgc65aac2"></a>Workspace assignments<br />
+<div class="outline-text-6" id="text-orgc65aac2">
 <p>
 Assign Yad windows to workspace 1
 </p>
@@ -1395,10 +1350,34 @@ Assign Yad windows to workspace 1
 </div>
 
 <p>
+Assign personal website to workspace 1
+</p>
+<div class="org-src-container">
+<pre class="src src-conf"><span style="color: #ffc9e8;">windowrulev2</span> = workspace 2,title:^(HD<span style="color: #f1fa8c;">'s Personal Documentation)$  </span>
+</pre>
+</div>
+<p>
 Assign Emacs windows to workspace 3
 </p>
 <div class="org-src-container">
 <pre class="src src-conf"><span style="color: #ffc9e8;">windowrulev2</span> = workspace 3,class:^(emacs)$  
+</pre>
+</div>
+
+<p>
+Assign Github windows to workspace 3
+</p>
+<div class="org-src-container">
+<pre class="src src-conf"><span style="color: #ffc9e8;">windowrulev2</span> = workspace 3,title:^(GitHub)$  
+</pre>
+</div>
+
+<p>
+Assign Jellyfin and Spotify windows to workspace 4
+</p>
+<div class="org-src-container">
+<pre class="src src-conf"><span style="color: #ffc9e8;">windowrulev2</span> = workspace 4,class:^(com.github.iwalton3.jellyfin-media-player)$  
+<span style="color: #ffc9e8;">windowrulev2</span> = workspace 4,title:^(Spotify)$  
 </pre>
 </div>
 
@@ -1419,8 +1398,8 @@ Assign librewolf to workspace 8
 </div>
 </div>
 </li>
-<li><a id="orgd24b850"></a>Screensharing privacy<br />
-<div class="outline-text-6" id="text-orgd24b850">
+<li><a id="orgbcd6747"></a>Screensharing privacy<br />
+<div class="outline-text-6" id="text-orgbcd6747">
 <div class="org-src-container">
 <pre class="src src-conf"><span style="color: #ffc9e8;">windowrulev2</span> = noscreenshare, class:^(org.keepassxc.KeePassXC)
 <span style="color: #ffc9e8;">windowrulev2</span> = noscreenshare, class:^(com.belmoussaoui.Authenticator)
@@ -1437,7 +1416,7 @@ Assign librewolf to workspace 8
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: Henry Davies (HD)</p>
-<p class="date">Created: 2025-07-18 Fri 09:39</p>
+<p class="date">Created: 2025-08-05 Tue 02:07</p>
 <p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
