@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2025-08-19 Tue 19:40 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>wlogout config</title>
+<meta name="author" content="Henry Davies (HD)" />
+<meta name="generator" content="Org Mode" />
+<link rel="stylesheet" type="text/css" href="https://fniessen.github.io/org-html-themes/src/readtheorg_theme/css/htmlize.css"/>
+<link rel="stylesheet" type="text/css" href="https://fniessen.github.io/org-html-themes/src/readtheorg_theme/css/readtheorg.css"/>
+<link rel="stylesheet" type="text/css" href="src/readtheorg_theme/css/search.css"/>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="https://fniessen.github.io/org-html-themes/src/lib/js/jquery.stickytableheaders.min.js"></script>
+<script type="text/javascript" src="https://fniessen.github.io/org-html-themes/src/readtheorg_theme/js/search.js"></script>
+<script type="text/javascript" src="https://fniessen.github.io/org-html-themes/src/readtheorg_theme/js/readtheorg.js"></script>
+<style>pre.src{background:#282a36;color:white;} </style>
+<style>code{background:#f8f8f2;color:#6272a4;} </style>
+<style>ul{background:#f8f8f2;} </style>
+</head>
+<body>
+<div id="content" class="content">
+<h1 class="title">wlogout config</h1>
+<div id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#orgfc06045">LAYOUT</a>
+<ul>
+<li><a href="#orgd29f515">Lock</a></li>
+<li><a href="#org6b0cc10">Logout</a></li>
+<li><a href="#org577ef39">Shutdown</a></li>
+<li><a href="#org708191f">Suspend</a></li>
+<li><a href="#org364b12e">Reboot</a></li>
+</ul>
+</li>
+<li><a href="#org97d3002">CSS</a></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgfc06045" class="outline-2">
+<h2 id="orgfc06045">LAYOUT</h2>
+<div class="outline-text-2" id="text-orgfc06045">
+</div>
+<div id="outline-container-orgd29f515" class="outline-3">
+<h3 id="orgd29f515">Lock</h3>
+<div class="outline-text-3" id="text-orgd29f515">
+<div class="org-src-container">
+<pre class="src src-json">{
+    <span style="color: #ff79c6; font-style: italic;">"label"</span> : <span style="color: #f1fa8c;">"lock"</span>,
+    <span style="color: #ff79c6; font-style: italic;">"action"</span> : <span style="color: #f1fa8c;">"loginctl lock-session"</span>,
+    <span style="color: #ff79c6; font-style: italic;">"text"</span> : <span style="color: #f1fa8c;">"Lock"</span>,
+    <span style="color: #ff79c6; font-style: italic;">"keybind"</span> : <span style="color: #f1fa8c;">"l"</span>
+}
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org6b0cc10" class="outline-3">
+<h3 id="org6b0cc10">Logout</h3>
+<div class="outline-text-3" id="text-org6b0cc10">
+<div class="org-src-container">
+<pre class="src src-json">{
+    <span style="color: #ff79c6; font-style: italic;">"label"</span> : <span style="color: #f1fa8c;">"logout"</span>,
+    <span style="color: #ff79c6; font-style: italic;">"action"</span> : <span style="color: #f1fa8c;">"~/Documents/scripts/bash/logout.sh"</span>,
+    <span style="color: #ff79c6; font-style: italic;">"text"</span> : <span style="color: #f1fa8c;">"Logout"</span>,
+    <span style="color: #ff79c6; font-style: italic;">"keybind"</span> : <span style="color: #f1fa8c;">"g"</span>
+}
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org577ef39" class="outline-3">
+<h3 id="org577ef39">Shutdown</h3>
+<div class="outline-text-3" id="text-org577ef39">
+<div class="org-src-container">
+<pre class="src src-json">{
+    <span style="color: #ff79c6; font-style: italic;">"label"</span> : <span style="color: #f1fa8c;">"shutdown"</span>,
+    <span style="color: #ff79c6; font-style: italic;">"action"</span> : <span style="color: #f1fa8c;">"systemctl poweroff"</span>,
+    <span style="color: #ff79c6; font-style: italic;">"text"</span> : <span style="color: #f1fa8c;">"Shutdown"</span>,
+    <span style="color: #ff79c6; font-style: italic;">"keybind"</span> : <span style="color: #f1fa8c;">"s"</span>
+}
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org708191f" class="outline-3">
+<h3 id="org708191f">Suspend</h3>
+<div class="outline-text-3" id="text-org708191f">
+<div class="org-src-container">
+<pre class="src src-json">{
+    <span style="color: #ff79c6; font-style: italic;">"label"</span> : <span style="color: #f1fa8c;">"suspend"</span>,
+    <span style="color: #ff79c6; font-style: italic;">"action"</span> : <span style="color: #f1fa8c;">"systemctl suspend"</span>,
+    <span style="color: #ff79c6; font-style: italic;">"text"</span> : <span style="color: #f1fa8c;">"Suspend"</span>,
+    <span style="color: #ff79c6; font-style: italic;">"keybind"</span> : <span style="color: #f1fa8c;">"u"</span>
+}
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org364b12e" class="outline-3">
+<h3 id="org364b12e">Reboot</h3>
+<div class="outline-text-3" id="text-org364b12e">
+<div class="org-src-container">
+<pre class="src src-json">{
+    <span style="color: #ff79c6; font-style: italic;">"label"</span> : <span style="color: #f1fa8c;">"reboot"</span>,
+    <span style="color: #ff79c6; font-style: italic;">"action"</span> : <span style="color: #f1fa8c;">"systemctl reboot"</span>,
+    <span style="color: #ff79c6; font-style: italic;">"text"</span> : <span style="color: #f1fa8c;">"Reboot"</span>,
+    <span style="color: #ff79c6; font-style: italic;">"keybind"</span> : <span style="color: #f1fa8c;">"r"</span>
+}
+</pre>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-org97d3002" class="outline-2">
+<h2 id="org97d3002">CSS</h2>
+<div class="outline-text-2" id="text-org97d3002">
+<div class="org-src-container">
+<pre class="src src-css"> <span style="color: #50fa7b;">*</span> {
+        <span style="color: #bd93f9;">background-image</span>: none;
+        <span style="color: #bd93f9;">box-shadow</span>: none;
+}
+
+<span style="color: #50fa7b;">window</span> {
+        <span style="color: #bd93f9;">background-color</span>: <span style="color: #ffffff; background-color: #0c0c0c;">rgba(12, 12, 12, 0.9)</span>;
+}
+
+<span style="color: #50fa7b;">button</span> {
+    <span style="color: #bd93f9;">border-radius</span>: 6;
+    <span style="color: #bd93f9;">border-color</span>: <span style="color: #ffffff; background-color: #000000;">black</span>;
+        <span style="color: #bd93f9;">text-decoration-color</span>: <span style="color: #000000; background-color: #FFFFFF;">#FFFFFF</span>;
+    <span style="color: #bd93f9;">color</span>: <span style="color: #000000; background-color: #FFFFFF;">#FFFFFF</span>;
+        <span style="color: #bd93f9;">background-color</span>: <span style="color: #ffffff; background-color: #1E1E1E;">#1E1E1E</span>;
+        <span style="color: #bd93f9;">border-style</span>: solid;
+        <span style="color: #bd93f9;">border-width</span>: 1px;
+        <span style="color: #bd93f9;">background-repeat</span>: no-repeat;
+        <span style="color: #bd93f9;">background-position</span>: center;
+        <span style="color: #bd93f9;">background-size</span>: 25%;
+}
+
+<span style="color: #50fa7b;">button:focus, button:active, button:hover</span> {
+        <span style="color: #bd93f9;">background-color</span>: <span style="color: #ffffff; background-color: #3700B3;">#3700B3</span>;
+        <span style="color: #bd93f9;">outline-style</span>: none;
+}
+
+<span style="color: #50fa7b;">#lock</span> {
+    <span style="color: #bd93f9;">background-image</span>: image(url(<span style="color: #f1fa8c;">"/usr/share/wlogout/icons/lock.png"</span>), url(<span style="color: #f1fa8c;">"/usr/local/share/wlogout/icons/lock.png"</span>));
+}
+
+<span style="color: #50fa7b;">#logout</span> {
+    <span style="color: #bd93f9;">background-image</span>: image(url(<span style="color: #f1fa8c;">"/usr/share/wlogout/icons/logout.png"</span>), url(<span style="color: #f1fa8c;">"/usr/local/share/wlogout/icons/logout.png"</span>));
+}
+<span style="color: #50fa7b;">#suspend</span> {
+    <span style="color: #bd93f9;">background-image</span>: image(url(<span style="color: #f1fa8c;">"/usr/share/wlogout/icons/suspend.png"</span>), url(<span style="color: #f1fa8c;">"/usr/local/share/wlogout/icons/suspend.png"</span>));
+}
+
+
+<span style="color: #50fa7b;">#shutdown</span> {
+    <span style="color: #bd93f9;">background-image</span>: image(url(<span style="color: #f1fa8c;">"/usr/share/wlogout/icons/shutdown.png"</span>), url(<span style="color: #f1fa8c;">"/usr/local/share/wlogout/icons/shutdown.png"</span>));
+}
+
+<span style="color: #50fa7b;">#reboot</span> {
+    <span style="color: #bd93f9;">background-image</span>: image(url(<span style="color: #f1fa8c;">"/usr/share/wlogout/icons/reboot.png"</span>), url(<span style="color: #f1fa8c;">"/usr/local/share/wlogout/icons/reboot.png"</span>));
+}
+</pre>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author: Henry Davies (HD)</p>
+<p class="date">Created: 2025-08-19 Tue 19:40</p>
+<p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>
