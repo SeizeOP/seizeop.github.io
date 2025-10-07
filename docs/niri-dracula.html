@@ -1,0 +1,278 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2025-10-02 Thu 03:47 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Personal Niri Configuration</title>
+<meta name="author" content="Henry Davies (HD)" />
+<meta name="generator" content="Org Mode" />
+<link rel="stylesheet" type="text/css" href="https://fniessen.github.io/org-html-themes/src/readtheorg_theme/css/htmlize.css"/>
+<link rel="stylesheet" type="text/css" href="https://fniessen.github.io/org-html-themes/src/readtheorg_theme/css/readtheorg.css"/>
+<link rel="stylesheet" type="text/css" href="https://fniessen.github.io/org-html-themes/src/readtheorg_theme/css/code-copy.css"/>
+<link rel="stylesheet" type="text/css" href="src/readtheorg_theme/css/search.css"/>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="https://fniessen.github.io/org-html-themes/src/lib/js/jquery.stickytableheaders.min.js"></script>
+<script type="text/javascript" src="https://fniessen.github.io/org-html-themes/src/readtheorg_theme/js/search.js"></script>
+<script type="text/javascript" src="https://fniessen.github.io/org-html-themes/src/readtheorg_theme/js/readtheorg.js"></script>
+<script type="text/javascript" src="https://fniessen.github.io/org-html-themes/src/readtheorg_theme/js/code-copy.js"></script>
+<style>code{background:#f8f8f2;color:#6272a4;} </style>
+<style>pre.src{background:#282a36;color:white;} </style>
+</head>
+<body>
+<div id="content" class="content">
+<h1 class="title">Personal Niri Configuration</h1>
+<div id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#org5f22200">ABOUT</a></li>
+<li><a href="#orgc4ea860">CONFIGURATION</a>
+<ul>
+<li><a href="#org056adfc">Autostarts</a>
+<ul>
+<li><a href="#org9e41b77">Start the emacs daemon for better emacs load times.</a></li>
+<li><a href="#orga41baad">Start <i>Waybar</i>, a commonly used bar for Wayland compositors</a></li>
+<li><a href="#org117bf8a">Set initial wallpaper</a></li>
+</ul>
+</li>
+<li><a href="#org87074c7">Inputs</a>
+<ul>
+<li><a href="#org3264fad">Touchpad</a></li>
+<li><a href="#org6bdcfae">Mouse</a></li>
+<li><a href="#orga69b756">Trackpoint</a></li>
+<li><a href="#org318142b">Focus on hover</a></li>
+</ul>
+</li>
+<li><a href="#org792c1d1">Outputs</a></li>
+<li><a href="#org7461d0e">Layout</a>
+<ul>
+<li><a href="#org49fd103">preset column widths</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org5f22200" class="outline-2">
+<h2 id="org5f22200">ABOUT</h2>
+<div class="outline-text-2" id="text-org5f22200">
+<p>
+This config is in the KDL format: <a href="https://kdl.dev">https://kdl.dev</a> 
+</p>
+
+<p>
+<code>/-&lt;node&gt;</code> comments out the following node, and <code>//</code> comments out a single line. Check the <a href="https://github.com/YaLTeR/niri/wiki/Configuration:-Introduction">wiki</a> for a full description of the configuration.
+</p>
+
+<p>
+Note that for readablility purposes I will be using <code>JSONC</code> source code blocks, as opposed to having to install the <code>kdl-mode</code> emacs package.
+</p>
+</div>
+</div>
+<div id="outline-container-orgc4ea860" class="outline-2">
+<h2 id="orgc4ea860">CONFIGURATION</h2>
+<div class="outline-text-2" id="text-orgc4ea860">
+</div>
+<div id="outline-container-org056adfc" class="outline-3">
+<h3 id="org056adfc">Autostarts</h3>
+<div class="outline-text-3" id="text-org056adfc">
+<p>
+Programs to run when Niri starts for the first time.
+</p>
+</div>
+<div id="outline-container-org9e41b77" class="outline-4">
+<h4 id="org9e41b77">Start the emacs daemon for better emacs load times.</h4>
+<div class="outline-text-4" id="text-org9e41b77">
+<div class="org-src-container">
+<pre class="src src-jsonc">spawn-at-startup <span style="color: #f1fa8c;">"~/.local/bin/serv-emacs"</span>
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-orga41baad" class="outline-4">
+<h4 id="orga41baad">Start <i>Waybar</i>, a commonly used bar for Wayland compositors</h4>
+<div class="outline-text-4" id="text-orga41baad">
+<div class="org-src-container">
+<pre class="src src-jsonc">spawn-at-startup <span style="color: #f1fa8c;">"~/.local/bin/launch-waybar"</span>
+</pre>
+</div>
+
+<div class="org-src-container">
+<pre class="src src-jsonc">spawn-at-startup <span style="color: #f1fa8c;">"nm-applet --indicator"</span>
+spawn-at-startup <span style="color: #f1fa8c;">"systemctl --user start plasma-polkit-agent"</span>
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org117bf8a" class="outline-4">
+<h4 id="org117bf8a">Set initial wallpaper</h4>
+<div class="outline-text-4" id="text-org117bf8a">
+<div class="org-src-container">
+<pre class="src src-jsonc">spawn-at-startup <span style="color: #f1fa8c;">"hyprpaper"</span>
+</pre>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-org87074c7" class="outline-3">
+<h3 id="org87074c7">Inputs</h3>
+<div class="outline-text-3" id="text-org87074c7">
+<p>
+configure input devices
+</p>
+<div class="org-src-container">
+<pre class="src src-jsonc">input {
+    keyboard {
+        xkb {
+            <span style="color: #6272a4; font-style: italic;">// </span><span style="color: #6272a4; font-style: italic;">You can set rules, model, layout, variant and options.
+</span>            <span style="color: #6272a4; font-style: italic;">// </span><span style="color: #6272a4; font-style: italic;">For more information, see xkeyboard-config(7).
+</span>
+            <span style="color: #6272a4; font-style: italic;">// </span><span style="color: #6272a4; font-style: italic;">For example:
+</span>            layout <span style="color: #f1fa8c;">"us,en"</span>
+        }
+</pre>
+</div>
+
+<p>
+Swap Capslock and Ctrl keys for convienence 
+</p>
+<div class="org-src-container">
+<pre class="src src-jsonc">    options <span style="color: #f1fa8c;">"grp:win_space_toggle,compose:ralt,ctrl:swapcaps"</span>
+}
+
+</pre>
+</div>
+
+<p>
+Enable numlock on startup, omitting this setting disables it.
+</p>
+<div class="org-src-container">
+<pre class="src src-jsonc">    numlock
+}
+
+</pre>
+</div>
+</div>
+<div id="outline-container-org3264fad" class="outline-4">
+<h4 id="org3264fad">Touchpad</h4>
+<div class="outline-text-4" id="text-org3264fad">
+<div class="org-src-container">
+<pre class="src src-jsonc">touchpad {
+    <span style="color: #6272a4; font-style: italic;">// </span><span style="color: #6272a4; font-style: italic;">off
+</span>    tap
+    <span style="color: #6272a4; font-style: italic;">// </span><span style="color: #6272a4; font-style: italic;">dwt
+</span>    <span style="color: #6272a4; font-style: italic;">// </span><span style="color: #6272a4; font-style: italic;">dwtp
+</span>    <span style="color: #6272a4; font-style: italic;">// </span><span style="color: #6272a4; font-style: italic;">drag false
+</span>    <span style="color: #6272a4; font-style: italic;">// </span><span style="color: #6272a4; font-style: italic;">drag-lock
+</span>    natural-scroll
+    <span style="color: #6272a4; font-style: italic;">// </span><span style="color: #6272a4; font-style: italic;">accel-speed 0.2
+</span>    <span style="color: #6272a4; font-style: italic;">// </span><span style="color: #6272a4; font-style: italic;">accel-profile "flat"
+</span>    <span style="color: #6272a4; font-style: italic;">// </span><span style="color: #6272a4; font-style: italic;">scroll-method "two-finger"
+</span>    <span style="color: #6272a4; font-style: italic;">// </span><span style="color: #6272a4; font-style: italic;">disabled-on-external-mouse
+</span>}
+
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org6bdcfae" class="outline-4">
+<h4 id="org6bdcfae">Mouse</h4>
+<div class="outline-text-4" id="text-org6bdcfae">
+<div class="org-src-container">
+<pre class="src src-jsonc">mouse {
+        <span style="color: #6272a4; font-style: italic;">// </span><span style="color: #6272a4; font-style: italic;">off
+</span>        <span style="color: #6272a4; font-style: italic;">// </span><span style="color: #6272a4; font-style: italic;">natural-scroll
+</span>        <span style="color: #6272a4; font-style: italic;">// </span><span style="color: #6272a4; font-style: italic;">accel-speed 0.2
+</span>        <span style="color: #6272a4; font-style: italic;">// </span><span style="color: #6272a4; font-style: italic;">accel-profile "flat"
+</span>        <span style="color: #6272a4; font-style: italic;">// </span><span style="color: #6272a4; font-style: italic;">scroll-method "no-scroll"
+</span>    }
+
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-orga69b756" class="outline-4">
+<h4 id="orga69b756">Trackpoint</h4>
+<div class="outline-text-4" id="text-orga69b756">
+<div class="org-src-container">
+<pre class="src src-jsonc">trackpoint {
+       <span style="color: #6272a4; font-style: italic;">// </span><span style="color: #6272a4; font-style: italic;">off
+</span>       <span style="color: #6272a4; font-style: italic;">// </span><span style="color: #6272a4; font-style: italic;">natural-scroll
+</span>        accel-speed <span style="color: #8be9fd;">1.5</span>
+       <span style="color: #6272a4; font-style: italic;">// </span><span style="color: #6272a4; font-style: italic;">accel-profile "flat"
+</span>        scroll-method <span style="color: #f1fa8c;">"on-button-down"</span>
+       <span style="color: #6272a4; font-style: italic;">// </span><span style="color: #6272a4; font-style: italic;">scroll-button 273
+</span>       <span style="color: #6272a4; font-style: italic;">// </span><span style="color: #6272a4; font-style: italic;">middle-emulation
+</span>   }
+
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org318142b" class="outline-4">
+<h4 id="org318142b">Focus on hover</h4>
+<div class="outline-text-4" id="text-org318142b">
+<div class="org-src-container">
+<pre class="src src-jsonc">  focus-follows-mouse max-scroll-amount=<span style="color: #f1fa8c;">"0%"</span>
+}
+</pre>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-org792c1d1" class="outline-3">
+<h3 id="org792c1d1">Outputs</h3>
+<div class="outline-text-3" id="text-org792c1d1">
+<div class="org-src-container">
+<pre class="src src-jsonc">output <span style="color: #f1fa8c;">"eDP-1"</span> {
+    mode <span style="color: #f1fa8c;">"1920x1080@60.000"</span>
+    scale <span style="color: #8be9fd;">2</span>
+    transform <span style="color: #f1fa8c;">"normal"</span>
+    position x=<span style="color: #8be9fd;">1280</span> y=<span style="color: #8be9fd;">0</span>
+}
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-org7461d0e" class="outline-3">
+<h3 id="org7461d0e">Layout</h3>
+<div class="outline-text-3" id="text-org7461d0e">
+<div class="org-src-container">
+<pre class="src src-jsonc">  layout {
+      gaps <span style="color: #8be9fd;">12</span>
+      background-color <span style="color: #f1fa8c;">"transparent"</span>
+      center-focused-column <span style="color: #f1fa8c;">"on-overflow"</span>
+}
+</pre>
+</div>
+</div>
+<div id="outline-container-org49fd103" class="outline-4">
+<h4 id="org49fd103">preset column widths</h4>
+<div class="outline-text-4" id="text-org49fd103">
+<div class="org-src-container">
+<pre class="src src-jsonc"> preset-column-widths {
+     proportion <span style="color: #8be9fd;">0.33333</span>
+     proportion <span style="color: #8be9fd;">0.5</span>
+     proportion <span style="color: #8be9fd;">0.66667</span>
+ }
+
+default-column-width { proportion <span style="color: #8be9fd;">0.5</span>; }
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author: Henry Davies (HD)</p>
+<p class="date">Created: 2025-10-02 Thu 03:47</p>
+<p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>
